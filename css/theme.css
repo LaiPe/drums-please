@@ -52,7 +52,7 @@ table {
 }
 
 .slide{
-    height: calc(100vh - var(--header));
+    min-height: calc(100vh - var(--header));
 }
 
 #header{
