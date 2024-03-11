@@ -69,10 +69,12 @@ table {
     border-bottom: 1px black solid;
 }
 #nav-produits{
-    width: 60%;
+    margin: 0 5%;
 }
 #nav-produits ul{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 4rem;
+    text-align: center;
 }
