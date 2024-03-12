@@ -1,0 +1,49 @@
+#produits{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tuille-produit{
+    width: 50%;
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(#ccc,#e4e4e4);
+}
+.tuille-produit a{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#presentation{
+    padding: 6rem 1.5rem;
+    background-color: var(--couleur-fond);
+}
+#texte-presentation{
+    background-color: white;
+    margin: 0 auto;
+    max-width: 600px;
+
+    padding: 3rem 3rem 1.5rem;
+}
+#texte-presentation p{
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#rappel-inscription{
+    background-color: var(--couleur-fond);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+#rappel-inscription h3{
+    font-size: 4rem;
+}
+#rappel-inscription a{
+    margin-top: 1rem;
+}
