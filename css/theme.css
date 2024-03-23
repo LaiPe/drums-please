@@ -1,5 +1,5 @@
 :root{
-    --header: 90px;
+    --header: 105px;
     --couleur-fond: rgb(12, 12, 31);
 }
 
@@ -16,12 +16,18 @@
     width: 100%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+#logo-header{
+    height: 9rem;
+    position: relative;
+    top: 2.8rem;
+    margin: 0 5%;
 }
 #nav-produits{
-    margin: 0 5%;
+    margin: 0 5% 0.5rem;
 }
 #nav-produits ul{
     width: 100%;
