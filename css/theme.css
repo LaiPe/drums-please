@@ -8,17 +8,17 @@
 }
 
 #header{
+    background-color: var(--couleur-fond);
+
     position: sticky;
     top: 0;
-
-    background-color: white;
     height: var(--header);
     width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px black solid;
 }
 #nav-produits{
     margin: 0 5%;
@@ -27,6 +27,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    column-gap: 4rem;
     text-align: center;
+    column-gap: 4rem;
+}
+#nav-produits a{
+    color: white;
+    text-decoration: none;
+}
+#nav-produits a:hover{
+    text-decoration: underline;
 }
