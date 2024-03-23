@@ -14,7 +14,7 @@
 
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 #accueil #conteneur-video{
@@ -30,7 +30,7 @@
 #accueil #conteneur-video::after{
     content: "";
     width: 100%;
-    height: 50%;
+    height: 60%;
     position: absolute;
     left: 0;
     bottom: 0;

@@ -7,6 +7,11 @@
     min-height: calc(100vh - var(--header));
 }
 
+body{
+    /* TEMP */
+    overflow-x: hidden;
+}
+
 #header{
     background-color: var(--couleur-fond);
 
@@ -23,13 +28,13 @@
     z-index: 10000;
 }
 #logo-header{
-    height: 9rem;
+    height: 7.5rem;
     position: relative;
-    top: 2.8rem;
-    margin: 0 5%;
+    top: 2.2rem;
+    margin: 0 2rem;
 }
 #nav-produits{
-    margin: 0 5% 0.5rem;
+    margin: 0 4rem 0.6rem;
 }
 #nav-produits ul{
     width: 100%;
@@ -39,6 +44,7 @@
     column-gap: 4rem;
 }
 #nav-produits a{
+    font-family: "Righteous";
     color: white;
     text-decoration: none;
 }
