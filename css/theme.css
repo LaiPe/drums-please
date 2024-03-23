@@ -19,6 +19,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
+
+    z-index: 10000;
 }
 #logo-header{
     height: 9rem;
