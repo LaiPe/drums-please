@@ -17,17 +17,20 @@
     margin: 2rem;
 }
 
-#accueil #conteneur-video{
-    height: 100%;
-    width: 100%;
+#accueil .conteneur-video{
     z-index: 9;
 }
-#accueil video{
+.conteneur-video{
+    height: 100%;
+    width: 100%;
+}
+.conteneur-video video{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-#accueil #conteneur-video::after{
+
+#accueil .conteneur-video::after{
     content: "";
     width: 100%;
     height: 60%;
@@ -129,19 +132,54 @@
     margin-bottom: 1.5rem;
 }
 
+
+
+
+
+
+
+
 #rappel-inscription{
-    background-color: var(--couleur-fond);
+    position: relative; 
+}
+#rappel-inscription .conteneur-video{
+    z-index: 9;
+
+    position: absolute;
+    top: 0;
+    left: 0; 
+}
+#texte-rappel{
+    z-index: 10;
+    position: relative;
+
+    background: linear-gradient(180deg, var(--couleur-fond) 0%, rgba(12, 12, 31, 0.8) 90%);
+    padding: 0 2rem;
+
     color: white;
     font-size: 2rem;
+    font-family: "Ojuju";
+    text-align: center;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 0.5rem;
 }
-#rappel-inscription h3{
+#texte-rappel h3{
     font-size: 4rem;
+    font-weight: 600;
 }
-#rappel-inscription a{
+#texte-rappel a{
+    color: white;
+    text-decoration: none;
     margin-top: 1rem;
+    padding: 0.7rem;
+    border: 1px solid white; 
+    border-radius: 5px;
+}
+#texte-rappel a:hover{
+    box-shadow:  0px 0px 20px rgba(217, 217, 217, 0.5),
+                0px 0px 20px rgba(255, 255, 255, 0.5);
 }
