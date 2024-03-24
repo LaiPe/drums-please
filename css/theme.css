@@ -73,6 +73,7 @@ label[for="activ-nav-produits"]{
     flex-direction: column;
     justify-content: space-evenly;
     transform: scale(1.2);
+    cursor: pointer;
 }
 label[for="activ-nav-produits"] span{
     width: 30px;
