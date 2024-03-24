@@ -94,6 +94,9 @@ label[for="activ-nav-produits"], #activ-nav-produits{
 }
 
 @media screen and (max-width: 1150px) {
+    #nav-produits{
+        margin: 0 2.5rem 0.6rem;
+    }
     #nav-produits #activ-nav-produits ~ ul{
         display: none;
 
