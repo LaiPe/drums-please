@@ -37,6 +37,10 @@ body{
     top: 2.2rem;
     margin: 0 2rem;
     z-index: 10000;
+    transition: transform 0.5s ease;
+}
+#logo-header:hover{
+    transform: scale(1.05) translateX(0.5rem);
 }
 
 #nav-produits{
@@ -132,6 +136,9 @@ label[for="activ-nav-produits"], #activ-nav-produits{
     #logo-header{
         height: 6.95rem;
         top: 1.94rem;
+    }
+    #logo-header:hover{
+        transform: scale(1.05) translateX(0.2rem);
     }
 
     #nav-produits #activ-nav-produits ~ ul{
