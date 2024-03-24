@@ -46,6 +46,11 @@ body{
     text-align: center;
     column-gap: 4rem;
 }
+#nav-produits li{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 #nav-produits a{
     font-family: "Righteous";
     color: white;
