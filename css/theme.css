@@ -30,12 +30,15 @@ body{
 
     z-index: 10000;
 }
+
 #logo-header{
     height: 7.5rem;
     position: relative;
     top: 2.2rem;
     margin: 0 2rem;
+    z-index: 10000;
 }
+
 #nav-produits{
     margin: 0 4rem 0.6rem;
 }
@@ -58,4 +61,82 @@ body{
 }
 #nav-produits a:hover{
     text-decoration: underline;
+}
+
+label[for="activ-nav-produits"]{
+    width: 30px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transform: scale(1.2);
+}
+label[for="activ-nav-produits"] span{
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    transition: 0.5s ease;
+}
+#activ-nav-produits:checked + label[for="activ-nav-produits"] span{
+    width: 35px;
+}
+#activ-nav-produits:checked + label[for="activ-nav-produits"] span:nth-of-type(1){
+    transform: translateY(11.5px) rotate(45deg);
+}
+#activ-nav-produits:checked + label[for="activ-nav-produits"] span:nth-of-type(2){
+    opacity: 0;
+}
+#activ-nav-produits:checked + label[for="activ-nav-produits"] span:nth-of-type(3){
+    transform: translateY(-11.5px) rotate(-45deg);
+}
+
+label[for="activ-nav-produits"], #activ-nav-produits{
+    display: none;
+}
+
+@media screen and (max-width: 1150px) {
+    #nav-produits #activ-nav-produits ~ ul{
+        display: none;
+
+        position: fixed;
+        bottom: 0;
+        height: calc(100vh - var(--header));
+        width: 100%;
+        background-color:  rgba(12, 12, 31, 0.8);
+        right: 0;
+        z-index: 100;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        row-gap: 3.5rem;
+    }
+    #nav-produits #activ-nav-produits:checked ~ ul{
+        display: flex;
+    }
+
+    label[for="activ-nav-produits"]{
+        display: flex;
+    }
+
+    #nav-produits li{
+        margin: 0 3rem 0 12rem;
+        font-size: 3rem;
+        text-align: end;
+    }  
+}
+
+@media screen and (max-width: 740px){
+    #logo-header{
+        height: 6.95rem;
+        top: 1.94rem;
+    }
+
+    #nav-produits #activ-nav-produits ~ ul{
+        background-color:  rgba(12, 12, 31, 0.95);
+        align-items: center;
+    }
+    #nav-produits li{
+        margin: 0 4rem;
+        text-align: center;
+    } 
 }
