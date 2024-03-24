@@ -39,7 +39,16 @@
     bottom: 0;
     background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
 }
-
+@media screen and (max-width: 1150px) {
+    #accueil h2{
+        font-size: 5.5rem; 
+    }
+}
+@media screen and (max-width: 740px){
+    #accueil h2{
+        font-size: 4rem; 
+    }
+}
 
 
 
@@ -104,7 +113,20 @@
     text-align: center;
     margin: 1rem;
 }
-
+@media screen and (max-width: 1150px) {
+    #produits{
+        flex-direction: column;
+    }
+    .tuille-produit{
+        width: 100%;
+        aspect-ratio: 6 / 2;
+    }
+}
+@media screen and (max-width: 740px) {
+    .tuille-produit{
+        aspect-ratio: 3 / 2;
+    }
+}
 
 
 
@@ -126,13 +148,21 @@
     color: white;
     font-family: "Nothing You Could Do", cursive;
     max-width: 600px;
-    padding: 3rem 1.5rem 1.5rem;
+    padding: 3rem 2.5rem 3rem 1.5rem;
 }
 #texte-presentation p{
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
 }
-
+@media screen and (max-width: 1000px) {
+    #fond-presentation{
+        position: absolute;
+        opacity: 0.05;
+    }
+    #texte-presentation{
+        padding: 3rem 1.5rem;
+    }
+}
 
 
 
