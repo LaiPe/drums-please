@@ -89,11 +89,12 @@ label[for="activ-nav-produits"], #activ-nav-produits{
         display: none;
 
         position: fixed;
-        bottom: 0;
+        top: var(--header);
+        left: 0;
         height: calc(100vh - var(--header));
-        width: 100%;
+        width: 100vw;
         background-color:  rgba(12, 12, 31, 0.8);
-        right: 0;
+        
         z-index: 100;
 
         flex-direction: column;
