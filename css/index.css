@@ -1,32 +1,3 @@
-#accueil {
-    position: relative;
-    height: calc(100vh - var(--header));
-}
-
-#accueil .conteneur-video{
-    z-index: 9;
-}
-.conteneur-video{
-    height: 100%;
-    width: 100%;
-}
-.conteneur-video video{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-#accueil .conteneur-video::after{
-    content: "";
-    width: 100%;
-    height: 60%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
-}
-
-
 
 #produits{
     display: flex;
@@ -148,15 +119,12 @@
 #rappel-inscription{
     position: relative; 
 }
-#rappel-inscription .conteneur-video{
-    z-index: 9;
-
+#rappel-inscription .conteneur-bckgrd{
     position: absolute;
     top: 0;
     left: 0; 
 }
 #texte-rappel{
-    z-index: 10;
     position: relative;
 
     background: linear-gradient(180deg, var(--couleur-fond) 0%, rgba(12, 12, 31, 0.8) 90%);

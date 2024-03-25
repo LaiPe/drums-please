@@ -1,3 +1,8 @@
+#accueil {
+    position: relative;
+    height: calc(100vh - var(--header));
+}
+
 .titre-accueil{
     position: absolute;
     bottom: 0;
@@ -20,4 +25,26 @@
     .titre-accueil{
         font-size: 4rem; 
     }
+}
+
+
+.conteneur-bckgrd{
+    height: 100%;
+    width: 100%;
+}
+.contenu-bckgrd{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#accueil .conteneur-bckgrd::after{
+    content: "";
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
 }
