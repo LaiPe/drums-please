@@ -1,6 +1,7 @@
 :root{
     --header: 105px;
     --couleur-fond: rgb(12, 12, 31);
+    --couleur-fond-clair: rgb(26, 26, 48);
 }
 
 *{
