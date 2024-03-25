@@ -156,6 +156,35 @@ label[for="activ-nav-produits"], #activ-nav-produits{
 
 
 
+.titre-accueil{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+
+    color: white;
+    font-size: 7rem;
+    font-family: "Ojuju";
+
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+@media screen and (max-width: 1150px) {
+    .titre-accueil{
+        font-size: 5.5rem; 
+    }
+}
+@media screen and (max-width: 740px){
+    .titre-accueil{
+        font-size: 4rem; 
+    }
+}
+
+
+
+
+
+
 
 footer{
     background-color: var(--couleur-fond);

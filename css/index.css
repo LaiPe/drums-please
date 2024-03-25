@@ -3,20 +3,6 @@
     height: calc(100vh - var(--header));
 }
 
-#accueil h2{
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-
-    color: white;
-    font-size: 7rem;
-    font-family: "Ojuju";
-
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-}
-
 #accueil .conteneur-video{
     z-index: 9;
 }
@@ -39,17 +25,6 @@
     bottom: 0;
     background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
 }
-@media screen and (max-width: 1150px) {
-    #accueil h2{
-        font-size: 5.5rem; 
-    }
-}
-@media screen and (max-width: 740px){
-    #accueil h2{
-        font-size: 4rem; 
-    }
-}
-
 
 
 
