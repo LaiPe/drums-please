@@ -15,7 +15,8 @@ footer a{
 footer ul{
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 1.5rem;
+    text-align: center;
 }
 footer a:hover{
     text-decoration: underline;

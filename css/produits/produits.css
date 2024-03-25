@@ -1,26 +1,32 @@
 #form-produit{
-    min-height: calc(100vh - var(--header) - 45px);
     background-color: var(--couleur-fond-clair);
     display: flex;
-    padding: 2rem;
 }
 #form-produit hr{
     width: 1px;
     background-color: white;
     border: none;
-    margin: 13vh 0;
+    height: calc(100vh - var(--header) - (15vh * 2));
+    margin: 15vh 0;
+    position: sticky;
+    top: calc(var(--header) + 15vh); /* cf #selecteur + margin-top*/
 }
 
 
 #selecteur{
     width: 50%;
-    padding: 2rem;
+    padding: 4rem 2rem 4rem 4rem;
 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     gap: 2rem;
+
+    float: left;
+    position: sticky;
+    top: calc(var(--header));
+    height: calc(100vh - var(--header));
 }
 #selecteur input[type="radio"]{
     display: none;
@@ -68,9 +74,12 @@
 
 #infos{
     width: calc(50% - 1px);
-    padding: 3.5rem 1.5rem;
+    padding: 5.5rem 3.5rem 5.5rem 1.5rem;
+
+    /* TEEEEEEEEEEMP*/
+    height: 200vh;
 }
-#infos section{
+#infos{
     color: white;
 }
 #infos .nom-instr{

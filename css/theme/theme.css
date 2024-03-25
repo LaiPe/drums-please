@@ -11,3 +11,7 @@
 .slide{
     min-height: calc(100vh - var(--header));
 }
+
+.slide-f{
+    height: calc(100vh - var(--header));
+}
