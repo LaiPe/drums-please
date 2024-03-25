@@ -1,0 +1,16 @@
+:root{
+    --header: 105px;
+    --couleur-fond: rgb(12, 12, 31);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.slide{
+    min-height: calc(100vh - var(--header));
+}
+
+body{
+    overflow-x: hidden;
+}
