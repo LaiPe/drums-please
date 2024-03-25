@@ -89,9 +89,9 @@ label[for="activ-nav-produits"], #activ-nav-produits{
         display: none;
 
         position: fixed;
-        top: var(--header);
+        top: calc(var(--header) - 2px);
         left: 0;
-        height: calc(100vh - var(--header));
+        height: calc(100vh - var(--header) + 2px);
         width: 100vw;
         background-color:  rgba(12, 12, 31, 0.8);
         

@@ -103,6 +103,8 @@
 @media screen and (max-width: 1000px) {
     #fond-presentation{
         position: absolute;
+        min-width: initial;
+        width: 100%;
         opacity: 0.05;
     }
     #texte-presentation{
