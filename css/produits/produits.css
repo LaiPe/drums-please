@@ -2,6 +2,7 @@
     min-height: calc(100vh - var(--header) - 45px);
     background-color: var(--couleur-fond-clair);
     display: flex;
+    padding: 2rem;
 }
 #form-produit hr{
     width: 1px;
@@ -11,15 +12,15 @@
 }
 
 
-
 #selecteur{
     width: 50%;
-    padding: 7vh 5rem 7vh 7rem;
+    padding: 2rem;
 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    gap: 2rem;
 }
 #selecteur input[type="radio"]{
     display: none;
@@ -67,4 +68,25 @@
 
 #infos{
     width: calc(50% - 1px);
+    padding: 3.5rem 1.5rem;
+}
+#infos section{
+    color: white;
+}
+#infos .nom-instr{
+    font-size: 3rem;
+    font-family: "Ojuju";
+    margin-bottom: 0.5rem;
+}
+#infos .disp{
+    font-family: "Poppins";
+    font-weight: 200;
+}
+#infos .disp-true .disp::before{
+    content: "✓";
+    margin-right: 0.4rem;
+}
+#infos .disp-false .disp::before{
+    content: "✗";
+    margin-right: 0.4rem;
 }
