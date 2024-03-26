@@ -1,0 +1,56 @@
+#selecteur{
+    width: 50%;
+    padding: 4rem 2rem 4rem 4rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+
+    float: left;
+    position: sticky;
+    top: calc(var(--header));
+    height: calc(100vh - var(--header));
+}
+#selecteur input[type="radio"]{
+    display: none;
+}
+
+#selecteur label{
+    background-color: white;
+    
+    height: 14rem;
+    width: 200px;
+    padding: 1rem;
+    border: 5px solid var(--couleur-fond);
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+}
+#selecteur label:hover{
+    outline: 5px white solid;
+}
+#selecteur label figure{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#selecteur label figcaption{
+    text-align: center;
+    color: var(--couleur-fond);
+    font-size: 1.1rem;
+    font-family: "Poppins";
+    font-weight: 600;
+}
+#selecteur label img{
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
