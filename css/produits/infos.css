@@ -8,6 +8,13 @@
     font-weight: 200;
 }
 
+.article-instr{
+    display: none;
+}
+.article-instr.select{
+    display: block;
+}
+
 
 .article-instr .nom-instr, .article-instr h4{
     font-family: "Ojuju";
@@ -29,6 +36,9 @@
     content: "✓";
     margin-right: 0.4rem;
 }
+.article-instr.disp-false .disp{
+    margin-bottom: 1.5rem;
+}
 .article-instr.disp-false .disp::before{
     content: "✗";
     margin-right: 0.4rem;
@@ -39,6 +49,9 @@
     margin-bottom: 1.5rem;
 }
 
+.article-instr.disp-false #autres-infos-form{
+    display: none;
+}
 
 
 #autres-infos-form{

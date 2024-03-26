@@ -21,7 +21,11 @@ function getLabelsAndInputs(parentElementId) {
     return labelsWithInputs;
 }
 
-function updateLabelClasses(event) {
+function getArticles(conteneurArticles) {
+    return Array.from(document.querySelectorAll('#' + conteneurArticles + ' article'));
+}
+
+function updateLabelSelect(event) {
     const input = event.target
     if (input.checked) {
         // Retirer la classe "select" de tous les labels
@@ -36,13 +40,27 @@ function updateLabelClasses(event) {
         }
     }
 }
+function updateArticleSelect(event) {
+    const input = event.target
+    if (input.checked) {
+        articles.forEach(article => {
+            article.classList.remove('select');
+        });
+
+        
+        const linkedArticle = document.getElementById("infos-" + input.id)
+        if (linkedArticle) {
+            linkedArticle.classList.add('select');
+        }
+    }
+}
 
 
 const labelsWithInputs = getLabelsAndInputs('selecteur');
-
-console.log(labelsWithInputs);
+const articles = getArticles('infos')
 
 labelsWithInputs.forEach(label => {
     const input = label.querySelector('input')
-    input.addEventListener('change', updateLabelClasses); // Surveiller les changements d'état
+    input.addEventListener('change', updateLabelSelect);
+    input.addEventListener('change', updateArticleSelect);
 });
