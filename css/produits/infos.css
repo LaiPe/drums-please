@@ -1,11 +1,16 @@
 #infos{
     width: calc(50% - 1px);
     padding: 5.5rem 3.5rem 5.5rem 1.5rem;
-}
-#infos{
+
     color: white;
     font-family: "Poppins";
     font-weight: 200;
+}
+@media screen and (max-width: 900px){
+    #infos{
+        width: 100%;
+        padding: 3.5rem 1.5rem;
+    }
 }
 
 .article-instr{
@@ -139,3 +144,4 @@ input#bouton-submit:hover{
     padding: 5px;
     border: 1px solid white;
 }
+

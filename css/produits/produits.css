@@ -11,3 +11,15 @@
     position: sticky;
     top: calc(var(--header) + 15vh); /* cf #selecteur + margin-top*/
 }
+
+@media screen and (max-width: 900px) {
+    #form-produit{
+        flex-direction: column;
+    }
+    #form-produit hr{
+        height: 1px;
+        width: 65vw;
+        margin: 0 auto;
+        position: static;
+    }
+}

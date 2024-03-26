@@ -31,6 +31,7 @@
 
     cursor: pointer;
 }
+
 #selecteur label:hover,
 #selecteur label.select{
     outline: 5px white solid;
@@ -54,4 +55,46 @@
     width: 150px;
     height: 100px;
     object-fit: contain;
+}
+
+@media screen and (max-width: 1540px) {
+    #selecteur label{
+        height: 10rem;
+        width: 150px;
+    }
+    #selecteur label figcaption{
+        font-size: 0.9rem;
+    }
+    #selecteur label img{
+        width: 100px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 900px){
+    #selecteur{
+        width: 100%;
+        position: static;
+        float: none;
+        height: fit-content;
+        padding: 4rem 6rem;
+    }
+}
+@media screen and (max-width: 550px){
+    #selecteur{
+        padding: 4rem 2rem;
+    }
+}
+@media screen and (max-width: 420px){
+    #selecteur label{
+        height: 8rem;
+        width: 110px;
+        padding: 0.3rem;
+    }
+    #selecteur label figcaption{
+        font-size: 0.75rem;
+    }
+    #selecteur label img{
+        width: 60px;
+        height: 50px;
+    }
 }
