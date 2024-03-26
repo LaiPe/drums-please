@@ -26,6 +26,11 @@
         font-size: 4rem; 
     }
 }
+@media screen and (max-width: 460px){
+    .titre-accueil{
+        font-size: 3.25rem; 
+    }
+}
 
 
 .conteneur-bckgrd{

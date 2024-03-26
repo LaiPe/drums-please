@@ -135,3 +135,8 @@ label[for="activ-nav-produits"], #activ-nav-produits{
         text-align: center;
     } 
 }
+@media screen and (max-width: 460px){
+    #nav-produits li{
+        font-size: 2rem;
+    }
+}
