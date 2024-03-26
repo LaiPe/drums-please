@@ -31,7 +31,8 @@
 
     cursor: pointer;
 }
-#selecteur label:hover{
+#selecteur label:hover,
+#selecteur label.select{
     outline: 5px white solid;
 }
 #selecteur label figure{
