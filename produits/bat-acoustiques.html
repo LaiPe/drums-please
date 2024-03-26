@@ -105,13 +105,20 @@
                 </fieldset>
                 <hr>
                 <div id="infos">
-                    <article id="infos-Pearl-Decade-Maple-6pc-Black-Burst" class="disp-true">
+                    <article id="infos-Pearl-Decade-Maple-6pc-Black-Burst" class="article-instr disp-true">
                         <h3 class="nom-instr">Pearl Decade Maple 6pc Black Burst</h3>
                         <span class="disp">Disponible</span>
                         <fieldset id="autres-infos-form">
                             <h4>Votre Commande</h4>
-                            <label for="nb-jours-loc">Nombre de jours :<input id="nb-jours-loc" type="number" name="nb-jours-loc" min="1" max="80"></label>
-                            <input type="submit" value="Réserver">
+                            <label for="nb-jours-loc">Nombre de jours :<input id="nb-jours-loc" type="number" name="nb-jours-loc" min="1" max="80" value="1"></label>
+                            <label for="cymbales">
+                                Cymbales :
+                                <select id="cymbales" name="cymbales">
+                                    <option value="avec">Avec</option>
+                                    <option value="sans">Sans</option>
+                                </select>
+                            </label>
+                            <input id="bouton-submit" type="submit" value="Réserver">
                         </fieldset>
                         <section id="composition">
                             <h4>Composition</h4>
@@ -129,13 +136,13 @@
                             <h4>Tarifs</h4>
                             <table>
                                 <thead>
-                                    <th></th>
+                                    <th class="borderless"></th>
                                     <th>Sans Cymbales</th>
                                     <th>Avec Cymbales</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>1 - 15 jours</th>
+                                        <th>1 - 14 jours</th>
                                         <td>70€ par jour</td>
                                         <td>85€ par jour</td>
                                     </tr>
@@ -154,10 +161,12 @@
                         </section>
                         <section id="images">
                             <h4>Images</h4>
-                            <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040489.jpg" alt="">
-                            <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040599.jpg" alt="">
-                            <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040629.jpg" alt="">
-                            <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040634.jpg" alt="">
+                            <div class="conteneur-img">
+                                <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040489.jpg" alt="">
+                                <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040599.jpg" alt="">
+                                <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040629.jpg" alt="">
+                                <img src="../img/produits/bat-acoustiques/Pearl Decade Maple 6pc Black Burst/13040634.jpg" alt="">
+                            </div>
                         </section>
                     </article>
                     <article></article>
