@@ -54,10 +54,52 @@ function updateArticleSelect(event) {
         }
     }
 }
+function initSelect(){
+    let atLeastOneRadioChecked = false;
+
+    labelsWithInputs.forEach(label => {
+
+        const input = label.querySelector('input');
+        if (input.checked) {
+            atLeastOneRadioChecked = true;
+
+            const parentLabel = input.closest('label');
+            if (parentLabel) {
+                parentLabel.classList.add('select');
+            }
+
+            const linkedArticle = document.getElementById("infos-" + input.id)
+            if (linkedArticle) {
+                linkedArticle.classList.add('select');
+            }
+        }
+    });
+
+    const noRadioChecked = !(atLeastOneRadioChecked);
+    console.log(noRadioChecked);
+
+    if (noRadioChecked) {
+
+        labelsWithInputs[0].classList.add('select');
+
+        const input = labelsWithInputs[0].querySelector('input');
+        input.checked = true
+    
+        const linkedArticle = document.getElementById("infos-" + input.id)
+        if (linkedArticle) {
+            linkedArticle.classList.add('select');
+        }
+        
+    }
+}
 
 
 const labelsWithInputs = getLabelsAndInputs('selecteur');
 const articles = getArticles('infos')
+
+window.addEventListener('load', function() {
+    initSelect();
+});
 
 labelsWithInputs.forEach(label => {
     const input = label.querySelector('input')
