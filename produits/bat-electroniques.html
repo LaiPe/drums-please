@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Drums Please - Location de Percussions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/reset.css">
+
+        <link rel="stylesheet" href="../css/theme/theme.css">
+        <link rel="stylesheet" href="../css/theme/theme-header.css">
+        <link rel="stylesheet" href="../css/theme/theme-main.css">
+        <link rel="stylesheet" href="../css/theme/theme-footer.css">
+
+        <link rel="stylesheet" href="../css/produits/produits.css">
+        <link rel="stylesheet" href="../css/produits/selecteur.css">
+        <link rel="stylesheet" href="../css/produits/infos.css">
+
+        <link rel="icon" href="../img/logo-drums-please/logo-icon-drums-please.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Righteous&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header">
+            <a href="../index.html"><img id="logo-header" src="../img/logo-drums-please/logo-large-drums-please.png" alt="logo-drums-please"></a>
+            <nav id="nav-produits">
+                <input type="checkbox" id="activ-nav-produits">
+                <label for="activ-nav-produits">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul>
+                    <li>
+                        <a href="./bat-acoustiques.html">Batteries Acoustiques</a>
+                    </li>
+                    <li>
+                        <a href="./bat-electroniques.html">Batteries Électroniques</a>
+                    </li>
+                    <li>
+                        <a href="./classiques.html">Classiques</a>
+                    </li>
+                    <li>
+                        <a href="./traditionnelles.html">Traditionnelles</a>
+                    </li>
+                </ul>
+            </nav>
+            <script src="../js/theme/chg-logo-responsive.js"></script>
+        </header>
+        <main>
+            <section id="accueil" class="slide">
+                <h2 class="titre-accueil">
+                    <span>Batteries</span> 
+                    <span>Électroniques</span>
+                </h2>
+                <div class="conteneur-bckgrd">
+                    <img class="contenu-bckgrd" src="../img/background-tuilles-produits/bat-elec.jpg" alt="Batterie Électronique">
+                </div>
+            </section>
+            <form id="form-produit">
+                <fieldset id="selecteur">
+                    <label for="Roland-TD-07KV-V-Drum-Set" class="select">
+                        <figure>
+                            <img src="../img/produits/bat-electroniques/Roland TD-07KV V-Drum Set.jpg" alt="Roland TD-07KV V-Drum Set">
+                            <figcaption>Roland TD-07KV V-Drum Set</figcaption>
+                        </figure>
+                        <input id="Roland-TD-07KV-V-Drum-Set" value="Roland TD-07KV V-Drum Set" type="radio" name="choix-instrum" checked>
+                    </label>
+                    <label for="Roland-TD-27KV2-E-Drum-Set">
+                        <figure>
+                            <img src="../img/produits/bat-electroniques/Roland TD-27KV2 E-Drum Set.jpg" alt="Roland TD-27KV2 E-Drum Set">
+                            <figcaption>Roland-TD-27KV2-E-Drum-Set</figcaption>
+                        </figure>
+                        <input id="Roland-TD-27KV2-E-Drum-Set" value="Roland TD-27KV2 E-Drum Set" type="radio" name="choix-instrum">
+                    </label>
+                </fieldset>
+
+                <hr>
+
+                <div id="infos">
+
+                    <article id="infos-Roland-TD-07KV-V-Drum-Set" class="article-instr disp-true select">
+                        <h3 class="nom-instr">Roland TD-07KV V-Drum Set</h3>
+                        <span class="disp">Disponible</span>
+
+                        <fieldset id="autres-infos-form">
+                            <h4>Votre Commande</h4>
+                            <label for="nb-jours-loc">Nombre de jours :<input id="nb-jours-loc" type="number" name="nb-jours-loc" min="1" max="80" value="1"></label>
+                            <label for="cymbales">
+                                Cymbales :
+                                <select id="cymbales" name="cymbales">
+                                    <option value="avec">Avec</option>
+                                    <option value="sans">Sans</option>
+                                </select>
+                            </label>
+                            <input id="bouton-submit" type="submit" value="Réserver">
+                        </fieldset>
+
+                        <section id="composition">
+                            <h4>Composition</h4>
+                            <ul>
+                                <li>1 pad de grosse caisse 10" KD-10 avec peau maillée</li>
+                                <li>1 pad de caisse claire 08" PDX-8 deux zones de jeu avec peau maillée</li>
+                                <li>3 pads de tom 06" PDX-6 une zone de jeu avec peaux maillées</li>
+                                <li>1 pad de cymbale charleston CY-5 Hi-Hat Pad</li>
+                                <li>Contrôleur de charleston Roland FD-1</li>
+                                <li>2 pads Crash/Ride 12" CY-8 deux zones de jeu avec fonction d'étouffement</li>
+                                <li>Rack MDS-Compact</li>
+                            </ul>
+                        </section>
+                        <section id="tarifs">
+                            <h4>Tarifs</h4>
+                            <table>
+                                <thead>
+                                    <th class="borderless"></th>
+                                    <th>Sans Cymbales</th>
+                                    <th>Avec Cymbales</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1 - 14 jours</th>
+                                        <td>60€ par jour</td>
+                                        <td>75€ par jour</td>
+                                    </tr>
+                                    <tr>
+                                        <th>15 - 30 jours</th>
+                                        <td>50€ par jour</td>
+                                        <td>65€ par jour</td>
+                                    </tr>
+                                    <tr>
+                                        <th>1 mois ou +</th>
+                                        <td>45€ par jour</td>
+                                        <td>60€ par jour</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section id="images">
+                            <h4>Images</h4>
+                            <div class="conteneur-img">
+                                <img src="../img/produits/bat-electroniques/Roland TD-07KV V-Drum Set/15816975.jpg" alt="Vue de côté">
+                                <img src="../img/produits/bat-electroniques/Roland TD-07KV V-Drum Set/15817005.jpg" alt="Vue du dessus">
+                                <img src="../img/produits/bat-electroniques/Roland TD-07KV V-Drum Set/15816965.jpg" alt="Vue de derrière">
+                                <img src="../img/produits/bat-electroniques/Roland TD-07KV V-Drum Set/15816970.jpg" alt="Vue de face">
+                            </div>
+                        </section>
+                    </article>
+
+                    <article id="infos-Roland-TD-27KV2-E-Drum-Set" class="article-instr disp-true">
+                        <h3 class="nom-instr">Roland TD-27KV2 E-Drum Set</h3>
+                        <span class="disp">Disponible</span>
+                        <fieldset id="autres-infos-form">
+                            <h4>Votre Commande</h4>
+                            <label for="nb-jours-loc">Nombre de jours :<input id="nb-jours-loc" type="number" name="nb-jours-loc" min="1" max="80" value="1"></label>
+                            <label for="cymbales">
+                                Cymbales :
+                                <select id="cymbales" name="cymbales">
+                                    <option value="avec">Avec</option>
+                                    <option value="sans">Sans</option>
+                                </select>
+                            </label>
+                            <input id="bouton-submit" type="submit" value="Réserver">
+                        </fieldset>
+                        <section id="composition">
+                            <h4>Composition</h4>
+                            <ul>
+                                <li>Pad de grosse caisse 10" (KD-10)</li>
+                                <li>Pad de caisse claire numérique 14"x05" (PD-140DS)</li>
+                                <li>3 pads de tom 10" deux zones de jeu (PDX-100)</li>
+                                <li>Pad de charleston numérique 14" (VH-14D)</li>
+                                <li>Pad de cymbale Crash 12" deux zones de jeu (CY-12C-T)</li>
+                                <li>Pad de cymbale Crash 14" deux zones de jeu (CY-14C-T)</li>
+                                <li>Pad de cymbale Ride numérique 18" (CY-18DR)</li>
+                                <li>Rack MDS-STD2</li>
+                            </ul>
+                        </section>
+                        <section id="tarifs">
+                            <h4>Tarifs</h4>
+                            <table>
+                                <thead>
+                                    <th class="borderless"></th>
+                                    <th>Sans Cymbales</th>
+                                    <th>Avec Cymbales</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1 - 14 jours</th>
+                                        <td>120€ par jour</td>
+                                        <td>150€ par jour</td>
+                                    </tr>
+                                    <tr>
+                                        <th>15 - 30 jours</th>
+                                        <td>110€ par jour</td>
+                                        <td>140€ par jour</td>
+                                    </tr>
+                                    <tr>
+                                        <th>1 mois ou +</th>
+                                        <td>100€ par jour</td>
+                                        <td>130€ par jour</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section id="images">
+                            <h4>Images</h4>
+                            <div class="conteneur-img">
+                                <img src="../img/produits/bat-electroniques/Roland TD-27KV2 E-Drum Set/17954497.jpg" alt="Vue de côté">
+                                <img src="../img/produits/bat-electroniques/Roland TD-27KV2 E-Drum Set/17954587.jpg" alt="Vue du dessus">
+                                <img src="../img/produits/bat-electroniques/Roland TD-27KV2 E-Drum Set/17954543.jpg" alt="Vue de derrière">
+                                <img src="../img/produits/bat-electroniques/Roland TD-27KV2 E-Drum Set/17954492.jpg" alt="Vue de face">
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </form>
+            <script src="../js/produits/select-produit.js"></script>
+        </main>
+        <footer>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span>Site réalisé par <a href="https://portfolio-leo-peyronnet.netlify.app/">Léo Peyronnet</a></span>
+        </footer>
+    </body>
+</html>
