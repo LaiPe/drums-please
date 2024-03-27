@@ -76,7 +76,6 @@ function initSelect(){
     });
 
     const noRadioChecked = !(atLeastOneRadioChecked);
-    console.log(noRadioChecked);
 
     if (noRadioChecked) {
 
