@@ -30,11 +30,11 @@ nav{
     display: flex;
 }
 
-#nav-produits{
+.sub-nav{
     margin: 0 2.5rem;
 }
 
-#nav-produits #activ-nav-produits ~ ul{
+.sub-nav .input-activ-sub-nav ~ ul{
     display: none;
 
     position: fixed;
@@ -51,10 +51,10 @@ nav{
     align-items: end;
     row-gap: 3.5rem;
 }
-#nav-produits #activ-nav-produits:checked ~ ul{
+.sub-nav .input-activ-sub-nav:checked ~ ul{
     display: flex;
 }
-#nav-produits li{
+.sub-nav li{
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -63,12 +63,12 @@ nav{
     text-align: end;
 }
 
-#nav-produits a{
+.sub-nav a{
     font-family: "Righteous";
     color: white;
     text-decoration: none;
 }
-#nav-produits a:hover{
+.sub-nav a:hover{
     text-decoration: underline;
 }
 
