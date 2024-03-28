@@ -53,3 +53,32 @@
     bottom: 0;
     background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
 }
+
+form .bouton-submit,
+form input
+{
+    display: block;
+    
+    background-color: var(--couleur-fond-clair);
+    color: white;
+    
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+    
+    font-family: "Poppins";
+    font-weight: 200;
+    font-size: 1.1rem;
+
+    padding: 0.3rem;
+} 
+form .bouton-submit{
+    margin: 0.75rem 0;
+    margin-bottom: 2rem;
+    width: 100px;
+}
+
+form .bouton-submit:hover{
+    box-shadow:  0px 0px 10px rgba(217, 217, 217, 0.5),
+                0px 0px 10px rgba(255, 255, 255, 0.5);
+} 

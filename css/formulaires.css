@@ -1,0 +1,47 @@
+header h2{
+    font-family: "Ojuju";
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+main{
+    background-color: var(--couleur-fond-clair);
+    color: white;
+    font-family: "Poppins";
+    font-weight: 200;
+    font-size: 1.1rem;
+}
+
+form{
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+    
+}
+
+fieldset{
+    margin: 1rem 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column
+}
+fieldset legend{
+    font-family: "Ojuju";
+    font-weight: 500;
+    font-size: 2rem;
+}
+fieldset label{
+    margin: 0.7rem 1rem;
+}
+fieldset input{
+    margin: 0.5rem 0;
+}
+fieldset label span{
+    font-size: 0.95rem;
+}
+
+form .bouton-submit{
+    margin: auto;
+}

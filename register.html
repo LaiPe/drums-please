@@ -73,41 +73,35 @@
             </header>
             <form action="../htbin/register.py" method="POST" id="registerForm">
                 <fieldset><legend>Informations Personelles</legend>
-                    <label for="lastname">Nom de Famille:
+                    <label for="lastname">Nom de Famille :
                         <input name="lastname" id="lastname" type="text">
-                        <br>
                         <span id="erreurlastname"></span>
                     </label>
-                    <label for="firstname">Prénom:
+                    <label for="firstname">Prénom :
                         <input name="firstname" id="firstname" type="text">
-                        <br>
                         <span id="erreurfirstname"></span>
                     </label>
-                    <label for="birthdate">Date de Naissance:
+                    <label for="birthdate">Date de Naissance :
                         <input name="birthdate" id="birthdate" type="text" placeholder="jj/mm/aaaa">
-                        <br>
                         <span id="erreurbirthdate"></span>
                     </label>
                 </fieldset>
 
                 <fieldset><legend>Informations de Compte</legend>
-                    <label for="username">Nom d'Utilisateur:
+                    <label for="username">Nom d'Utilisateur :
                         <input name="username" id="username" type="text">
-                        <br>
                         <span id="erreurusername"></span>
                     </label>
-                    <label for="useremail">Adresse email:
+                    <label for="useremail">Adresse email :
                         <input name="useremail" id="useremail" type="text">
-                        <br>
                         <span id="erreuruseremail"></span>
                     </label>
-                    <label for="userpwd">Mot de passe:
+                    <label for="userpwd">Mot de passe :
                         <input name="userpwd" id="userpwd" type="password">
-                        <br>
                         <span id="erreuruserpwd"></span>
                     </label>
                 </fieldset>
-                <button type="submit">Valider</button>
+                <input class="bouton-submit" type="submit" value="Valider">
             </form>
             <script src="../js/verifRegister.js"></script>
         </main>
