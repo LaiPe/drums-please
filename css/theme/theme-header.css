@@ -183,18 +183,18 @@ label[for="activ-nav-compte"] span:nth-of-type(2)::after{
         transform: scale(1.05) translateX(0.2rem);
     }
 
-    #nav-produits #activ-nav-produits ~ ul{
+    .sub-nav .input-activ-sub-nav ~ ul{
         background-color:  rgba(12, 12, 31, 0.95);
         align-items: center;
     }
-    #nav-produits li{
+    .sub-nav li{
         margin: 0 4rem;
         text-align: center;
     } 
 }
 
 @media screen and (max-width: 460px){
-    #nav-produits li{
+    .sub-nav li{
         font-size: 2rem;
     }
 }
