@@ -28,12 +28,15 @@
 
 nav{
     display: flex;
+    margin-bottom: 0.8rem;
+    padding: 0 2rem;
+    gap: 2rem;
 }
 
-.sub-nav{
-    margin: 0 2.5rem;
-}
 
+.sub-nav .input-activ-sub-nav{
+    display: none;
+}
 .sub-nav .input-activ-sub-nav ~ ul{
     display: none;
 
