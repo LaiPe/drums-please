@@ -147,7 +147,7 @@ label[for="activ-nav-compte"] span:nth-of-type(2)::after{
     height: 4px;
     background-color: var(--couleur-fond);
     opacity: 0;
-    transition: opacity 0.2s 0.5s ease;
+    transition: opacity 0.2s ease;
 }
 label[for="activ-nav-compte"] span:nth-of-type(2)::before{
     transform: rotate(45deg);
@@ -167,6 +167,7 @@ label[for="activ-nav-compte"] span:nth-of-type(2)::after{
 #activ-nav-compte:checked + label[for="activ-nav-compte"] span:nth-of-type(2)::before,
 #activ-nav-compte:checked + label[for="activ-nav-compte"] span:nth-of-type(2)::after{
     opacity: 1;
+    transition: opacity 0.2s 0.5s ease;
 }
 
     
