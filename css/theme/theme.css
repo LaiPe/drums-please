@@ -15,3 +15,13 @@
 .slide-f{
     height: calc(100vh - var(--header));
 }
+
+.slide-with-footer{
+    min-height: calc(100vh - var(--header) - 45px);
+}
+
+@media screen and (max-width: 740px){
+    .slide-with-footer{
+        min-height: calc(100vh - var(--header) - 77px);
+    }
+}
