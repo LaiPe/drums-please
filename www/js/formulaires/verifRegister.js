@@ -1,33 +1,23 @@
 function initFlagTest(){
     let flagTest = [];
-    for (let i=0 ; i<3 ; i++){
-        flagTest[i] = []
-        for (let j=0 ; j<6 ; j++){
-            flagTest[i][j] = true;
-        }
+    for (let i=0 ; i<6 ; i++){ // pour chaque input
+        flagTest[i] = [];
+        for (let j=0 ; j<3 ; j++){ // pour chaque étape de vérification
+            flagTest[i][j] = true; 
+        } 
     }
     return flagTest;
 }
 
 function verifFlagTest(flagTest){
     let result = true;
-    for (let i=0 ; i<3 ; i++){
-        flagTest[i] = []
-        for (let j=0 ; j<6 ; j++){
+    for (let i=0 ; i<6 ; i++){ // pour chaque input
+        for (let j=0 ; j<3 ; j++){ // pour chaque étape de vérification
             result = result && flagTest[i][j];
         }
     }
     return result;
 }
-
-function verifStageFlagTest(flagTest){
-    let result = true;
-    for (let j=0 ; j<6 ; j++){
-        result = result && flagTest[j];
-    }
-    return result;
-}
-
 
 
 
@@ -125,38 +115,38 @@ const errRegex = [
 
 var flagTest = initFlagTest();
 
+
 for (let i=0 ; i<6 ; i++){
     inputs[i].addEventListener('change', () => {
 
         if(i < 5){ // tous sauf birthdate
-            flagTest[0][i] = verifChampVide(inputs[i]);
+            flagTest[i][0] = verifChampVide(inputs[i]);
         }
 
-        if(i > 1 && verifStageFlagTest(flagTest[0])){ // tous sauf lastname et firstname et si l'input a passé la première verif.
-            flagTest[1][i] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+        if(i > 1 && flagTest[i][0]){ // tous sauf lastname et firstname et si l'input a passé la première verif.
+            flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
         }
 
-        if(i == 5 && verifStageFlagTest(flagTest[1])){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
-            flagTest[2][i] = verifDateValide(inputs[i]);
+        if(i == 5 && flagTest[i][1]){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
+            flagTest[i][2] = verifDateValide(inputs[i]);
         }
 
     });
 }
 
-
 registerForm.addEventListener('submit', function(e){
     for (let i=0 ; i<6 ; i++){
 
         if(i < 5){ // tous sauf birthdate
-            flagTest[0][i] = verifChampVide(inputs[i]);
+            flagTest[i][0] = verifChampVide(inputs[i]);
         }
 
-        if(i > 1 && verifStageFlagTest(flagTest[0])){ // tous sauf lastname et firstname et si l'input a passé la première verif.
-            flagTest[1][i] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+        if(i > 1 && flagTest[i][0]){ // tous sauf lastname et firstname et si l'input a passé la première verif.
+            flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
         }
 
-        if(i == 5 && verifStageFlagTest(flagTest[1])){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
-            flagTest[2][i] = verifDateValide(inputs[i]);
+        if(i == 5 && flagTest[i][1]){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
+            flagTest[i][2] = verifDateValide(inputs[i]);
         }
     }
 
