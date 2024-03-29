@@ -75,30 +75,31 @@
                 <fieldset><legend>Informations Personelles</legend>
                     <label for="lastname">Nom de Famille :
                         <input name="lastname" id="lastname" type="text">
-                        <span id="erreurlastname"></span>
+                        <span class="texte-erreur" id="erreurlastname"></span>
                     </label>
                     <label for="firstname">Prénom :
                         <input name="firstname" id="firstname" type="text">
-                        <span id="erreurfirstname"></span>
+                        <span class="texte-erreur" id="erreurfirstname"></span>
                     </label>
-                    <label for="birthdate">Date de Naissance :
+                    <label for="birthdate facult">Date de Naissance :
+                        <span class="facult">(facultatif)</span>
                         <input name="birthdate" id="birthdate" type="text" placeholder="jj/mm/aaaa">
-                        <span id="erreurbirthdate"></span>
+                        <span class="texte-erreur" id="erreurbirthdate"></span>
                     </label>
                 </fieldset>
 
                 <fieldset><legend>Informations de Compte</legend>
                     <label for="username">Nom d'Utilisateur :
                         <input name="username" id="username" type="text">
-                        <span id="erreurusername"></span>
+                        <span class="texte-erreur" id="erreurusername"></span>
                     </label>
                     <label for="useremail">Adresse email :
                         <input name="useremail" id="useremail" type="text">
-                        <span id="erreuruseremail"></span>
+                        <span class="texte-erreur" id="erreuruseremail"></span>
                     </label>
                     <label for="userpwd">Mot de passe :
                         <input name="userpwd" id="userpwd" type="password">
-                        <span id="erreuruserpwd"></span>
+                        <span class="texte-erreur" id="erreuruserpwd"></span>
                     </label>
                 </fieldset>
                 <input class="bouton-submit" type="submit" value="Valider">
