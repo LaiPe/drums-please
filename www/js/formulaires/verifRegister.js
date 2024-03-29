@@ -3,9 +3,13 @@ function initFlagTest(){
     for (let i=0 ; i<6 ; i++){ // pour chaque input
         flagTest[i] = [];
         for (let j=0 ; j<3 ; j++){ // pour chaque étape de vérification
-            flagTest[i][j] = true; 
+            flagTest[i][j] = false; 
         } 
     }
+
+    //Exceptions (pour facultatifs)
+    flagTest[5][0] = true // birthdate est exempté de la première vérif car il est facultatif
+
     return flagTest;
 }
 
@@ -13,7 +17,18 @@ function verifFlagTest(flagTest){
     let result = true;
     for (let i=0 ; i<6 ; i++){ // pour chaque input
         for (let j=0 ; j<3 ; j++){ // pour chaque étape de vérification
-            result = result && flagTest[i][j];
+
+            if(i < 5){ // pour tous sauf birthdate
+                result = result && flagTest[i][0] // La première vérif compte (indice 0)
+            }
+
+            if(i > 1){ // pour tous sauf lastname et firstname
+                result = result && flagTest[i][1] // La deuxième vérif compte (indice 1)
+            }
+
+            if(i == 5){ // pour birthdate
+                result = result && flagTest[i][2] // La troisième vérif compte (indice 2)
+            }
         }
     }
     return result;
