@@ -23,9 +23,10 @@ form{
 
 fieldset{
     margin: 1rem 0;
-    padding: 1rem 0;
+    padding: 1rem;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    width: 100%;
 }
 fieldset legend{
     font-family: "Ojuju";
@@ -37,6 +38,8 @@ fieldset label{
 }
 fieldset input{
     margin: 0.5rem 0;
+    width: 100%;
+    min-width: 270px;
 }
 fieldset label span{
     font-size: 0.95rem;
