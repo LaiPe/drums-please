@@ -36,8 +36,6 @@ function verifFlagTest(flagTest){
 
 
 
-
-
 function verifChampVide(input){
 
     if (input.value.trim() == "") {
@@ -128,7 +126,13 @@ const errRegex = [
     'Veuillez rentrer une date au format jj/mm/aaaa (jour/mois/année).' //message err regex birthdate
 ];
 
-var flagTest = initFlagTest();
+var flagTest = initFlagTest(); //Initialisation de la grille de validation des vérifications
+
+
+
+
+
+
 
 
 for (let i=0 ; i<6 ; i++){
