@@ -15,7 +15,7 @@ main{
 }
 
 form{
-    max-width: fit-content;
+    max-width: 400px;
     margin: 0 auto;
     padding: 0 0 4rem;
     
@@ -42,7 +42,9 @@ fieldset input{
     min-width: 270px;
 }
 fieldset label .texte-erreur{
+    display: block;
     font-size: 0.95rem;
+    width: 100%;
 }
 fieldset label .facult{
     font-size: 0.95rem;
