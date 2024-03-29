@@ -14,14 +14,14 @@ inputs.push(document.getElementById('birthdate'));
 const regex = [
     /^[a-zA-Z0-9]{6,}$/, //regex username
     /^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-z]+$/, //regex useremail
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/, //regex userpwd
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_\-;:!?./*&$]).{12,}$/, //regex userpwd
     /^(\d{2})\/(\d{2})\/(\d{4})$/ //regex birthdate
 ];
 
 const errRegex = [
     'Utilisez au moins 6 carcrtères: lettres (majuscules ou minuscules) ou chiffres.', //message err regex username
     'Veuillez rentrer une adresse email valide.', //message err regex useremail
-    'Utilisez au moins 8 caractères dont un chiffre, une majuscule et une minuscule.', //message err regex userpwd
+    'Utilisez au moins 12 caractères dont un chiffre, une majuscule, une minuscule et un caractère spécial (_-;:!?./*&$).', //message err regex userpwd
     'Veuillez rentrer une date au format jj/mm/aaaa (jour/mois/année).' //message err regex birthdate
 ];
 
