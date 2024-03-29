@@ -1,3 +1,101 @@
+function initFlagTest(){
+    let flagTest = [];
+    for (let i=0 ; i<3 ; i++){
+        flagTest[i] = []
+        for (let j=0 ; j<6 ; j++){
+            flagTest[i][j] = true;
+        }
+    }
+    return flagTest;
+}
+
+function verifFlagTest(flagTest){
+    let result = true;
+    for (let i=0 ; i<3 ; i++){
+        flagTest[i] = []
+        for (let j=0 ; j<6 ; j++){
+            result = result && flagTest[i][j];
+        }
+    }
+    return result;
+}
+
+function verifStageFlagTest(flagTest){
+    let result = true;
+    for (let j=0 ; j<6 ; j++){
+        result = result && flagTest[j];
+    }
+    return result;
+}
+
+
+
+
+
+
+function verifChampVide(input){
+
+    if (input.value.trim() == "") {
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "Veuillez remplir ce champ.";
+        erreur.style.color = 'red';
+        return false;
+    } 
+    else{
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "";
+        return true;
+    }
+}
+
+function verifChampFormatValide(input, regex, errRegex){
+
+    if (regex.test(input.value) == false) { 
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = errRegex;
+        erreur.style.color = 'orange';
+        return false;
+    } 
+    else {
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "";
+        return true;
+    }
+}
+
+function verifDateValide(input){
+
+    const j = parseInt(input.value[0] + input.value[1]);
+    const m = parseInt(input.value[3] + input.value[4]);
+    const a = parseInt(input.value[6] + input.value[7] + input.value[8] + input.value[9]);
+
+    var birthdate = new Date(a,m-1,j)
+
+    var aV = birthdate.getFullYear();
+    var mV = birthdate.getMonth() + 1;
+    var jV = birthdate.getDate();
+
+    var aujd = new Date();
+
+    if (j != jV || m != mV || a != aV){
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "Veuillez rentrer une date valide.";
+        erreur.style.color = 'orange';
+        return false;
+    }
+    else if (birthdate >= aujd){
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "Veuillez rentrer une date valide. (avant aujourd'hui)";
+        erreur.style.color = 'orange';
+        return false;
+    }
+    else {
+        let erreur = document.getElementById('erreur' + input.id);
+        erreur.innerHTML = "";
+        return true;
+    }
+}
+
 const registerForm = document.getElementById('registerForm');
 
 const inputs = []; //liste des inputs
@@ -25,105 +123,44 @@ const errRegex = [
     'Veuillez rentrer une date au format jj/mm/aaaa (jour/mois/année).' //message err regex birthdate
 ];
 
-function verifChampVide(inputs, flagTest){
+var flagTest = initFlagTest();
 
-    // i compris entre 0 et 4 (exclus birthdate car facultatif)
+for (let i=0 ; i<6 ; i++){
+    inputs[i].addEventListener('change', () => {
 
-    for (let i=0;i<5;i++){
-        if (inputs[i].value.trim() == "") {
-            let erreur = document.getElementById('erreur' + inputs[i].id);
-            erreur.innerHTML = "Veuillez remplir ce champ.";
-            erreur.style.color = 'red';
-            //
-            flagTest[i] = false;
-        } 
-        else{
-            let erreur = document.getElementById('erreur' + inputs[i].id);
-            erreur.innerHTML = "";
+        if(i < 5){ // tous sauf birthdate
+            flagTest[0][i] = verifChampVide(inputs[i]);
         }
-    }
 
-    return flagTest;
+        if(i > 1 && verifStageFlagTest(flagTest[0])){ // tous sauf lastname et firstname et si il a passé la première verif.
+            flagTest[1][i] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+        }
+
+        if(i == 5 && verifStageFlagTest(flagTest[1])){ //birthdate si il a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
+            flagTest[2][i] = verifDateValide(inputs[i]);
+        }
+
+    });
 }
 
-function verifChampFormatValide(inputs, flagTest, regex, errRegex){
 
-    // i compris entre 2 et 5 (exclus lastname et firstname car pas de contraites de format dessus)
+registerForm.addEventListener('submit', function(e){
+    for (let i=0 ; i<6 ; i++){
 
-    for (let i=2;i<6;i++){
-        if (flagTest[i] == true && regex[i-2].test(inputs[i].value) == false && inputs[i].value.trim() != "") {
-            console.log("i:",i);
-            let erreur = document.getElementById('erreur' + inputs[i].id);
-            erreur.innerHTML = errRegex[i-2];
-            erreur.style.color = 'orange';
-            //
-            flagTest[i] = false;
-        } 
-        else if (flagTest[i] == true){
-            let erreur = document.getElementById('erreur' + inputs[i].id);
-            erreur.innerHTML = "";
+        if(i < 5){ // tous sauf birthdate
+            flagTest[0][i] = verifChampVide(inputs[i]);
         }
-    }  
-    return flagTest;
-}
 
-function verifDateValide(inputs, flagTest){
-    if (inputs[5].value.trim() != "" && flagTest[5]){ //Si le champ birthdate n'est pas vide et a un format valide (jj/mm/aaaa) 
-
-        const j = parseInt(inputs[5].value[0] + inputs[5].value[1]);
-        const m = parseInt(inputs[5].value[3] + inputs[5].value[4]);
-        const a = parseInt(inputs[5].value[6] + inputs[5].value[7] + inputs[5].value[8] + inputs[5].value[9]);
-
-        var birthdate = new Date(a,m-1,j)
-
-        var aV = birthdate.getFullYear();
-        var mV = birthdate.getMonth() + 1;
-        var jV = birthdate.getDate();
-
-        var aujd = new Date();
-
-        if (j != jV || m != mV || a != aV){
-            let erreur = document.getElementById('erreur' + inputs[5].id);
-            erreur.innerHTML = "Veuillez rentrer une date valide.";
-            erreur.style.color = 'orange';
-            //
-            flagTest[5] = false;
+        if(i > 1 && verifStageFlagTest(flagTest[0])){ // tous sauf lastname et firstname et si il a passé la première verif.
+            flagTest[1][i] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
         }
-        else if (birthdate >= aujd){
-            let erreur = document.getElementById('erreur' + inputs[5].id);
-            erreur.innerHTML = "Veuillez rentrer une date valide. (avant aujourd'hui)";
-            erreur.style.color = 'orange';
-            //
-            flagTest[5] = false;
-        }
-        else {
-            let erreur = document.getElementById('erreur' + inputs[5].id);
-            erreur.innerHTML = "";
-        }
-    }
-    return flagTest;
-}
 
-registerForm.addEventListener('submit', function(e) {
-    
-
-    let flagTest = [];
-    for (let i=0;i<6;i++){
-        flagTest[i] = true;
-    }
-
-    flagTest = verifChampVide(inputs, flagTest);
-
-    flagTest = verifChampFormatValide(inputs, flagTest, regex, errRegex);
-     
-    flagTest = verifDateValide(inputs,flagTest)
-
-
-    for (let i=0;i<6;i++){
-        if (flagTest[i] == false){
-            e.preventDefault();
+        if(i == 5 && verifStageFlagTest(flagTest[1])){ //birthdate si il a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
+            flagTest[2][i] = verifDateValide(inputs[i]);
         }
     }
 
+    if (!(verifFlagTest(flagTest))){
+        e.preventDefault();
+    }   
 });
-
