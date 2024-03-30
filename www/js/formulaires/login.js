@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', function(e) {
     console.log(data);
     let xhr = new XMLHttpRequest();
     xhr.addEventListener('readystatechange', () => {
-        let message = document.getElementById("message");
+        const message = document.getElementById("message");
         console.log(xhr);
 
         if (xhr.readyState == 4 && xhr.status == 200){
@@ -15,7 +15,6 @@ loginForm.addEventListener('submit', function(e) {
         }
         else if (xhr.readyState == 4){
             message.innerHTML = "Une erreur est survenue, veuillez réessayer ultérieurement.";
-            message.style.color = 'red';
         }
     });
     
