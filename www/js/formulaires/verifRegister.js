@@ -8,7 +8,11 @@ function initFlagTest(){
     }
 
     //Exceptions (pour facultatifs)
-    flagTest[5][0] = true // birthdate est exempté de la première vérif car il est facultatif
+
+    for (let j=0 ; j<3 ; j++){ // pour chaque étape de vérification
+        flagTest[5][j] = true // birthdate est exempté de vérifs car il est facultatif
+    } 
+    
 
     return flagTest;
 }
@@ -35,18 +39,28 @@ function verifFlagTest(flagTest){
 }
 
 
+function estVide(input){
+    return input.value.trim() == "";
+}
+
+function wipeMessageErreur(input){
+    let erreur = document.getElementById('erreur' + input.id);
+    erreur.innerHTML = "";
+}
+
+
+
 
 function verifChampVide(input){
 
-    if (input.value.trim() == "") {
+    if (estVide(input)) {
         let erreur = document.getElementById('erreur' + input.id);
         erreur.innerHTML = "Veuillez remplir ce champ.";
         erreur.style.color = 'red';
         return false;
     } 
     else{
-        let erreur = document.getElementById('erreur' + input.id);
-        erreur.innerHTML = "";
+        wipeMessageErreur(input)
         return true;
     }
 }
@@ -60,8 +74,7 @@ function verifChampFormatValide(input, regex, errRegex){
         return false;
     } 
     else {
-        let erreur = document.getElementById('erreur' + input.id);
-        erreur.innerHTML = "";
+        wipeMessageErreur(input)
         return true;
     }
 }
@@ -93,8 +106,7 @@ function verifDateValide(input){
         return false;
     }
     else {
-        let erreur = document.getElementById('erreur' + input.id);
-        erreur.innerHTML = "";
+        wipeMessageErreur(input)
         return true;
     }
 }
@@ -143,13 +155,26 @@ for (let i=0 ; i<6 ; i++){
         }
 
         if(i > 1 && flagTest[i][0]){ // tous sauf lastname et firstname et si l'input a passé la première verif.
-            flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+
+            if (i == 5 && estVide(inputs[i])){ // cas spécial pour birthdate lorsqu'il est vide
+                wipeMessageErreur(inputs[i]);
+                flagTest[i][1] = true;
+            }
+            else{
+                flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+            }   
         }
 
         if(i == 5 && flagTest[i][1]){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
-            flagTest[i][2] = verifDateValide(inputs[i]);
-        }
 
+            if (estVide(inputs[i])){ //si birthdate est vide
+                wipeMessageErreur(inputs[i]);
+                flagTest[i][1] = true;
+            }
+            else {
+                flagTest[i][2] = verifDateValide(inputs[i]);
+            }
+        }
     });
 }
 
@@ -161,11 +186,24 @@ registerForm.addEventListener('submit', function(e){
         }
 
         if(i > 1 && flagTest[i][0]){ // tous sauf lastname et firstname et si l'input a passé la première verif.
-            flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+
+            if (i == 5 && estVide(inputs[i])){ // cas spécial pour birthdate lorsqu'il est vide
+                wipeMessageErreur(inputs[i]);
+                flagTest[i][1] = true;
+            }
+            else{
+                flagTest[i][1] = verifChampFormatValide(inputs[i], regex[i-2], errRegex[i-2]);
+            }
         }
 
         if(i == 5 && flagTest[i][1]){ //birthdate si l'input a passé la deuxième verif. (inutile de checker la première verif car il en est exclus)
-            flagTest[i][2] = verifDateValide(inputs[i]);
+            if (estVide(inputs[i])){ //si birthdate est vide
+                wipeMessageErreur(inputs[i]);
+                flagTest[i][1] = true;
+            }
+            else {
+                flagTest[i][2] = verifDateValide(inputs[i]);
+            }
         }
     }
 
