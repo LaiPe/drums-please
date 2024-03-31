@@ -55,3 +55,19 @@ fieldset label .facult{
 form .bouton-submit{
     margin: auto;
 }
+
+
+.indication{
+    margin-top: 3rem;
+    text-align: center;
+}
+.indication > *{
+    margin: 0.5rem;
+}
+.indication a{
+    color: white;
+}
+
+#lien-chatroom{
+    display: none;
+}
