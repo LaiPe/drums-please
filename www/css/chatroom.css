@@ -87,4 +87,7 @@ body > main{
     font-weight: 300;
 }
 
+.err{
+    color: red;
+}
 
