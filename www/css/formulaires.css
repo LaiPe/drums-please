@@ -61,13 +61,8 @@ form .bouton-submit{
     margin-top: 3rem;
     text-align: center;
 }
-.indication > *{
-    margin: 0.5rem;
-}
-.indication a{
-    color: white;
-}
 
 #lien-chatroom{
+    color: white;
     display: none;
 }
