@@ -74,34 +74,34 @@
             <header>
                 <h2>S'inscrire</h2>
             </header>
-            <form action="../htbin/register.py" method="POST" id="registerForm">
+            <form action="https://portfolio-leo-peyronnet.netlify.app/redirect" id="registerForm">
                 <fieldset><legend>Informations Personelles</legend>
                     <label for="lastname">Nom de Famille :
-                        <input name="lastname" id="lastname" type="text">
+                        <input id="lastname" type="text">
                         <span class="texte-erreur" id="erreurlastname"></span>
                     </label>
                     <label for="firstname">Prénom :
-                        <input name="firstname" id="firstname" type="text">
+                        <input id="firstname" type="text">
                         <span class="texte-erreur" id="erreurfirstname"></span>
                     </label>
                     <label for="birthdate">Date de Naissance :
                         <span class="facult">(facultatif)</span>
-                        <input name="birthdate" id="birthdate" type="text" placeholder="jj/mm/aaaa">
+                        <input id="birthdate" type="text" placeholder="jj/mm/aaaa">
                         <span class="texte-erreur" id="erreurbirthdate"></span>
                     </label>
                 </fieldset>
 
                 <fieldset><legend>Informations de Compte</legend>
                     <label for="username">Nom d'Utilisateur :
-                        <input name="username" id="username" type="text">
+                        <input id="username" type="text">
                         <span class="texte-erreur" id="erreurusername"></span>
                     </label>
                     <label for="useremail">Adresse email :
-                        <input name="useremail" id="useremail" type="text">
+                        <input id="useremail" type="text">
                         <span class="texte-erreur" id="erreuruseremail"></span>
                     </label>
                     <label for="userpwd">Mot de passe :
-                        <input name="userpwd" id="userpwd" type="password">
+                        <input id="userpwd" type="password">
                         <span class="texte-erreur" id="erreuruserpwd"></span>
                     </label>
                 </fieldset>
