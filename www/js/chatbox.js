@@ -11,7 +11,7 @@ $(document).ready(function(){
                 $("#chat-feed").empty();
                 // Mettre à jour la zone de discussion avec les messages reçus
                 data.forEach(function(message){
-                    $("#chat-feed").append("<div class='message'><header><span class='nom-user'>" + message.user + "</span><time class='date-message'>" + message.date + " @" + message.time +"</time></header><main class='contenu-message'>" + message.msg + "</main>");
+                    $("#chat-feed").append("<div class='message'><header><span class='nom-user'>" + message.user + "</span><time class='date-message'>" + message.date + " @" + message.time +"</time></header><div class='contenu-message'>" + message.msg + "</div>");
                 });
             },
             error: function(){
