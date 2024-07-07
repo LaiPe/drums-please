@@ -76,7 +76,9 @@ nav{
 }
 
 
-
+.label-activ-sub-nav {
+    cursor: pointer;
+}
 
 label[for="activ-nav-produits"]{
     display: flex;
@@ -84,7 +86,6 @@ label[for="activ-nav-produits"]{
     height: 35px;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
 }
 label[for="activ-nav-produits"] span{
     width: 100%;
