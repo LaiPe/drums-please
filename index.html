@@ -207,6 +207,13 @@
     </footer>
     <script>
       const video = document.querySelector("video");
+      function handleEvent(event) {
+        console.log(`${event.type}`);
+      }
+
+      video.addEventListener("loadstart", handleEvent);
+      video.addEventListener("progress", handleEvent);
+      video.addEventListener("canplay", handleEvent);
       video.addEventListener("canplaythrough", (e) => {
         e.target.play();
         console.log("salut");
