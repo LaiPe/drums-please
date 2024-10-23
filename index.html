@@ -206,17 +206,29 @@
       >
     </footer>
     <script>
-      const video = document.querySelector("video");
+      const videos = document.querySelectorAll("video");
+
       function handleEvent(event) {
-        console.log(`${event.type}`);
+        const element = event.target;
+        const closestSection = element.closest("section");
+        if (closestSection) {
+          console.log(
+            `${element.tagName} into ${closestSection.id} => ${event.type}`
+          );
+        } else {
+          `${element.tagName} into ??? => ${event.type}`;
+        }
       }
 
-      video.addEventListener("loadstart", handleEvent);
-      video.addEventListener("progress", handleEvent);
-      video.addEventListener("canplay", handleEvent);
-      video.addEventListener("canplaythrough", (e) => {
-        e.target.play();
-        console.log("salut");
+      videos.forEach((video) => {
+        video.addEventListener("loadstart", handleEvent);
+        video.addEventListener("progress", handleEvent);
+        video.addEventListener("canplay", handleEvent);
+        video.addEventListener("canplaythrough", (e) => {
+          handleEvent(e);
+          video.play();
+          console.log("play !");
+        });
       });
     </script>
   </body>
