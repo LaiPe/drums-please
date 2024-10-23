@@ -10,6 +10,8 @@
 
 .slide{
     min-height: calc(100vh - var(--header));
+body {
+  background-color: var(--couleur-fond);
 }
 
 .slide-f{
