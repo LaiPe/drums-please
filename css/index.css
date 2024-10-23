@@ -1,166 +1,162 @@
+#produits {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--couleur-fond);
+}
+.tuille-produit {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.tuille-produit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: grayscale(1);
+  transform: scale(1);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+.tuille-produit:hover::before {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+#bat-acoustiques::before {
+  background-image: url(../img/background-tuilles-produits/bat-acous.jpg);
+}
+#bat-electroniques::before {
+  background-image: url(../img/background-tuilles-produits/bat-elec.jpg);
+}
+#classiques::before {
+  background-image: url(../img/background-tuilles-produits/perc-class.jpg);
+}
+#traditionnelles::before {
+  background-image: url(../img/background-tuilles-produits/perc-trad.jpg);
+}
 
-#produits{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: var(--couleur-fond);
+.tuille-produit a {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgba(12, 12, 31, 0.5);
+  color: white;
+  text-decoration: none;
 }
-.tuille-produit{
-    position: relative;
-    width: 50%;
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-}
-.tuille-produit::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    filter: grayscale(1);
-    transform: scale(1);
-    transition: transform 0.5s ease ,filter 0.5s ease;
-    
-}
-.tuille-produit:hover::before{
-    transform: scale(1.1);
-    filter: grayscale(0);
-}
-#bat-acoustiques::before{
-    background-image: url(../img/background-tuilles-produits/bat-acous.jpg);
-}
-#bat-electroniques::before{
-    background-image: url(../img/background-tuilles-produits/bat-elec.jpg);
-}
-#classiques::before{
-    background-image: url(../img/background-tuilles-produits/perc-class.jpg);
-}
-#traditionnelles::before{
-    background-image: url(../img/background-tuilles-produits/perc-trad.jpg);
-}
-
-.tuille-produit a{
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    background-color: rgba(12, 12, 31, 0.5);
-    color: white;
-    text-decoration: none;   
-}
-.titre-tuille{
-    font-size: 3rem;
-    font-family: "Ojuju";
-    text-align: center;
-    margin: 1rem;
+.titre-tuille {
+  font-size: 3rem;
+  font-family: "Ojuju";
+  text-align: center;
+  margin: 1rem;
 }
 @media screen and (max-width: 1150px) {
-    #produits{
-        flex-direction: column;
-    }
-    .tuille-produit{
-        width: 100%;
-        aspect-ratio: 6 / 2;
-    }
+  #produits {
+    flex-direction: column;
+  }
+  .tuille-produit {
+    width: 100%;
+    aspect-ratio: 6 / 2;
+  }
 }
 @media screen and (max-width: 740px) {
-    .tuille-produit{
-        aspect-ratio: 3 / 2;
-    }
+  .tuille-produit {
+    aspect-ratio: 3 / 2;
+  }
 }
 
-
-
-
-#presentation{
-    background-color: var(--couleur-fond);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 1rem;
+#presentation {
+  background-color: var(--couleur-fond);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1rem;
 }
-#fond-presentation{
-    margin: 0 1.5rem;
-    max-width: 650px;
-    min-width: 450px;
+#fond-presentation {
+  margin: 0 1.5rem;
+  max-width: 650px;
+  min-width: 450px;
 }
-#texte-presentation{
-    color: white;
-    font-family: "Nothing You Could Do", cursive;
-    max-width: 600px;
-    padding: 3rem 2.5rem 3rem 1.5rem;
+#texte-presentation {
+  color: white;
+  font-family: "Nothing You Could Do", cursive;
+  max-width: 600px;
+  padding: 3rem 2.5rem 3rem 1.5rem;
 }
-#texte-presentation p{
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+#texte-presentation p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 @media screen and (max-width: 1000px) {
-    #fond-presentation{
-        position: absolute;
-        min-width: initial;
-        width: 100%;
-        opacity: 0.05;
-    }
-    #texte-presentation{
-        padding: 3rem 1.5rem;
-    }
-}
-
-
-
-
-
-
-
-#rappel-inscription{
-    position: relative; 
-}
-#rappel-inscription .conteneur-bckgrd{
+  #fond-presentation {
     position: absolute;
-    top: 0;
-    left: 0; 
+    min-width: initial;
+    width: 100%;
+    opacity: 0.05;
+  }
+  #texte-presentation {
+    padding: 3rem 1.5rem;
+  }
 }
-#texte-rappel{
-    position: relative;
 
-    background: linear-gradient(180deg, var(--couleur-fond) 0%, rgba(12, 12, 31, 0.8) 90%);
-    padding: 0 2rem;
+#rappel-inscription {
+  position: relative;
+}
+#rappel-inscription .conteneur-bckgrd {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#texte-rappel {
+  position: relative;
 
-    color: white;
-    font-size: 2rem;
-    font-family: "Ojuju";
-    text-align: center;
+  background: linear-gradient(
+    180deg,
+    var(--couleur-fond) 0%,
+    rgba(12, 12, 31, 0.8) 90%
+  );
+  padding: 0 2rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 0.5rem;
+  color: white;
+  font-size: 2rem;
+  font-family: "Ojuju";
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.5rem;
 }
-#texte-rappel h3{
-    font-size: 4rem;
-    font-weight: 600;
+#texte-rappel h3 {
+  font-size: 4rem;
+  font-weight: 600;
 }
-#texte-rappel a{
-    color: white;
-    text-decoration: none;
-    margin-top: 1rem;
-    padding: 0.5rem 0.7rem 0.7rem;
-    border: 1px solid white; 
-    border-radius: 5px;
+#texte-rappel a {
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 0.5rem 0.7rem 0.7rem;
+  border: 1px solid white;
+  border-radius: 5px;
 }
-#texte-rappel a:hover{
-    box-shadow:  0px 0px 20px rgba(217, 217, 217, 0.5),
-                0px 0px 20px rgba(255, 255, 255, 0.5);
+#texte-rappel a:hover {
+  box-shadow:
+    0px 0px 20px rgba(217, 217, 217, 0.5),
+    0px 0px 20px rgba(255, 255, 255, 0.5);
 }
 @media screen and (max-width: 740px) {
-    #texte-rappel h3{
-        margin-bottom: 1.5rem;
-    }
+  #texte-rappel h3 {
+    margin-bottom: 1.5rem;
+  }
 }

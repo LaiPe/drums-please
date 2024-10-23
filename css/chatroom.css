@@ -1,93 +1,92 @@
-body > main{
-    font-family: "Poppins";
-    background-color: var(--couleur-fond-clair);
-    padding: 3rem 1rem;
+body > main {
+  font-family: "Poppins";
+  background-color: var(--couleur-fond-clair);
+  padding: 3rem 1rem;
 }
-#conteneur-chatroom{
-    background-color: #eee;
-    border: 3px solid var(--couleur-fond);
-    border-radius: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
+#conteneur-chatroom {
+  background-color: #eee;
+  border: 3px solid var(--couleur-fond);
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
 }
-#conteneur-chat{
-    width: 70%;
-    height: 100%;
-    position: relative;  
-}
-
-#conteneur-chat-feed{
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-#chat-feed::after{
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3rem;
-}
-#message-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0;
-    width: 100%;
-    padding: 0 5%;
-}
-#message-input{
-    width: 80%;
-}
-#message-send{
-    width: 10%;
-    min-width: 90px;
-    transition: background-color 0.5s ease;
-}
-#message-send:hover{
-    background-color: rgb(44, 44, 71);
+#conteneur-chat {
+  width: 70%;
+  height: 100%;
+  position: relative;
 }
 
-#chatroom-users{
-    width: 30%;
-    height: 100%;
-    padding: 1rem;
-    background-color: #ccc;
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+#conteneur-chat-feed {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
-#chatroom-users h2{
-    font-size: 2rem;
+#chat-feed::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
 }
-
-.message{
-    padding: 1.5rem;
-    width: 100%;
-    position: relative;
+#message-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  width: 100%;
+  padding: 0 5%;
 }
-
-.message .nom-user{
-    font-size: 1.2rem;
+#message-input {
+  width: 80%;
 }
-.message .date-message{
-    font-size: 0.9rem;
-    font-style: italic;
-    font-weight: 300;
-    position: absolute;
-    right: 1rem;
-    top: 1.8rem;
+#message-send {
+  width: 10%;
+  min-width: 90px;
+  transition: background-color 0.5s ease;
 }
-.message .contenu-message{
-    margin-top: 0.8rem;
-    padding-left: 1rem;
-    font-weight: 300;
+#message-send:hover {
+  background-color: rgb(44, 44, 71);
 }
 
-.err{
-    color: red;
+#chatroom-users {
+  width: 30%;
+  height: 100%;
+  padding: 1rem;
+  background-color: #ccc;
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#chatroom-users h2 {
+  font-size: 2rem;
 }
 
+.message {
+  padding: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.message .nom-user {
+  font-size: 1.2rem;
+}
+.message .date-message {
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 300;
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+}
+.message .contenu-message {
+  margin-top: 0.8rem;
+  padding-left: 1rem;
+  font-weight: 300;
+}
+
+.err {
+  color: red;
+}

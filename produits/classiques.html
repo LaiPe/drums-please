@@ -1,268 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-    <head>
-        <title>Drums Please - Location de Percussions</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Drums Please - Location de Percussions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css" />
 
-        <link rel="stylesheet" href="../css/theme/theme.css">
-        <link rel="stylesheet" href="../css/theme/theme-header.css">
-        <link rel="stylesheet" href="../css/theme/theme-main.css">
-        <link rel="stylesheet" href="../css/theme/theme-footer.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" />
+    <link rel="stylesheet" href="../css/theme/theme-header.css" />
+    <link rel="stylesheet" href="../css/theme/theme-main.css" />
+    <link rel="stylesheet" href="../css/theme/theme-footer.css" />
 
-        <link rel="stylesheet" href="../css/produits/produits.css">
-        <link rel="stylesheet" href="../css/produits/selecteur.css">
-        <link rel="stylesheet" href="../css/produits/infos.css">
+    <link rel="stylesheet" href="../css/produits/produits.css" />
+    <link rel="stylesheet" href="../css/produits/selecteur.css" />
+    <link rel="stylesheet" href="../css/produits/infos.css" />
 
-        <link rel="icon" href="../img/logo-drums-please/logo-icon-drums-please.png">
+    <link
+      rel="icon"
+      href="../img/logo-drums-please/logo-icon-drums-please.png"
+    />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Righteous&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header id="header">
-            <a href="../index.html"><img id="logo-header" src="../img/logo-drums-please/logo-large-drums-please.png" alt="logo-drums-please"></a>
-            <nav>
-                <div id="nav-produits" class="sub-nav">
-                    <input type="checkbox" id="activ-nav-produits" class="input-activ-sub-nav">
-                    <label for="activ-nav-produits" class="label-activ-sub-nav">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <ul>
-                        <li>
-                            <a href="./bat-acoustiques.html">Batteries Acoustiques</a>
-                        </li>
-                        <li>
-                            <a href="./bat-electroniques.html">Batteries Électroniques</a>
-                        </li>
-                        <li>
-                            <a href="./classiques.html">Classiques</a>
-                        </li>
-                        <li>
-                            <a href="./traditionnelles.html">Traditionnelles</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="nav-compte" class="sub-nav">
-                    <input type="checkbox" id="activ-nav-compte" class="input-activ-sub-nav">
-                    <label for="activ-nav-compte" class="label-activ-sub-nav">
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <ul>
-                        <li>
-                            <a href="../login.html">Se Connecter</a>
-                        </li>
-                        <li>
-                            <a href="../register.html">S'inscrire</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <script src="../js/theme/chg-logo-responsive.js"></script>
-            <script src="../js/theme/navs.js"></script>
-        </header>
-        <main>
-            <noscript>
-                <p>Votre navigateur ne supporte pas JavaScript ou vous avez désactivé JavaScript. Pour profiter pleinement de ce site, veuillez activer JavaScript dans votre navigateur.</p>
-            </noscript>
-            <section id="accueil" class="slide">
-                <h2 class="titre-accueil">
-                    <span>Percussions</span> 
-                    <span>Classiques</span>
-                </h2>
-                <div class="conteneur-bckgrd">
-                    <img class="contenu-bckgrd" src="../img/background-tuilles-produits/perc-class.jpg" alt="Percussions Classiques">
-                </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <a href="../index.html"
+        ><img
+          id="logo-header"
+          src="../img/logo-drums-please/logo-large-drums-please.png"
+          alt="logo-drums-please"
+      /></a>
+      <nav>
+        <div id="nav-produits" class="sub-nav">
+          <input
+            type="checkbox"
+            id="activ-nav-produits"
+            class="input-activ-sub-nav"
+          />
+          <label for="activ-nav-produits" class="label-activ-sub-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul>
+            <li>
+              <a href="./bat-acoustiques.html">Batteries Acoustiques</a>
+            </li>
+            <li>
+              <a href="./bat-electroniques.html">Batteries Électroniques</a>
+            </li>
+            <li>
+              <a href="./classiques.html">Classiques</a>
+            </li>
+            <li>
+              <a href="./traditionnelles.html">Traditionnelles</a>
+            </li>
+          </ul>
+        </div>
+        <div id="nav-compte" class="sub-nav">
+          <input
+            type="checkbox"
+            id="activ-nav-compte"
+            class="input-activ-sub-nav"
+          />
+          <label for="activ-nav-compte" class="label-activ-sub-nav">
+            <span></span>
+            <span></span>
+          </label>
+          <ul>
+            <li>
+              <a href="../login.html">Se Connecter</a>
+            </li>
+            <li>
+              <a href="../register.html">S'inscrire</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <script src="../js/theme/chg-logo-responsive.js"></script>
+      <script src="../js/theme/navs.js"></script>
+    </header>
+    <main>
+      <noscript>
+        <p>
+          Votre navigateur ne supporte pas JavaScript ou vous avez désactivé
+          JavaScript. Pour profiter pleinement de ce site, veuillez activer
+          JavaScript dans votre navigateur.
+        </p>
+      </noscript>
+      <section id="accueil" class="slide">
+        <h2 class="titre-accueil">
+          <span>Percussions</span>
+          <span>Classiques</span>
+        </h2>
+        <div class="conteneur-bckgrd">
+          <img
+            class="contenu-bckgrd"
+            src="../img/background-tuilles-produits/perc-class.jpg"
+            alt="Percussions Classiques"
+          />
+        </div>
+      </section>
+
+      <form
+        id="form-produit"
+        action="https://portfolio.leopeyronnet.fr/redirect"
+      >
+        <fieldset id="selecteur">
+          <label for="Bergerault-Marimba-SRS50H-A=442Hz">
+            <img
+              src="../img/produits/classiques/thumbnail/Bergerault-Marimba-SRS50H-A=442Hz.jpg"
+              alt="Bergerault Marimba SRS50H A=442Hz"
+            />
+            <span>Bergerault Marimba SRS50H A=442Hz</span>
+            <input
+              id="Bergerault-Marimba-SRS50H-A=442Hz"
+              value="Bergerault Marimba SRS50H A=442Hz"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Bergerault-MCBH-Marimba-Campus-A=442Hz">
+            <img
+              src="../img/produits/classiques/thumbnail/Bergerault-MCBH-Marimba-Campus-A=442Hz.jpg"
+              alt="Bergerault MCBH Marimba Campus A=442Hz"
+            />
+            <span>Bergerault MCBH Marimba Campus A=442Hz</span>
+            <input
+              id="Bergerault-MCBH-Marimba-Campus-A=442Hz"
+              value="Bergerault MCBH Marimba Campus A=442Hz"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for='Adams-Universal-Timpani-26"-+29"-FST'>
+            <img
+              src="../img/produits/classiques/thumbnail/Adams-Universal-Timpani-26-+29-FST.jpg"
+              alt='Adams Universal Timpani 26" +29" FST'
+            />
+            <span>Adams Universal Timpani 26" +29" FST</span>
+            <input
+              id='Adams-Universal-Timpani-26"-+29"-FST'
+              value='Adams-Universal-Timpani-26"-+29"-FST'
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Yamaha-YV-2030-MS">
+            <img
+              src="../img/produits/classiques/thumbnail/Yamaha-YV-2030-MS.jpg"
+              alt="Yamaha YV 2030 MS"
+            />
+            <span>Yamaha YV 2030 MS</span>
+            <input
+              id="Yamaha-YV-2030-MS"
+              value="Yamaha YV 2030 MS"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+        </fieldset>
+
+        <hr />
+
+        <div id="infos">
+          <article
+            id="infos-Bergerault-Marimba-SRS50H-A=442Hz"
+            class="article-instr disp-false"
+          >
+            <h3 class="nom-instr">Bergerault Marimba SRS50H A=442Hz</h3>
+            <span class="disp">Indisponible</span>
+
+            <input class="bouton-submit" type="submit" value="Réserver" />
+
+            <section class="caracteristiques">
+              <h4>Caractéristiques</h4>
+              <ul>
+                <li>5 octaves</li>
+                <li>Tessiture: Do2 - Do7</li>
+                <li>La = 442 Hz</li>
+                <li>Dimensions des lames: 72 à 40 x 27 à 20 mm</li>
+                <li>Longueur: 2590 mm</li>
+                <li>Largeur: 1040 - 350 mm</li>
+                <li>Hauteur: 860 - 1010 mm</li>
+              </ul>
             </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <ul>
+                <li><u>1 - 14 jours :</u> 120€ par jour</li>
+                <li><u>15 - 30 jours :</u> 110€ par jour</li>
+                <li><u>1 mois ou + :</u> 100€ par jour</li>
+              </ul>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/10151685.jpg"
+                  alt="Vue de devant"
+                />
+                <img
+                  src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/Bergerault-Marimba-SRS50H-A=442Hz.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/10151675.jpg"
+                  alt="Gros Plan"
+                />
+              </div>
+            </section>
+          </article>
 
-            <form id="form-produit" action="https://portfolio.leopeyronnet.fr/redirect">
-                <fieldset id="selecteur">
-                    <label for="Bergerault-Marimba-SRS50H-A=442Hz">
-                        <img src="../img/produits/classiques/thumbnail/Bergerault-Marimba-SRS50H-A=442Hz.jpg" alt="Bergerault Marimba SRS50H A=442Hz">
-                        <span>Bergerault Marimba SRS50H A=442Hz</span>
-                        <input id="Bergerault-Marimba-SRS50H-A=442Hz" value="Bergerault Marimba SRS50H A=442Hz" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Bergerault-MCBH-Marimba-Campus-A=442Hz">
-                        <img src="../img/produits/classiques/thumbnail/Bergerault-MCBH-Marimba-Campus-A=442Hz.jpg" alt="Bergerault MCBH Marimba Campus A=442Hz">
-                        <span>Bergerault MCBH Marimba Campus A=442Hz</span>
-                        <input id="Bergerault-MCBH-Marimba-Campus-A=442Hz" value="Bergerault MCBH Marimba Campus A=442Hz" type="radio" name="choix-instrum">
-                    </label>
-                    <label for='Adams-Universal-Timpani-26"-+29"-FST'>
-                        <img src="../img/produits/classiques/thumbnail/Adams-Universal-Timpani-26-+29-FST.jpg" alt='Adams Universal Timpani 26" +29" FST'>
-                        <span>Adams Universal Timpani 26" +29" FST</span>
-                        <input id='Adams-Universal-Timpani-26"-+29"-FST' value='Adams-Universal-Timpani-26"-+29"-FST' type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Yamaha-YV-2030-MS">
-                        <img src="../img/produits/classiques/thumbnail/Yamaha-YV-2030-MS.jpg" alt="Yamaha YV 2030 MS">
-                        <span>Yamaha YV 2030 MS</span>
-                        <input id="Yamaha-YV-2030-MS" value="Yamaha YV 2030 MS" type="radio" name="choix-instrum">
-                    </label>
-                </fieldset>
+          <article
+            id="infos-Bergerault-MCBH-Marimba-Campus-A=442Hz"
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Bergerault MCBH Marimba Campus A=442Hz</h3>
+            <span class="disp">Disponible</span>
 
-                <hr>
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                <div id="infos">
+            <section class="caracteristiques">
+              <h4>Caractéristiques</h4>
+              <ul>
+                <li>4 1/2 octaves</li>
+                <li>Tessiture: Fa2 - Do7</li>
+                <li>La = 442 Hz</li>
+                <li>Dimensions des lames: 70 - 40 mm</li>
+                <li>Longueur: 2120 mm</li>
+                <li>Largeur: 890 - 320 mm</li>
+                <li>Hauteur: 840 - 970 mm</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <ul>
+                <li><u>1 - 14 jours :</u> 100€ par jour</li>
+                <li><u>15 - 30 jours :</u> 90€ par jour</li>
+                <li><u>1 mois ou + :</u> 85€ par jour</li>
+              </ul>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/15072095.jpg"
+                  alt="Vue de devant"
+                />
+                <img
+                  src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/Bergerault-MCBH-Marimba-Campus-A=442Hz.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/15072040.jpg"
+                  alt="Gros Plan"
+                />
+              </div>
+            </section>
+          </article>
 
-                    <article id="infos-Bergerault-Marimba-SRS50H-A=442Hz" class="article-instr disp-false">
-                        <h3 class="nom-instr">Bergerault Marimba SRS50H A=442Hz</h3>
-                        <span class="disp">Indisponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
+          <article
+            id='infos-Adams-Universal-Timpani-26"-+29"-FST'
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Adams Universal Timpani 26" +29" FST</h3>
+            <span class="disp">Disponible</span>
 
-                        <section class="caracteristiques">
-                            <h4>Caractéristiques</h4>
-                            <ul>
-                                <li>5 octaves</li>
-                                <li>Tessiture: Do2 - Do7</li>
-                                <li>La = 442 Hz</li>
-                                <li>Dimensions des lames: 72 à 40 x 27 à 20 mm</li>
-                                <li>Longueur: 2590 mm</li>
-                                <li>Largeur: 1040 - 350 mm</li>
-                                <li>Hauteur: 860 - 1010 mm</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <ul>
-                                <li><u>1 - 14 jours :</u> 120€ par jour</li>
-                                <li><u>15 - 30 jours :</u> 110€ par jour</li>
-                                <li><u>1 mois ou + :</u> 100€ par jour</li>
-                            </ul>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/10151685.jpg" alt="Vue de devant">
-                                <img src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/Bergerault-Marimba-SRS50H-A=442Hz.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/classiques/Bergerault-Marimba-SRS50H-A=442Hz/600/10151675.jpg" alt="Gros Plan">
-                            </div>
-                        </section>
-                    </article>
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                    <article id="infos-Bergerault-MCBH-Marimba-Campus-A=442Hz" class="article-instr disp-true">
-                        <h3 class="nom-instr">Bergerault MCBH Marimba Campus A=442Hz</h3>
-                        <span class="disp">Disponible</span>
+            <section class="caracteristiques">
+              <h4>Caractéristiques</h4>
+              <ul>
+                <li>Timbale Adams 29" 2PAUFFI29D FS German</li>
+                <li>Timbale Adams 26" 2PAUFFI26D FS German</li>
+                <li>Fûts parabolique en fibre de verre</li>
+                <li>Pédales d'accordage fixe</li>
+                <li>6 tirants chacun</li>
+                <li>3 pieds chacun</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <ul>
+                <li><u>1 - 14 jours :</u> 100€ par jour</li>
+                <li><u>15 - 30 jours :</u> 90€ par jour</li>
+                <li><u>1 mois ou + :</u> 85€ par jour</li>
+              </ul>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/Adams-Universal-Timpani-26-+29-FST.jpg"
+                  alt='Timbales 29" et 26"'
+                />
+                <img
+                  src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/15630530.jpg"
+                  alt='Timbales 29"'
+                />
+                <img
+                  src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/15630520.jpg"
+                  alt='Timbales 26"'
+                />
+              </div>
+            </section>
+          </article>
 
-                        <input class="bouton-submit" type="submit" value="Réserver">
+          <article id="infos-Yamaha-YV-2030-MS" class="article-instr disp-true">
+            <h3 class="nom-instr">Yamaha YV 2030 MS</h3>
+            <span class="disp">Disponible</span>
 
-                        <section class="caracteristiques">
-                            <h4>Caractéristiques</h4>
-                            <ul>
-                                <li>4 1/2 octaves</li>
-                                <li>Tessiture: Fa2 - Do7</li>
-                                <li>La = 442 Hz</li>
-                                <li>Dimensions des lames: 70 - 40 mm</li>
-                                <li>Longueur: 2120 mm</li>
-                                <li>Largeur: 890 - 320 mm</li>
-                                <li>Hauteur: 840 - 970 mm</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <ul>
-                                <li><u>1 - 14 jours :</u> 100€ par jour</li>
-                                <li><u>15 - 30 jours :</u> 90€ par jour</li>
-                                <li><u>1 mois ou + :</u> 85€ par jour</li>
-                            </ul>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                
-                                <img src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/15072095.jpg" alt="Vue de devant">
-                                <img src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/Bergerault-MCBH-Marimba-Campus-A=442Hz.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/classiques/Bergerault-MCBH-Marimba-Campus-A=442Hz/600/15072040.jpg" alt="Gros Plan">
-                            </div>
-                        </section>
-                    </article>
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                    <article id='infos-Adams-Universal-Timpani-26"-+29"-FST' class="article-instr disp-true">
-                        <h3 class="nom-instr">Adams Universal Timpani 26" +29" FST</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-
-                        <section class="caracteristiques">
-                            <h4>Caractéristiques</h4>
-                            <ul>
-                                <li>Timbale Adams 29" 2PAUFFI29D FS German</li>
-                                <li>Timbale Adams 26" 2PAUFFI26D FS German</li>
-                                <li>Fûts parabolique en fibre de verre</li>
-                                <li>Pédales d'accordage fixe</li>
-                                <li>6 tirants chacun</li>
-                                <li>3 pieds chacun</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <ul>
-                                <li><u>1 - 14 jours :</u> 100€ par jour</li>
-                                <li><u>15 - 30 jours :</u> 90€ par jour</li>
-                                <li><u>1 mois ou + :</u> 85€ par jour</li>
-                            </ul>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/Adams-Universal-Timpani-26-+29-FST.jpg" alt='Timbales 29" et 26"'>
-                                <img src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/15630530.jpg" alt='Timbales 29"'>
-                                <img src="../img/produits/classiques/Adams-Universal-Timpani-26-+29-FST/600/15630520.jpg" alt='Timbales 26"'>                               
-                            </div>
-                        </section>
-                    </article>
-
-                    <article id="infos-Yamaha-YV-2030-MS" class="article-instr disp-true">
-                        <h3 class="nom-instr">Yamaha YV 2030 MS</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-                        
-                        <section class="caracteristiques">
-                            <h4>Caractéristiques</h4>
-                            <ul>
-                                <li>3 octaves</li>
-                                <li>Tessiture: Fa - Fa3</li>
-                                <li>La = 442 Hz</li>
-                                <li>Lames en aluminium de 33 mm</li>
-                                <li>Hauteur réglable de 660 à 850 mm par ressorts à gaz</li>
-                                <li>Amortisseurs montés en parallèle</li>
-                                <li>Moteur YVD10 réglable de 30 à 145 tr/min.</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <ul>
-                                <li><u>1 - 14 jours :</u> 100€ par jour</li>
-                                <li><u>15 - 30 jours :</u> 90€ par jour</li>
-                                <li><u>1 mois ou + :</u> 85€ par jour</li>
-                            </ul>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/classiques/Yamaha-YV-2030-MS/600/Yamaha-YV-2030-MS.jpg" alt="Yamaha YV 2030 MS">
-
-                            </div>
-                        </section>
-                    </article>
-                </div>
-            </form>
-            <script src="../js/produits/select-produit.js"></script>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <span>Site réalisé par <a href="https://portfolio.leopeyronnet.fr">Léo Peyronnet</a></span>
-        </footer>
-    </body>
+            <section class="caracteristiques">
+              <h4>Caractéristiques</h4>
+              <ul>
+                <li>3 octaves</li>
+                <li>Tessiture: Fa - Fa3</li>
+                <li>La = 442 Hz</li>
+                <li>Lames en aluminium de 33 mm</li>
+                <li>Hauteur réglable de 660 à 850 mm par ressorts à gaz</li>
+                <li>Amortisseurs montés en parallèle</li>
+                <li>Moteur YVD10 réglable de 30 à 145 tr/min.</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <ul>
+                <li><u>1 - 14 jours :</u> 100€ par jour</li>
+                <li><u>15 - 30 jours :</u> 90€ par jour</li>
+                <li><u>1 mois ou + :</u> 85€ par jour</li>
+              </ul>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/classiques/Yamaha-YV-2030-MS/600/Yamaha-YV-2030-MS.jpg"
+                  alt="Yamaha YV 2030 MS"
+                />
+              </div>
+            </section>
+          </article>
+        </div>
+      </form>
+      <script src="../js/produits/select-produit.js"></script>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <span
+        >Site réalisé par
+        <a href="https://portfolio.leopeyronnet.fr">Léo Peyronnet</a></span
+      >
+    </footer>
+  </body>
 </html>

@@ -1,68 +1,66 @@
-header h2{
-    font-family: "Ojuju";
-    font-weight: 600;
-    font-size: 3rem;
-    text-align: center;
-    padding: 4rem 0;
+header h2 {
+  font-family: "Ojuju";
+  font-weight: 600;
+  font-size: 3rem;
+  text-align: center;
+  padding: 4rem 0;
 }
 
-main{
-    background-color: var(--couleur-fond-clair);
-    color: white;
-    font-family: "Poppins";
-    font-weight: 200;
-    font-size: 1.1rem;
+main {
+  background-color: var(--couleur-fond-clair);
+  color: white;
+  font-family: "Poppins";
+  font-weight: 200;
+  font-size: 1.1rem;
 }
 
-form{
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 0 0 4rem;
-    
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 0 4rem;
 }
 
-fieldset{
-    margin: 1rem 0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+fieldset {
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-fieldset legend{
-    font-family: "Ojuju";
-    font-weight: 500;
-    font-size: 2rem;
+fieldset legend {
+  font-family: "Ojuju";
+  font-weight: 500;
+  font-size: 2rem;
 }
-fieldset label{
-    margin: 0.7rem 1rem;
+fieldset label {
+  margin: 0.7rem 1rem;
 }
-fieldset input{
-    margin: 0.5rem 0;
-    width: 100%;
-    min-width: 270px;
+fieldset input {
+  margin: 0.5rem 0;
+  width: 100%;
+  min-width: 270px;
 }
-fieldset label .texte-erreur{
-    display: block;
-    font-size: 0.95rem;
-    width: 100%;
+fieldset label .texte-erreur {
+  display: block;
+  font-size: 0.95rem;
+  width: 100%;
 }
-fieldset label .facult{
-    font-size: 0.95rem;
-    font-style: italic;
-    font-weight: 200;
-}
-
-form .bouton-submit{
-    margin: auto;
+fieldset label .facult {
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 200;
 }
 
-
-.indication{
-    margin-top: 3rem;
-    text-align: center;
+form .bouton-submit {
+  margin: auto;
 }
 
-#lien-chatroom{
-    color: white;
-    display: none;
+.indication {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#lien-chatroom {
+  color: white;
+  display: none;
 }

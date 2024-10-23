@@ -1,537 +1,730 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-    <head>
-        <title>Drums Please - Location de Percussions</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Drums Please - Location de Percussions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css" />
 
-        <link rel="stylesheet" href="../css/theme/theme.css">
-        <link rel="stylesheet" href="../css/theme/theme-header.css">
-        <link rel="stylesheet" href="../css/theme/theme-main.css">
-        <link rel="stylesheet" href="../css/theme/theme-footer.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" />
+    <link rel="stylesheet" href="../css/theme/theme-header.css" />
+    <link rel="stylesheet" href="../css/theme/theme-main.css" />
+    <link rel="stylesheet" href="../css/theme/theme-footer.css" />
 
-        <link rel="stylesheet" href="../css/produits/produits.css">
-        <link rel="stylesheet" href="../css/produits/selecteur.css">
-        <link rel="stylesheet" href="../css/produits/infos.css">
+    <link rel="stylesheet" href="../css/produits/produits.css" />
+    <link rel="stylesheet" href="../css/produits/selecteur.css" />
+    <link rel="stylesheet" href="../css/produits/infos.css" />
 
-        <link rel="icon" href="../img/logo-drums-please/logo-icon-drums-please.png">
+    <link
+      rel="icon"
+      href="../img/logo-drums-please/logo-icon-drums-please.png"
+    />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Righteous&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header id="header">
-            <a href="../index.html"><img id="logo-header" src="../img/logo-drums-please/logo-large-drums-please.png" alt="logo-drums-please"></a>
-            <nav>
-                <div id="nav-produits" class="sub-nav">
-                    <input type="checkbox" id="activ-nav-produits" class="input-activ-sub-nav">
-                    <label for="activ-nav-produits" class="label-activ-sub-nav">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <ul>
-                        <li>
-                            <a href="./bat-acoustiques.html">Batteries Acoustiques</a>
-                        </li>
-                        <li>
-                            <a href="./bat-electroniques.html">Batteries Électroniques</a>
-                        </li>
-                        <li>
-                            <a href="./classiques.html">Classiques</a>
-                        </li>
-                        <li>
-                            <a href="./traditionnelles.html">Traditionnelles</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="nav-compte" class="sub-nav">
-                    <input type="checkbox" id="activ-nav-compte" class="input-activ-sub-nav">
-                    <label for="activ-nav-compte" class="label-activ-sub-nav">
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <ul>
-                        <li>
-                            <a href="../login.html">Se Connecter</a>
-                        </li>
-                        <li>
-                            <a href="../register.html">S'inscrire</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <script src="../js/theme/chg-logo-responsive.js"></script>
-            <script src="../js/theme/navs.js"></script>
-        </header>
-        <main>
-            <noscript>
-                <p>Votre navigateur ne supporte pas JavaScript ou vous avez désactivé JavaScript. Pour profiter pleinement de ce site, veuillez activer JavaScript dans votre navigateur.</p>
-            </noscript>
-            <section id="accueil" class="slide">
-                <h2 class="titre-accueil">
-                    <span>Batteries</span> 
-                    <span>Acoustiques</span>
-                </h2>
-                <div class="conteneur-bckgrd">
-                    <img class="contenu-bckgrd" src="../img/background-tuilles-produits/bat-acous.jpg" alt="Batterie Acoustique">
-                </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <a href="../index.html"
+        ><img
+          id="logo-header"
+          src="../img/logo-drums-please/logo-large-drums-please.png"
+          alt="logo-drums-please"
+      /></a>
+      <nav>
+        <div id="nav-produits" class="sub-nav">
+          <input
+            type="checkbox"
+            id="activ-nav-produits"
+            class="input-activ-sub-nav"
+          />
+          <label for="activ-nav-produits" class="label-activ-sub-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul>
+            <li>
+              <a href="./bat-acoustiques.html">Batteries Acoustiques</a>
+            </li>
+            <li>
+              <a href="./bat-electroniques.html">Batteries Électroniques</a>
+            </li>
+            <li>
+              <a href="./classiques.html">Classiques</a>
+            </li>
+            <li>
+              <a href="./traditionnelles.html">Traditionnelles</a>
+            </li>
+          </ul>
+        </div>
+        <div id="nav-compte" class="sub-nav">
+          <input
+            type="checkbox"
+            id="activ-nav-compte"
+            class="input-activ-sub-nav"
+          />
+          <label for="activ-nav-compte" class="label-activ-sub-nav">
+            <span></span>
+            <span></span>
+          </label>
+          <ul>
+            <li>
+              <a href="../login.html">Se Connecter</a>
+            </li>
+            <li>
+              <a href="../register.html">S'inscrire</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <script src="../js/theme/chg-logo-responsive.js"></script>
+      <script src="../js/theme/navs.js"></script>
+    </header>
+    <main>
+      <noscript>
+        <p>
+          Votre navigateur ne supporte pas JavaScript ou vous avez désactivé
+          JavaScript. Pour profiter pleinement de ce site, veuillez activer
+          JavaScript dans votre navigateur.
+        </p>
+      </noscript>
+      <section id="accueil" class="slide">
+        <h2 class="titre-accueil">
+          <span>Batteries</span>
+          <span>Acoustiques</span>
+        </h2>
+        <div class="conteneur-bckgrd">
+          <img
+            class="contenu-bckgrd"
+            src="../img/background-tuilles-produits/bat-acous.jpg"
+            alt="Batterie Acoustique"
+          />
+        </div>
+      </section>
+      <form
+        id="form-produit"
+        action="https://portfolio.leopeyronnet.fr/redirect"
+      >
+        <fieldset id="selecteur">
+          <label for="Pearl-Decade-Maple-6pc-Black-Burst">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/Pearl-Decade-Maple-6pc-Black-Burst.jpg"
+              alt="Pearl Decade Maple 6pc Black Burst"
+            />
+            <span>Pearl Decade Maple 6pc Black Burst</span>
+            <input
+              id="Pearl-Decade-Maple-6pc-Black-Burst"
+              value="Pearl Decade Maple 6pc Black Burst"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Sonor-AQ1-Stage-Set-Caribbean-Blue">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/Sonor-AQ1-Stage-Set-Caribbean-Blue.jpg"
+              alt="Sonor AQ1 Stage Set Caribbean Blue"
+            />
+            <span>Sonor AQ1 Stage Set Caribbean Blue</span>
+            <input
+              id="Sonor-AQ1-Stage-Set-Caribbean-Blue"
+              value="Sonor AQ1 Stage Set Caribbean Blue"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Tama-Superstar-Classic-Kit-20-CFF">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/Tama-Superstar-Classic-Kit-20-CFF.jpg"
+              alt="Tama Superstar Classic Kit 20 CFF"
+            />
+            <span>Tama Superstar Classic Kit 20 CFF</span>
+            <input
+              id="Tama-Superstar-Classic-Kit-20-CFF"
+              value="Tama Superstar Classic Kit 20 CFF"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Yamaha-Stage-Custom-Standard-Set-CLW">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/Yamaha-Stage-Custom-Standard-Set-CLW.jpg"
+              alt="Yamaha Stage Custom Standard Set CLW"
+            />
+            <span>Yamaha Stage Custom Standard Set CLW</span>
+            <input
+              id="Yamaha-Stage-Custom-Standard-Set-CLW"
+              value="Yamaha Stage Custom Standard Set CLW"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="Tama-Superstar-Cl.-22-3-pcs-Kit-CFF">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF.jpg"
+              alt="Tama Superstar Cl. 22 3-pcs Kit CFF"
+            />
+            <span>Tama Superstar Cl. 22 3-pcs Kit CFF</span>
+            <input
+              id="Tama-Superstar-Cl.-22-3-pcs-Kit-CFF"
+              value="Tama Superstar Cl. 22 3-pcs Kit CFF"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+          <label for="DrumCraft-Series-4-Standard-Set-BAF">
+            <img
+              src="../img/produits/bat-acoustiques/thumbnail/DrumCraft-Series-4-Standard-Set-BAF.jpg"
+              alt="DrumCraft Series 4 Standard Set BAF"
+            />
+            <span>DrumCraft Series 4 Standard Set BAF</span>
+            <input
+              id="DrumCraft-Series-4-Standard-Set-BAF"
+              value="DrumCraft Series 4 Standard Set BAF"
+              type="radio"
+              name="choix-instrum"
+            />
+          </label>
+        </fieldset>
+
+        <hr />
+
+        <div id="infos">
+          <article
+            id="infos-Pearl-Decade-Maple-6pc-Black-Burst"
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Pearl Decade Maple 6pc Black Burst</h3>
+            <span class="disp">Disponible</span>
+
+            <input class="bouton-submit" type="submit" value="Réserver" />
+
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 22"x18"</li>
+                <li>Caisse claire 14"x5,5"</li>
+                <li>Tom 10"x07"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 14"x14"</li>
+                <li>Stand tom 16"x16"</li>
+                <li>
+                  Peaux Remo Ambassador UT et Remo Powerstroke 3 (grosse caisse)
+                </li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
             </section>
-            <form id="form-produit" action="https://portfolio.leopeyronnet.fr/redirect">
-                <fieldset id="selecteur">
-                    <label for="Pearl-Decade-Maple-6pc-Black-Burst">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/Pearl-Decade-Maple-6pc-Black-Burst.jpg" alt="Pearl Decade Maple 6pc Black Burst">
-                        <span>Pearl Decade Maple 6pc Black Burst</span>
-                        <input id="Pearl-Decade-Maple-6pc-Black-Burst" value="Pearl Decade Maple 6pc Black Burst" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Sonor-AQ1-Stage-Set-Caribbean-Blue">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/Sonor-AQ1-Stage-Set-Caribbean-Blue.jpg" alt="Sonor AQ1 Stage Set Caribbean Blue">
-                        <span>Sonor AQ1 Stage Set Caribbean Blue</span>
-                        <input id="Sonor-AQ1-Stage-Set-Caribbean-Blue" value="Sonor AQ1 Stage Set Caribbean Blue" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Tama-Superstar-Classic-Kit-20-CFF">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/Tama-Superstar-Classic-Kit-20-CFF.jpg" alt="Tama Superstar Classic Kit 20 CFF">
-                        <span>Tama Superstar Classic Kit 20 CFF</span>
-                        <input id="Tama-Superstar-Classic-Kit-20-CFF" value="Tama Superstar Classic Kit 20 CFF" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Yamaha-Stage-Custom-Standard-Set-CLW">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/Yamaha-Stage-Custom-Standard-Set-CLW.jpg" alt="Yamaha Stage Custom Standard Set CLW">
-                        <span>Yamaha Stage Custom Standard Set CLW</span>
-                        <input id="Yamaha-Stage-Custom-Standard-Set-CLW" value="Yamaha Stage Custom Standard Set CLW" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="Tama-Superstar-Cl.-22-3-pcs-Kit-CFF">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF.jpg" alt="Tama Superstar Cl. 22 3-pcs Kit CFF">
-                        <span>Tama Superstar Cl. 22 3-pcs Kit CFF</span>
-                        <input id="Tama-Superstar-Cl.-22-3-pcs-Kit-CFF" value="Tama Superstar Cl. 22 3-pcs Kit CFF" type="radio" name="choix-instrum">
-                    </label>
-                    <label for="DrumCraft-Series-4-Standard-Set-BAF">
-                        <img src="../img/produits/bat-acoustiques/thumbnail/DrumCraft-Series-4-Standard-Set-BAF.jpg" alt="DrumCraft Series 4 Standard Set BAF">
-                        <span>DrumCraft Series 4 Standard Set BAF</span>
-                        <input id="DrumCraft-Series-4-Standard-Set-BAF" value="DrumCraft Series 4 Standard Set BAF" type="radio" name="choix-instrum">
-                    </label>
-                </fieldset>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>70€ par jour</td>
+                    <td>85€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>60€ par jour</td>
+                    <td>75€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>55€ par jour</td>
+                    <td>70€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040489.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040599.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040629.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040634.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
 
-                <hr>
+          <article
+            id="infos-Sonor-AQ1-Stage-Set-Caribbean-Blue"
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Sonor AQ1 Stage Set Caribbean Blue</h3>
+            <span class="disp">Disponible</span>
 
-                <div id="infos">
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                    <article id="infos-Pearl-Decade-Maple-6pc-Black-Burst" class="article-instr disp-true">
-                        <h3 class="nom-instr">Pearl Decade Maple 6pc Black Burst</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 22"x17,5"</li>
+                <li>Caisse claire 14"x06"</li>
+                <li>Tom 10"x07"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 16"x15"</li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>65€ par jour</td>
+                    <td>80€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>55€ par jour</td>
+                    <td>70€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>50€ par jour</td>
+                    <td>65€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624497.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624632.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624613.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624623.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
 
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 22"x18"</li>
-                                <li>Caisse claire 14"x5,5"</li>
-                                <li>Tom 10"x07"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 14"x14"</li>
-                                <li>Stand tom 16"x16"</li>
-                                <li>Peaux Remo Ambassador UT et Remo Powerstroke 3 (grosse caisse)</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>70€ par jour</td>
-                                        <td>85€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>60€ par jour</td>
-                                        <td>75€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>55€ par jour</td>
-                                        <td>70€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040489.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040599.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040629.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/Pearl-Decade-Maple-6pc-Black-Burst/600/13040634.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
+          <article
+            id="infos-Tama-Superstar-Classic-Kit-20-CFF"
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Tama Superstar Classic Kit 20 CFF</h3>
+            <span class="disp">Disponible</span>
 
-                    <article id="infos-Sonor-AQ1-Stage-Set-Caribbean-Blue" class="article-instr disp-true">
-                        <h3 class="nom-instr">Sonor AQ1 Stage Set Caribbean Blue</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-                        
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 22"x17,5"</li>
-                                <li>Caisse claire 14"x06"</li>
-                                <li>Tom 10"x07"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 16"x15"</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>65€ par jour</td>
-                                        <td>80€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>55€ par jour</td>
-                                        <td>70€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>50€ par jour</td>
-                                        <td>65€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624497.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624632.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624613.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/Sonor-AQ1-Stage-Set-Caribbean-Blue/600/18624623.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                    <article id="infos-Tama-Superstar-Classic-Kit-20-CFF" class="article-instr disp-true">
-                        <h3 class="nom-instr">Tama Superstar Classic Kit 20 CFF</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-                        
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 20"x16"</li>
-                                <li>Caisse claire 14"x05"</li>
-                                <li>Tom 10"x07"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 14"x14"</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>60€ par jour</td>
-                                        <td>75€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>50€ par jour</td>
-                                        <td>65€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>45€ par jour</td>
-                                        <td>60€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123292.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123302.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123352.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123357.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 20"x16"</li>
+                <li>Caisse claire 14"x05"</li>
+                <li>Tom 10"x07"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 14"x14"</li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>60€ par jour</td>
+                    <td>75€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>50€ par jour</td>
+                    <td>65€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>45€ par jour</td>
+                    <td>60€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123292.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123302.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123352.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Classic-Kit-20-CFF/600/14123357.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
 
-                    <article id="infos-Yamaha-Stage-Custom-Standard-Set-CLW" class="article-instr disp-false">
-                        <h3 class="nom-instr">Yamaha Stage Custom Standard Set CLW</h3>
-                        <span class="disp">Indisponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
+          <article
+            id="infos-Yamaha-Stage-Custom-Standard-Set-CLW"
+            class="article-instr disp-false"
+          >
+            <h3 class="nom-instr">Yamaha Stage Custom Standard Set CLW</h3>
+            <span class="disp">Indisponible</span>
 
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 22" x 17"</li>
-                                <li>Caisse claire 14" x 5,5"</li>
-                                <li>Tom 10"x07"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 16" x 15"</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>65€ par jour</td>
-                                        <td>80€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>55€ par jour</td>
-                                        <td>70€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>50€ par jour</td>
-                                        <td>65€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563099.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563098.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563079.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563153.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
+            <input class="bouton-submit" type="submit" value="Réserver" />
 
-                    <article id="infos-Tama-Superstar-Cl.-22-3-pcs-Kit-CFF" class="article-instr disp-true">
-                        <h3 class="nom-instr">Tama Superstar Cl. 22 3-pcs Kit CFF</h3>
-                        <span class="disp">Disponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-                        
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 22"x14"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 16" x 16"</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>45€ par jour</td>
-                                        <td>60€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>35€ par jour</td>
-                                        <td>50€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>30€ par jour</td>
-                                        <td>45€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885182.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885198.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885177.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885172.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 22" x 17"</li>
+                <li>Caisse claire 14" x 5,5"</li>
+                <li>Tom 10"x07"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 16" x 15"</li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>65€ par jour</td>
+                    <td>80€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>55€ par jour</td>
+                    <td>70€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>50€ par jour</td>
+                    <td>65€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563099.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563098.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563079.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Yamaha-Stage-Custom-Standard-Set-CLW/600/18563153.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
 
-                    <article id="infos-DrumCraft-Series-4-Standard-Set-BAF" class="article-instr disp-false">
-                        <h3 class="nom-instr">DrumCraft Series 4 Standard Set BAF</h3>
-                        <span class="disp">Indisponible</span>
-                        
-                        <input class="bouton-submit" type="submit" value="Réserver">
-                        
-                        <section class="composition">
-                            <h4>Composition</h4>
-                            <ul>
-                                <li>Grosse caisse 22"x18"</li>
-                                <li>Caisse claire 14"x5,5"</li>
-                                <li>Tom 10"x07"</li>
-                                <li>Tom 12"x08"</li>
-                                <li>Stand tom 14"x14"</li>
-                                <li>Peaux Remo UC</li>
-                            </ul>
-                            <h5>Cymbales</h5>
-                            <ul>
-                                <li>Paiste PST7 Set Medium</li>
-                                <li>Cymbales charleston 14"</li>
-                                <li>Crash 16"</li>
-                                <li>Ride 20"</li>
-                            </ul>
-                        </section>
-                        <section class="tarifs">
-                            <h4>Tarifs</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="borderless"></th>
-                                        <th>Sans Cymbales</th>
-                                        <th>Avec Cymbales</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1 - 14 jours</th>
-                                        <td>60€ par jour</td>
-                                        <td>75€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>15 - 30 jours</th>
-                                        <td>50€ par jour</td>
-                                        <td>65€ par jour</td>
-                                    </tr>
-                                    <tr>
-                                        <th>1 mois ou +</th>
-                                        <td>45€ par jour</td>
-                                        <td>60€ par jour</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <section class="images">
-                            <h4>Images</h4>
-                            <div class="conteneur-img">
-                                <img src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072915.jpg" alt="Vue de côté">
-                                <img src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072943.jpg" alt="Vue du dessus">
-                                <img src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072913.jpg" alt="Vue de derrière">
-                                <img src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072908.jpg" alt="Vue de face">
-                            </div>
-                            <figure>
-                                <img src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg" alt="Vue d'ensemble des cymbales">
-                                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
-                            </figure>
-                        </section>
-                    </article>
-                </div>
-            </form>
-            <script src="../js/produits/select-produit.js"></script>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <span>Site réalisé par <a href="https://portfolio.leopeyronnet.fr">Léo Peyronnet</a></span>
-        </footer>
-    </body>
+          <article
+            id="infos-Tama-Superstar-Cl.-22-3-pcs-Kit-CFF"
+            class="article-instr disp-true"
+          >
+            <h3 class="nom-instr">Tama Superstar Cl. 22 3-pcs Kit CFF</h3>
+            <span class="disp">Disponible</span>
+
+            <input class="bouton-submit" type="submit" value="Réserver" />
+
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 22"x14"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 16" x 16"</li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>45€ par jour</td>
+                    <td>60€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>35€ par jour</td>
+                    <td>50€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>30€ par jour</td>
+                    <td>45€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885182.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885198.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885177.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/Tama-Superstar-Cl.-22-3-pcs-Kit-CFF/600/18885172.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
+
+          <article
+            id="infos-DrumCraft-Series-4-Standard-Set-BAF"
+            class="article-instr disp-false"
+          >
+            <h3 class="nom-instr">DrumCraft Series 4 Standard Set BAF</h3>
+            <span class="disp">Indisponible</span>
+
+            <input class="bouton-submit" type="submit" value="Réserver" />
+
+            <section class="composition">
+              <h4>Composition</h4>
+              <ul>
+                <li>Grosse caisse 22"x18"</li>
+                <li>Caisse claire 14"x5,5"</li>
+                <li>Tom 10"x07"</li>
+                <li>Tom 12"x08"</li>
+                <li>Stand tom 14"x14"</li>
+                <li>Peaux Remo UC</li>
+              </ul>
+              <h5>Cymbales</h5>
+              <ul>
+                <li>Paiste PST7 Set Medium</li>
+                <li>Cymbales charleston 14"</li>
+                <li>Crash 16"</li>
+                <li>Ride 20"</li>
+              </ul>
+            </section>
+            <section class="tarifs">
+              <h4>Tarifs</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="borderless"></th>
+                    <th>Sans Cymbales</th>
+                    <th>Avec Cymbales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 - 14 jours</th>
+                    <td>60€ par jour</td>
+                    <td>75€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>15 - 30 jours</th>
+                    <td>50€ par jour</td>
+                    <td>65€ par jour</td>
+                  </tr>
+                  <tr>
+                    <th>1 mois ou +</th>
+                    <td>45€ par jour</td>
+                    <td>60€ par jour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="images">
+              <h4>Images</h4>
+              <div class="conteneur-img">
+                <img
+                  src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072915.jpg"
+                  alt="Vue de côté"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072943.jpg"
+                  alt="Vue du dessus"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072913.jpg"
+                  alt="Vue de derrière"
+                />
+                <img
+                  src="../img/produits/bat-acoustiques/DrumCraft-Series-4-Standard-Set-BAF/600/17072908.jpg"
+                  alt="Vue de face"
+                />
+              </div>
+              <figure>
+                <img
+                  src="../img/produits/bat-acoustiques/cymbales/600/Paiste-PST7-Set-Medium.jpg"
+                  alt="Vue d'ensemble des cymbales"
+                />
+                <figcaption>Kit de cymbales Paiste PST7 Medium</figcaption>
+              </figure>
+            </section>
+          </article>
+        </div>
+      </form>
+      <script src="../js/produits/select-produit.js"></script>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <span
+        >Site réalisé par
+        <a href="https://portfolio.leopeyronnet.fr">Léo Peyronnet</a></span
+      >
+    </footer>
+  </body>
 </html>

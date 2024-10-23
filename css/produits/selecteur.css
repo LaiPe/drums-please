@@ -1,95 +1,95 @@
-#selecteur{
-    width: 50%;
-    padding: 4rem 2rem 4rem 4rem;
+#selecteur {
+  width: 50%;
+  padding: 4rem 2rem 4rem 4rem;
 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
 
-    float: left;
-    position: sticky;
-    top: calc(var(--header));
-    height: calc(100vh - var(--header));
+  float: left;
+  position: sticky;
+  top: calc(var(--header));
+  height: calc(100vh - var(--header));
 }
-#selecteur input[type="radio"]{
-    display: none;
+#selecteur input[type="radio"] {
+  display: none;
 }
 
-#selecteur label{
-    background-color: white;
-    
-    height: 14rem;
-    width: 200px;
-    padding: 1rem;
-    border: 5px solid var(--couleur-fond);
-    border-radius: 12px;
+#selecteur label {
+  background-color: white;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  height: 14rem;
+  width: 200px;
+  padding: 1rem;
+  border: 5px solid var(--couleur-fond);
+  border-radius: 12px;
 
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  cursor: pointer;
 }
 
 #selecteur label:hover,
-#selecteur label.select{
-    outline: 5px white solid;
+#selecteur label.select {
+  outline: 5px white solid;
 }
 
-#selecteur label span{
-    text-align: center;
-    color: var(--couleur-fond);
-    font-size: 1.1rem;
-    font-family: "Poppins";
-    font-weight: 600;
+#selecteur label span {
+  text-align: center;
+  color: var(--couleur-fond);
+  font-size: 1.1rem;
+  font-family: "Poppins";
+  font-weight: 600;
 }
-#selecteur label img{
-    width: 150px;
-    height: 100px;
-    object-fit: contain;
+#selecteur label img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 1540px) {
-    #selecteur label{
-        height: 10rem;
-        width: 150px;
-    }
-    #selecteur label span{
-        font-size: 0.9rem;
-    }
-    #selecteur label img{
-        width: 100px;
-        height: 60px;
-    }
+  #selecteur label {
+    height: 10rem;
+    width: 150px;
+  }
+  #selecteur label span {
+    font-size: 0.9rem;
+  }
+  #selecteur label img {
+    width: 100px;
+    height: 60px;
+  }
 }
-@media screen and (max-width: 900px){
-    #selecteur{
-        width: 100%;
-        position: static;
-        float: none;
-        height: fit-content;
-        padding: 4rem 6rem;
-    }
+@media screen and (max-width: 900px) {
+  #selecteur {
+    width: 100%;
+    position: static;
+    float: none;
+    height: fit-content;
+    padding: 4rem 6rem;
+  }
 }
-@media screen and (max-width: 550px){
-    #selecteur{
-        padding: 4rem 2rem;
-    }
+@media screen and (max-width: 550px) {
+  #selecteur {
+    padding: 4rem 2rem;
+  }
 }
-@media screen and (max-width: 420px){
-    #selecteur label{
-        height: 8rem;
-        width: 110px;
-        padding: 0.3rem;
-    }
-    #selecteur label span{
-        font-size: 0.75rem;
-    }
-    #selecteur label img{
-        width: 60px;
-        height: 50px;
-    }
+@media screen and (max-width: 420px) {
+  #selecteur label {
+    height: 8rem;
+    width: 110px;
+    padding: 0.3rem;
+  }
+  #selecteur label span {
+    font-size: 0.75rem;
+  }
+  #selecteur label img {
+    width: 60px;
+    height: 50px;
+  }
 }

@@ -31,6 +31,6 @@ window.addEventListener("scroll", () => {
   console.log(
     `videoTop : ${videoTop.paused ? "Pause" : "Play"} ; videoBot : ${
       videoBot.paused ? "Pause" : "Play"
-    }`
+    }`,
   );
 });

@@ -1,95 +1,97 @@
 #accueil {
-    position: relative;
-    height: calc(100vh - var(--header));
+  position: relative;
+  height: calc(100vh - var(--header));
 }
 
-.titre-accueil{
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
+.titre-accueil {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
 
-    color: white;
-    font-size: 7rem;
-    font-family: "Ojuju";
+  color: white;
+  font-size: 7rem;
+  font-family: "Ojuju";
 
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
 }
 @media screen and (max-width: 1150px) {
-    .titre-accueil{
-        font-size: 5.5rem; 
-    }
+  .titre-accueil {
+    font-size: 5.5rem;
+  }
 }
-@media screen and (max-width: 740px){
-    .titre-accueil{
-        font-size: 4rem; 
-    }
+@media screen and (max-width: 740px) {
+  .titre-accueil {
+    font-size: 4rem;
+  }
 }
-@media screen and (max-width: 460px){
-    .titre-accueil{
-        font-size: 3.25rem; 
-    }
-}
-
-
-.conteneur-bckgrd{
-    height: 100%;
-    width: 100%;
-}
-.contenu-bckgrd{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+@media screen and (max-width: 460px) {
+  .titre-accueil {
+    font-size: 3.25rem;
+  }
 }
 
+.conteneur-bckgrd {
+  height: 100%;
+  width: 100%;
+}
+.contenu-bckgrd {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-#accueil .conteneur-bckgrd::after{
-    content: "";
-    width: 100%;
-    height: 60%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(12,12,31,0.8) 0%, rgba(9,9,121,0) 100%);
+#accueil .conteneur-bckgrd::after {
+  content: "";
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(12, 12, 31, 0.8) 0%,
+    rgba(9, 9, 121, 0) 100%
+  );
 }
 
 form .bouton-submit,
-form input
-{
-    display: block;
-    
-    background-color: var(--couleur-fond-clair);
-    color: white;
-    
-    border: 1px solid white;
-    border-radius: 5px;
-    outline: none;
-    
-    font-family: "Poppins";
-    font-weight: 200;
-    font-size: 1.1rem;
+form input {
+  display: block;
 
-    padding: 0.3rem;
-} 
-form .bouton-submit{
-    margin: 0.75rem 0;
-    margin-bottom: 2rem;
-    width: 100px;
+  background-color: var(--couleur-fond-clair);
+  color: white;
+
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+
+  font-family: "Poppins";
+  font-weight: 200;
+  font-size: 1.1rem;
+
+  padding: 0.3rem;
+}
+form .bouton-submit {
+  margin: 0.75rem 0;
+  margin-bottom: 2rem;
+  width: 100px;
 }
 
-form .bouton-submit:hover{
-    box-shadow:  0px 0px 10px rgba(217, 217, 217, 0.5),
-                0px 0px 10px rgba(255, 255, 255, 0.5);
-} 
+form .bouton-submit:hover {
+  box-shadow:
+    0px 0px 10px rgba(217, 217, 217, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
 
-noscript{
-    font-weight: 400;
-    position: fixed;
-    bottom: 1rem;
-    color: var(--couleur-fond);
-    background-color: white;
-    width: 250px;
-    padding: 1.5rem;
-    margin: 0 auto;
+noscript {
+  font-weight: 400;
+  position: fixed;
+  bottom: 1rem;
+  color: var(--couleur-fond);
+  background-color: white;
+  width: 250px;
+  padding: 1.5rem;
+  margin: 0 auto;
 }
