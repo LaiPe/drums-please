@@ -17,13 +17,13 @@
 #logo-header {
   height: 7.5rem;
   position: relative;
-  top: 2.2rem;
+  top: 2rem;
   margin: 0 2rem;
   z-index: 10000;
   transition: transform 0.5s ease;
 }
 #logo-header:hover {
-  transform: scale(1.05) translateX(0.5rem);
+  transform: scale(1.04) translateX(0.5rem);
 }
 
 nav {
@@ -175,12 +175,9 @@ label[for="activ-nav-compte"] span:nth-of-type(2)::after {
 }
 
 @media screen and (max-width: 740px) {
-  #logo-header {
-    height: 6.95rem;
-    top: 1.94rem;
-  }
+
   #logo-header:hover {
-    transform: scale(1.05) translateX(0.2rem);
+    transform: scale(1.05) translateX(0.09rem);
   }
 
   .sub-nav .input-activ-sub-nav ~ ul {
