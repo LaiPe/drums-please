@@ -1,0 +1,39 @@
+.navModal ul {
+    display: none;
+
+    position: fixed;
+    top: calc(var(--header-height) - 2px);
+    left: 0;
+    height: calc(100vh - var(--header-height) + 2px);
+    width: 100vw;
+    background-color: rgba(12, 12, 31, 0.8);
+
+    z-index: 100;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    row-gap: 3.5rem;
+}
+.navModal.open ul {
+    display: flex;
+}
+
+.navModal li {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 3rem 0 12rem;
+    font-size: 3rem;
+    text-align: end;
+}
+
+.navModal li a {
+    font-family: "Righteous";
+    color: white;
+    text-decoration: none;
+}
+
+.navModal li a:hover {
+    text-decoration: underline;
+}

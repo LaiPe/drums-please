@@ -1,0 +1,35 @@
+.header {
+  background-color: var(--background-color);
+
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+
+  z-index: 10000;
+}
+
+.logo {
+  height: 7.5rem;
+  position: relative;
+  top: 2rem;
+  margin: 0 2rem;
+  z-index: 10000;
+  transition: transform 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.04) translateX(0.5rem);
+}
+
+.nav {
+  display: flex;
+  margin-bottom: 0.8rem;
+  padding: 0 2rem;
+  gap: 2rem;
+}
