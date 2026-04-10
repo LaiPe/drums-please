@@ -3,10 +3,18 @@
     height: calc(100vh - var(--header-height));
 }
 
+.heroGradient {
+    background: linear-gradient(
+        0deg,
+        rgba(12, 12, 31, 0.9) 0%,
+        rgba(9, 9, 121, 0) 60%
+    );
+}
+
 .heroTitle {
     position: absolute;
     bottom: 0;
-    z-index: 10;
+    left: 0;
 
     color: white;
     font-size: 7rem;
@@ -30,4 +38,10 @@
   .heroTitle {
     font-size: 3.25rem;
   }
+}
+
+.productsGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
