@@ -2,7 +2,6 @@
     position: relative;
     height: calc(100vh - var(--header-height));
 }
-
 .heroGradient {
     background: linear-gradient(
         0deg,
@@ -10,7 +9,6 @@
         rgba(9, 9, 121, 0) 60%
     );
 }
-
 .heroTitle {
     position: absolute;
     bottom: 0;
@@ -40,17 +38,21 @@
   }
 }
 
+
+
 .productsSection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 @media screen and (max-width: 1150px) {
   .productsSection {
     flex-direction: column;
   }
 }
+
+
+
 
 .aboutSection {
   min-height: calc(100vh - var(--header-height));
@@ -61,21 +63,78 @@
   justify-content: space-evenly;
   padding: 0 1rem;
 }
-
 .aboutImage {
   margin: 0 1.5rem;
   max-width: 650px;
   min-width: 450px;
 }
-
 .aboutContent {
   color: white;
   font-family: "Nothing You Could Do", cursive;
   max-width: 600px;
   padding: 3rem 2.5rem 3rem 1.5rem;
 }
-
 .aboutContent p {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 1000px) {
+  .aboutImage {
+    position: absolute;
+    min-width: initial;
+    width: 100%;
+    opacity: 0.05;
+  }
+  .aboutContent {
+    padding: 3rem 1.5rem;
+  }
+}
+
+
+
+.ctaSection {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+}
+.ctaContent {
+  background: linear-gradient(
+    180deg,
+    var(--background-color) 0%,
+    rgba(12, 12, 31, 0.8) 90%
+  );
+  padding: 0 2rem;
+
+  color: white;
+  font-size: 2rem;
+  font-family: "Ojuju";
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+.ctaTitle {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.ctaButton {
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 0.5rem 0.7rem 0.7rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.ctaButton:hover {
+  box-shadow:
+    0px 0px 20px rgba(217, 217, 217, 0.5),
+    0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 740px) {
+  .ctaTitle {
+    margin-bottom: 1.5rem;
+  }
 }

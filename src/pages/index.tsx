@@ -92,6 +92,15 @@ const IndexPage: React.FC<PageProps> = () => {
           </p>
         </div>
       </section>
+
+      <section className={styles.ctaSection}>
+        <BackgroundMedia mediaType="video" mediaSrc="/videos/video-background-index.mp4" childrenClassName={styles.ctaContent}>
+          <h3 className={styles.ctaTitle}>Alors n'hésitez plus !</h3>
+          <p>Profitez de la réduction de 50% pour votre première location.</p>
+          <Link to="/register" className={styles.ctaButton}>Inscrivez-vous !</Link>
+        </BackgroundMedia>
+      </section>
+
     </Layout>
   )
 }
