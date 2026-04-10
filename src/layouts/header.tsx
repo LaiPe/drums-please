@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         <Link to="/">
             <img
                 className={styles.logo}
-                src="/logos/logo-large-drums-please.png"
+                src="/img/logos/logo-large-drums-please.png"
                 alt="logo-drums-please"
             />
         </Link>
