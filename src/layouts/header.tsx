@@ -4,6 +4,7 @@ import * as styles from "./header.module.css"
 import ProductNavButton from '../components/navigation/buttons/ProductNavButton'
 import AccountNavButton from '../components/navigation/buttons/AccountNavButton'
 import NavModal from '../components/navigation/modal/NavModal'
+import useViewport from '../hooks/useViewport'
 
 /* TODO: extract navlinks to a separate file and import them here, then map over them to generate the nav items in the header. This will make it easier to maintain and update the navigation links in the future. */
 const NAVLINKS = {
@@ -33,12 +34,24 @@ const Header: React.FC = () => {
         setIsProductNavOpen(false); // Close product nav when account nav is opened
     }
 
+    const { isMobile } = useViewport();
+    const [logoSrc, setLogoSrc] = React.useState("/img/logos/logo-large-drums-please.png");
+
+    React.useEffect(() => {
+        console.log("Viewport changed: ", { isMobile });
+        if (isMobile) {
+            setLogoSrc("/img/logos/logo-mobile-drums-please.png");
+        } else {
+            setLogoSrc("/img/logos/logo-large-drums-please.png");
+        }
+    }, [isMobile]);
+
     return (
         <header className={styles.header}>
         <Link to="/">
             <img
                 className={styles.logo}
-                src="/img/logos/logo-large-drums-please.png"
+                src={logoSrc}
                 alt="logo-drums-please"
             />
         </Link>
