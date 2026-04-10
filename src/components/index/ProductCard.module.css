@@ -39,3 +39,15 @@
     text-align: center;
     margin: 1rem;
 }
+
+@media screen and (max-width: 1150px) {
+  .productCard {
+    width: 100%;
+    aspect-ratio: 6 / 2;
+  }
+}
+@media screen and (max-width: 740px) {
+  .productCard {
+    aspect-ratio: 3 / 2;
+  }
+}

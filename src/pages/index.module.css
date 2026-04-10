@@ -1,4 +1,4 @@
-.hero {
+.heroSection {
     position: relative;
     height: calc(100vh - var(--header-height));
 }
@@ -40,8 +40,42 @@
   }
 }
 
-.productsGrid {
+.productsSection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1150px) {
+  .productsSection {
+    flex-direction: column;
+  }
+}
+
+.aboutSection {
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+}
+
+.aboutImage {
+  margin: 0 1.5rem;
+  max-width: 650px;
+  min-width: 450px;
+}
+
+.aboutContent {
+  color: white;
+  font-family: "Nothing You Could Do", cursive;
+  max-width: 600px;
+  padding: 3rem 2.5rem 3rem 1.5rem;
+}
+
+.aboutContent p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
