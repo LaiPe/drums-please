@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--couleur-fond);
+  background-color: var(--background-color);
   color: white;
   display: flex;
   flex-direction: row;
