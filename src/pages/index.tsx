@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, type HeadFC, type PageProps } from "gatsby"
-import Layout from "../layouts/Layout"
+import Layout from "../layouts/layout"
 import "../css/global.css"
 import * as styles from "./index.module.css"
 import BackgroundMedia from "../components/backgrounds/BackgroundMedia"

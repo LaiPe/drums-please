@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import * as React from "react"
-import * as styles from "./Footer.module.css"
+import * as styles from "./footer.module.css"
 
 const Footer: React.FC = () => {
     return (
