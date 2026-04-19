@@ -7,14 +7,17 @@ interface ProductNavButtonProps {
 
 const ProductNavButton: React.FC<ProductNavButtonProps> = ({ isActive, onClick }) => {
     return (
-        <div 
-            className={`${styles.productNavButton} ${isActive ? styles.active : ""}`} 
+        <button
+            type="button"
+            aria-label="Menu produits"
+            aria-expanded={isActive}
+            className={`${styles.productNavButton} ${isActive ? styles.active : ""}`}
             onClick={onClick}
-            >
+        >
             <div className={styles.burgerBar}></div>
             <div className={styles.burgerBar}></div>
             <div className={styles.burgerBar}></div>
-        </div>
+        </button>
     )
 }
 

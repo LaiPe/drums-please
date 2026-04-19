@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Layout from "@/layouts/layout"
 import "@/css/global.css"
 import styles from "./index.module.css"
 import BackgroundMedia from "@/components/backgrounds/BackgroundMedia"
@@ -32,8 +31,7 @@ const products = [
 
 export default function Page() {
   return (
-    <Layout>
-
+    <>
       <section className={styles.heroSection}>
         <BackgroundMedia mediaType="video" mediaSrc="/videos/video-background-index.mp4" childrenClassName={styles.heroGradient}>
           <h2 className={styles.heroTitle}>
@@ -99,7 +97,6 @@ export default function Page() {
           <Link href="/register" className={styles.ctaButton}>Inscrivez-vous !</Link>
         </BackgroundMedia>
       </section>
-
-    </Layout>
+    </>
   )
 }
