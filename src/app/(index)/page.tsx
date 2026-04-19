@@ -1,10 +1,9 @@
-import * as React from "react"
-import { Link, type HeadFC, type PageProps } from "gatsby"
-import Layout from "../layouts/layout"
-import "../css/global.css"
-import * as styles from "./index.module.css"
-import BackgroundMedia from "../components/backgrounds/BackgroundMedia"
-import ProductCard from "../components/index/ProductCard"
+import Link from "next/link"
+import Layout from "@/layouts/layout"
+import "@/css/global.css"
+import styles from "./index.module.css"
+import BackgroundMedia from "@/components/backgrounds/BackgroundMedia"
+import ProductCard from "@/components/index/ProductCard"
 
 const heroTitle = ["Louez votre matériel", "à un prix imbatable !"]
 
@@ -31,7 +30,7 @@ const products = [
   },
 ]
 
-const IndexPage: React.FC<PageProps> = () => {
+export default function Page() {
   return (
     <Layout>
 
@@ -97,14 +96,10 @@ const IndexPage: React.FC<PageProps> = () => {
         <BackgroundMedia mediaType="video" mediaSrc="/videos/video-background-index.mp4" childrenClassName={styles.ctaContent}>
           <h3 className={styles.ctaTitle}>Alors n'hésitez plus !</h3>
           <p>Profitez de la réduction de 50% pour votre première location.</p>
-          <Link to="/register" className={styles.ctaButton}>Inscrivez-vous !</Link>
+          <Link href="/register" className={styles.ctaButton}>Inscrivez-vous !</Link>
         </BackgroundMedia>
       </section>
 
     </Layout>
   )
 }
-
-export default IndexPage
-
-export const Head: HeadFC = () => <title>Home Page</title>

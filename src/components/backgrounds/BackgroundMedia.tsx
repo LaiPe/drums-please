@@ -1,5 +1,4 @@
-import * as React from "react"
-import * as styles from "./BackgroundMedia.module.css"
+import styles from "./BackgroundMedia.module.css"
 
 interface BackgroundMediaProps {
     mediaType: "video" | "image";

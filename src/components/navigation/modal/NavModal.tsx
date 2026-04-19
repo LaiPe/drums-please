@@ -1,6 +1,5 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import * as styles from "./NavModal.module.css"
+import Link from "next/link"
+import styles from "./NavModal.module.css"
 
 interface NavModalProps {
     isOpen: boolean
@@ -13,7 +12,7 @@ const NavModal: React.FC<NavModalProps> = ({ isOpen, links}) => {
             <ul className={styles.linkList}>
                 {links.map((link, index) => (
                     <li key={index}>
-                        <Link to={link.path}>{link.name}</Link>
+                        <Link href={link.path}>{link.name}</Link>
                     </li>
                 ))}
             </ul>

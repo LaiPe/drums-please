@@ -1,5 +1,4 @@
-import * as React from "react"
-import * as styles from "./ProductNavButton.module.css"
+import styles from "./ProductNavButton.module.css"
 
 interface ProductNavButtonProps {
     isActive: boolean,

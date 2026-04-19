@@ -1,14 +1,13 @@
-import { Link } from "gatsby"
-import * as React from "react"
-import * as styles from "./footer.module.css"
+import Link from "next/link"
+import styles from "./footer.module.css"
 
-const Footer: React.FC = () => {
+export default function Footer() {
     return (
         <footer className={styles.footer}>
             <ul>
-                <li><Link to="#">Mentions légales</Link></li>
-                <li><Link to="#">Cookies</Link></li>
-                <li><Link to="#">Contact</Link></li>
+                <li><Link href="#">Mentions légales</Link></li>
+                <li><Link href="#">Cookies</Link></li>
+                <li><Link href="#">Contact</Link></li>
             </ul>
             <span>
                 Site réalisé par
@@ -17,5 +16,3 @@ const Footer: React.FC = () => {
         </footer>
     )
 }
-
-export default Footer

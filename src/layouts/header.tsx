@@ -1,10 +1,13 @@
-import { Link } from 'gatsby'
-import * as React from "react"
-import * as styles from "./header.module.css"
-import ProductNavButton from '../components/navigation/buttons/ProductNavButton'
-import AccountNavButton from '../components/navigation/buttons/AccountNavButton'
-import NavModal from '../components/navigation/modal/NavModal'
-import useViewport from '../hooks/useViewport'
+'use client'
+
+import Link from "next/link"
+import styles from "./header.module.css"
+import ProductNavButton from '@/components/navigation/buttons/ProductNavButton'
+import AccountNavButton from '@/components/navigation/buttons/AccountNavButton'
+import NavModal from '@/components/navigation/modal/NavModal'
+
+import useViewport from '@/hooks/useViewport'
+import { useEffect, useState } from "react"
 
 /* TODO: extract navlinks to a separate file and import them here, then map over them to generate the nav items in the header. This will make it easier to maintain and update the navigation links in the future. */
 const NAVLINKS = {
@@ -20,9 +23,9 @@ const NAVLINKS = {
     ]
 }
 
-const Header: React.FC = () => {
-    const [isProductNavOpen, setIsProductNavOpen] = React.useState(false);
-    const [isAccountNavOpen, setIsAccountNavOpen] = React.useState(false);
+export default function Header() {
+    const [isProductNavOpen, setIsProductNavOpen] = useState(false);
+    const [isAccountNavOpen, setIsAccountNavOpen] = useState(false);
 
     const toogleProductNav = () => {
         setIsProductNavOpen(!isProductNavOpen);
@@ -35,9 +38,9 @@ const Header: React.FC = () => {
     }
 
     const { isMobile } = useViewport();
-    const [logoSrc, setLogoSrc] = React.useState("/img/logos/logo-large-drums-please.png");
+    const [logoSrc, setLogoSrc] = useState("/img/logos/logo-large-drums-please.png");
 
-    React.useEffect(() => {
+    useEffect(() => {
         console.log("Viewport changed: ", { isMobile });
         if (isMobile) {
             setLogoSrc("/img/logos/logo-mobile-drums-please.png");
@@ -48,7 +51,7 @@ const Header: React.FC = () => {
 
     return (
         <header className={styles.header}>
-        <Link to="/">
+        <Link href="/">
             <img
                 className={styles.logo}
                 src={logoSrc}
@@ -68,6 +71,3 @@ const Header: React.FC = () => {
         </header>
     )
 }
-  
-
-export default Header

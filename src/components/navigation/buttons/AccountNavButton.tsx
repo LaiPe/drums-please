@@ -1,6 +1,4 @@
-import * as React from "react"
-import * as styles from "./AccountNavButton.module.css"
-import { useState } from "react"
+import styles from "./AccountNavButton.module.css"
 
 interface AccountNavButtonProps {
     isActive: boolean,

@@ -1,7 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import * as styles from './ProductCard.module.css'
-import BackgroundMedia from '../backgrounds/BackgroundMedia'
+import Link from 'next/link'
+import styles from './ProductCard.module.css'
+import BackgroundMedia from '@/components/backgrounds/BackgroundMedia'
 
 interface ProductCardProps {
     title: string;
@@ -17,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, imageSrc, link }) => {
             mediaClassName={styles.productImage} 
             containerClassName={styles.productCard}
         >
-            <Link to={link}>
+            <Link href={link}>
                 <h3 className={styles.productTitle}>{title}</h3>
             </Link>
         </BackgroundMedia>
