@@ -1,0 +1,160 @@
+.container {
+    display: flex;
+    background-color: var(--background-color-secondary);
+}
+
+.divider {
+  width: 1px;
+  background-color: white;
+  border: none;
+  height: calc(100vh - var(--header-height) - (15vh * 2));
+  margin: 15vh 0;
+  position: sticky;
+  top: calc(var(--header-height) + 15vh); 
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .divider {
+    height: 1px;
+    width: 65vw;
+    margin: 0 auto;
+    position: static;
+  }
+}
+
+.selector {
+    width: 50%;
+    padding: 4rem 2rem 4rem 4rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+
+    float: left;
+    position: sticky;
+    top: calc(var(--header-height));
+    height: calc(100vh - var(--header-height));
+}
+
+.productButton {
+    background-color: white;
+
+    height: 14rem;
+    width: 200px;
+    padding: 1rem;
+    border: 5px solid var(--background-color);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    cursor: pointer;
+}
+
+.productButton:hover, .productButton.selected {
+    outline: 5px white solid;
+}
+
+.productImage {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.productName {
+    text-align: center;
+    color: var(--background-color);
+    font-size: 1.1rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    line-height: 0.9rem;
+}
+
+@media screen and (max-width: 1540px) {
+  .productButton {
+    height: 10rem;
+    width: 150px;
+  }
+  .productName {
+    font-size: 0.9rem;
+  }
+  .productImage {
+    width: 100px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .selector {
+    width: 100%;
+    position: static;
+    float: none;
+    height: fit-content;
+    padding: 4rem 6rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .selector {
+    padding: 4rem 2rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .productButton {
+    height: 8rem;
+    width: 110px;
+    padding: 0.3rem;
+  }
+  .productName {
+    font-size: 0.75rem;
+  }
+  .productImage {
+    width: 60px;
+    height: 50px;
+  }
+}
+
+.productDescription {
+    width: calc(50% - 1px);
+    padding: 5.5rem 3.5rem 5.5rem 1.5rem;
+
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-weight: 200;
+}
+@media screen and (max-width: 900px) {
+  .productDescription {
+    width: 100%;
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+.productDescription h3, .productDescription h4 {
+    font-family: "Ojuju";
+    font-weight: 400;
+}
+.productDescription h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.productDescription h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.productDescription p {
+    margin-bottom: 1rem;
+    line-height: 1.3rem;
+}
+.productDescription ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.productDescription li {
+  margin: 0.5rem;
+}

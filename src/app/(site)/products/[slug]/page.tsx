@@ -32,9 +32,7 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
                 />
             </section>
 
-            <section>
-                <ProductDetails productCategoryId={category.id} />
-            </section>
+            <ProductDetails productCategoryId={category.id} />
         </>
     )
 }

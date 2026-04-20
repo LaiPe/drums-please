@@ -9,5 +9,5 @@ export default async function ProductDetails({ productCategoryId }: { productCat
         return <p>It's empty here !</p>
     }
 
-    return <ProductDetailsClient products={products} />
+    return <ProductDetailsClient products={products}/>
 }

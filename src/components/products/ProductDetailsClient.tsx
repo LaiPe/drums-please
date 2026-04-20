@@ -2,12 +2,14 @@
 
 import styles from "./ProductDetails.module.css"
 import { useState } from "react"
+import ProductDescription from "./ProductDescription"
 
 type Subproduct = {
     id: string
     slug: string
     name: string
     imageSrc: string
+    description: string
 }
 
 export default function ProductDetailsClient({ products }: { products: Subproduct[] }) {
@@ -21,20 +23,17 @@ export default function ProductDetailsClient({ products }: { products: Subproduc
     }
 
     return (
-        <>
+        <section className={styles.container}>
             <div className={styles.selector}>
                 {products.map(item => (
                     <button key={item.id} className={styles.productButton} onClick={() => handleProductClick(item.id)}>
                         <img src={item.imageSrc} alt={item.name} className={styles.productImage} />
-                        <h3 className={styles.productName}>{item.name}</h3>
+                        <span className={styles.productName}>{item.name}</span>
                     </button>
                 ))}
             </div>
-            <hr />
-            <div className={styles.productDescription}>
-                <h3 className={styles.productNameDescription}>{selectedProduct.name}</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </>
+            <hr className={styles.divider} />
+            <ProductDescription product={selectedProduct} />
+        </section>
     )
 }
