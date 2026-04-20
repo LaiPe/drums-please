@@ -1,8 +1,14 @@
 import Link from "next/link"
 import styles from "./header.module.css"
 import NavControls from "@/components/navigation/NavControls"
+import { productsCategories } from "@/data/placehorlder-data"
 
 export default function Header() {
+    const productLinks = productsCategories.map(cat => ({
+        name: cat.name,
+        path: `/products/${cat.slug}`,
+    }))
+
     return (
         <header className={styles.header}>
             <Link href="/">
@@ -18,7 +24,7 @@ export default function Header() {
                     />
                 </picture>
             </Link>
-            <NavControls />
+            <NavControls productLinks={productLinks} />
         </header>
     )
 }
