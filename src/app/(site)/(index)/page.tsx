@@ -1,35 +1,12 @@
 import Link from "next/link"
-import "@/css/global.css"
 import styles from "./index.module.css"
 import BackgroundMedia from "@/components/backgrounds/BackgroundMedia"
 import ProductCard from "@/components/index/ProductCard"
 
 const heroTitle = ["Louez votre matériel", "à un prix imbatable !"]
 
-const products = [
-  {
-    title: "Batteries Acoustiques",
-    imageSrc: "/img/products-cards/bat-acous.jpg",
-    link: "/produits/bat-acoustiques"
-  },
-  {
-    title: "Batteries Électroniques",
-    imageSrc: "/img/products-cards/bat-elec.jpg",
-    link: "/produits/bat-electroniques"
-  },
-  {
-    title: "Classiques",
-    imageSrc: "/img/products-cards/perc-class.jpg",
-    link: "/produits/classiques"
-  },
-  {
-    title: "Traditionnelles",
-    imageSrc: "/img/products-cards/perc-trad.jpg",
-    link: "/produits/traditionnelles"
-  },
-]
-
-export default function Page() {
+export default async function Page() {
+  const { productsCategories } = await import("@/data/placehorlder-data") // Simulate fetching data from an API or database
   return (
     <>
       <section className={styles.heroSection}>
@@ -42,12 +19,12 @@ export default function Page() {
       </section>
 
       <section className={styles.productsSection}>
-        {products.map((product) => (
+        {productsCategories.map((category) => (
           <ProductCard
-            key={product.title}
-            title={product.title}
-            imageSrc={product.imageSrc}
-            link={product.link}
+            key={`card-${category.slug}`}
+            title={category.name}
+            imageSrc={category.imageSrc}
+            link={`/products/${category.slug}`}
           />
         ))}
       </section>
