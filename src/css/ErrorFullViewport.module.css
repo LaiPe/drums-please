@@ -12,9 +12,14 @@
 
 .title {
     font-size: 5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: "Ojuju", cursive;
+    line-height: 1.3;
 }
+.title.lineHeight {
+    line-height: 1.3;
+}
+
 .message {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
