@@ -1,6 +1,6 @@
 import styles from "./BackgroundMedia.module.css"
 
-interface BackgroundMediaProps {
+export interface BackgroundMediaProps {
     mediaType: "video" | "image";
     mediaSrc: string;
     children?: React.ReactNode;

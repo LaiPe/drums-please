@@ -2,20 +2,18 @@ import Link from "next/link"
 import styles from "./index.module.css"
 import BackgroundMedia from "@/components/backgrounds/BackgroundMedia"
 import ProductCard from "@/components/index/ProductCard"
-
-const heroTitle = ["Louez votre matériel", "à un prix imbatable !"]
+import ViewportHeroWithText from "@/components/hero/ViewportHeroWithText"
 
 export default async function Page() {
   const { productsCategories } = await import("@/data/placehorlder-data") // Simulate fetching data from an API or database
   return (
     <>
       <section className={styles.heroSection}>
-        <BackgroundMedia mediaType="video" mediaSrc="/videos/video-background-index.mp4" childrenClassName={styles.heroGradient}>
-          <h2 className={styles.heroTitle}>
-            <span>{heroTitle[0]}</span>
-            <span>{heroTitle[1]}</span>
-          </h2>
-        </BackgroundMedia>
+        <ViewportHeroWithText 
+          titleSpans={["Louez votre matériel", "à un prix imbatable !"]}
+          mediaType="video" 
+          mediaSrc="/videos/video-background-index.mp4" 
+        />
       </section>
 
       <section className={styles.productsSection}>

@@ -1,7 +1,11 @@
-.heroSection {
+/* Double assignment of heroSection class is intentional to increase the specificity of the selector, 
+ensuring it overrides any other styles that might be applied to the heroSection class from other 
+components or global styles. */
+.heroSection.heroSection {
     position: relative;
     height: calc(100vh - var(--header-height));
 }
+
 
 .heroGradient {
     background: linear-gradient(

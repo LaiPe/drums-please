@@ -1,4 +1,3 @@
-import { products } from "@/data/placehorlder-data"
 import ProductDetailsClient from "./ProductDetailsClient"
 
 export default async function ProductDetails({ productCategoryId }: { productCategoryId: string }) {
