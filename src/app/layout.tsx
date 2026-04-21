@@ -1,4 +1,4 @@
-import '@/css/global.css';
+import '@/ui/css/global.css';
 import * as fonts from '@/fonts';
 
 interface RootLayoutProps {

@@ -1,7 +1,7 @@
-import Button from "@/components/inputs/Button";
-import styles from "@/css/ErrorFullViewport.module.css"
-import Footer from "@/layouts/footer";
-import Header from "@/layouts/header";
+import Button from "@/ui/components/inputs/Button";
+import styles from "@/ui/css/ErrorFullViewport.module.css"
+import Footer from "@/ui/layouts/footer";
+import Header from "@/ui/layouts/header";
 
 export default function NotFound() {
     return (

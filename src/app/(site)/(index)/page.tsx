@@ -1,11 +1,11 @@
 import Link from "next/link"
 import styles from "./index.module.css"
-import BackgroundMedia from "@/components/backgrounds/BackgroundMedia"
-import ProductCard from "@/components/index/ProductCard"
-import ViewportHeroWithText from "@/components/hero/ViewportHeroWithText"
+import BackgroundMedia from "@/ui/components/backgrounds/BackgroundMedia"
+import ProductCard from "@/ui/components/index/ProductCard"
+import ViewportHeroWithText from "@/ui/components/hero/ViewportHeroWithText"
 
 export default async function Page() {
-  const { productsCategories } = await import("@/data/placehorlder-data") // Simulate fetching data from an API or database
+  const { productsCategories } = await import("@/lib/data/placehorlder-data") // Simulate fetching data from an API or database
   return (
     <>
       <section className={styles.heroSection}>

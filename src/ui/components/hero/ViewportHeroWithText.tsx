@@ -1,5 +1,5 @@
 import styles from "./ViewportHeroWithText.module.css"
-import BackgroundMedia, { type BackgroundMediaProps } from "@/components/backgrounds/BackgroundMedia"
+import BackgroundMedia, { type BackgroundMediaProps } from "@/ui/components/backgrounds/BackgroundMedia"
 
 // This component is a wrapper around BackgroundMedia that adds a title overlay and some default styling for hero sections. 
 // It takes the same props as BackgroundMedia, minus 'childrenClassName' and 'children', plus a title prop for the text overlay.

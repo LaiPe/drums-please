@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import ProductNavButton from '@/components/navigation/buttons/ProductNavButton'
-import AccountNavButton from '@/components/navigation/buttons/AccountNavButton'
-import NavModal from '@/components/navigation/modal/NavModal'
-import styles from "@/layouts/header.module.css"
+import ProductNavButton from '@/ui/components/navigation/buttons/ProductNavButton'
+import AccountNavButton from '@/ui/components/navigation/buttons/AccountNavButton'
+import NavModal from '@/ui/components/navigation/modal/NavModal'
+import styles from "@/ui/layouts/header.module.css"
 
 type NavLink = { name: string; path: string }
 

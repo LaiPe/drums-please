@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styles from "./header.module.css"
-import NavControls from "@/components/navigation/NavControls"
-import { productsCategories } from "@/data/placehorlder-data"
+import NavControls from "@/ui/components/navigation/NavControls"
+import { productsCategories } from "@/lib/data/placehorlder-data"
 
 export default function Header() {
     const productLinks = productsCategories.map(cat => ({

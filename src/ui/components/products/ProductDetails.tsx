@@ -3,7 +3,7 @@ import EmptyProductDetails from "./EmptyProductDetails"
 
 export default async function ProductDetails({ productCategoryId }: { productCategoryId: string }) {
     // TODO : ORM : fetch object Product (product list corresponding to the category)
-    const data = await import("@/data/placehorlder-data")
+    const data = await import("@/lib/data/placehorlder-data")
     const products = data.products.filter(product => product.categoryId === productCategoryId)
 
     if (products.length === 0) {

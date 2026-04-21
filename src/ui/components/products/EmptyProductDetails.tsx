@@ -1,6 +1,5 @@
-import Link from "next/link"
-import styles from "@/css/ErrorFullViewport.module.css"
-import Button from "@/components/inputs/Button"
+import styles from "@/ui/css/ErrorFullViewport.module.css"
+import Button from "@/ui/components/inputs/Button"
 
 export default function EmptyProductDetails() {
     return (

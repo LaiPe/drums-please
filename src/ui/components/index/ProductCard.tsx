@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './ProductCard.module.css'
-import BackgroundMedia from '@/components/backgrounds/BackgroundMedia'
+import BackgroundMedia from '@/ui/components/backgrounds/BackgroundMedia'
 
 interface ProductCardProps {
     title: string;

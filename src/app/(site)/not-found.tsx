@@ -1,5 +1,5 @@
-import Button from "@/components/inputs/Button";
-import styles from "@/css/ErrorFullViewport.module.css"
+import Button from "@/ui/components/inputs/Button";
+import styles from "@/ui/css/ErrorFullViewport.module.css"
 
 export default function NotFound() {
     return (
