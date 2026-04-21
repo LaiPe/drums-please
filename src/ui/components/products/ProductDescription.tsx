@@ -1,13 +1,6 @@
 import ReactMarkdown from "react-markdown"
 import styles from "./ProductDetails.module.css"
-
-type Product = {
-    id: string
-    slug: string
-    name: string
-    imageSrc: string
-    description: string
-}
+import { Product } from "@/lib/db/schema"
 
 export default function ProductDescription({ product }: { product: Product }) {
     return (

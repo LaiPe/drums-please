@@ -3,19 +3,12 @@
 import styles from "./ProductDetails.module.css"
 import { useState } from "react"
 import ProductDescription from "./ProductDescription"
+import { Product } from "@/lib/db/schema"
 
-type Subproduct = {
-    id: string
-    slug: string
-    name: string
-    imageSrc: string
-    description: string
-}
-
-export default function ProductDetailsClient({ products }: { products: Subproduct[] }) {
+export default function ProductDetailsClient({ products }: { products: Product[] }) {
     const [selectedProduct, setSelectedProduct] = useState(products[0])
 
-    const handleProductClick = (productId: string) => {
+    const handleProductClick = (productId: number | string) => {
         const product = products.find(p => p.id === productId)
         if (product) {
             setSelectedProduct(product)

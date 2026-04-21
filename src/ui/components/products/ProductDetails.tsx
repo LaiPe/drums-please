@@ -1,10 +1,10 @@
 import ProductDetailsClient from "./ProductDetailsClient"
 import EmptyProductDetails from "./EmptyProductDetails"
+import { getAllProductsByCategoryId } from "@/lib/data/data"
+import { Product } from "@/lib/db/schema"
 
-export default async function ProductDetails({ productCategoryId }: { productCategoryId: string }) {
-    // TODO : ORM : fetch object Product (product list corresponding to the category)
-    const data = await import("@/lib/data/placehorlder-data")
-    const products = data.products.filter(product => product.categoryId === productCategoryId)
+export default async function ProductDetails({ productCategoryId }: { productCategoryId: string | number }) {
+    const products : Product[] = await getAllProductsByCategoryId(Number(productCategoryId))
 
     if (products.length === 0) {
         return <EmptyProductDetails />
