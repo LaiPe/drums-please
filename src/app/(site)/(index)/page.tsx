@@ -3,9 +3,11 @@ import styles from "./index.module.css"
 import BackgroundMedia from "@/ui/components/backgrounds/BackgroundMedia"
 import ProductCard from "@/ui/components/index/ProductCard"
 import ViewportHeroWithText from "@/ui/components/hero/ViewportHeroWithText"
+import { getAllProductCategories } from "@/lib/data/data"
+import { ProductCategory } from "@/lib/db/schema"
 
 export default async function Page() {
-  const { productsCategories } = await import("@/lib/data/placehorlder-data") // Simulate fetching data from an API or database
+  const productCategories : ProductCategory[] = await getAllProductCategories()
   return (
     <>
       <section className={styles.heroSection}>
@@ -17,7 +19,7 @@ export default async function Page() {
       </section>
 
       <section className={styles.productsSection}>
-        {productsCategories.map((category) => (
+        {productCategories.map((category) => (
           <ProductCard
             key={`card-${category.slug}`}
             title={category.name}

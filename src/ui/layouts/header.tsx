@@ -1,10 +1,12 @@
 import Link from "next/link"
 import styles from "./header.module.css"
 import NavControls from "@/ui/components/navigation/NavControls"
-import { productsCategories } from "@/lib/data/placehorlder-data"
+import { getAllProductCategories } from "@/lib/data/data"
+import { ProductCategory } from "@/lib/db/schema"
 
-export default function Header() {
-    const productLinks = productsCategories.map(cat => ({
+export default async function Header() {
+    const productCategories : ProductCategory[] = await getAllProductCategories()
+    const productLinks = productCategories.map(cat => ({
         name: cat.name,
         path: `/products/${cat.slug}`,
     }))
