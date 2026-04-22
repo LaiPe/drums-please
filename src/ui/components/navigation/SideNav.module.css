@@ -1,0 +1,199 @@
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 9000;
+
+    background-color: var(--background-color);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.collapsed {
+    width: 64px;
+}
+
+.expanded {
+    width: 280px;
+}
+
+/* ── Top / Logo ── */
+
+.top {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 10px;
+    justify-content: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    min-height: 80px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.logoLink {
+    position: relative;
+    left: 35px;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expanded .logoLink:hover {
+    left: 0;
+}
+
+
+
+.logo {
+    height: 42px;
+    width: 42px;
+    flex-shrink: 0;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logoLink:hover .logo {
+    transform: scale(1.06);
+}
+
+.logoLabel {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.expanded .logoLink:hover .logoLabel {
+    opacity: 1;
+    transition: opacity 0.2s ease 0.2s;
+}
+
+.logoLink:hover .logoLabel {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Toggle button ── */
+
+.toggleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.6rem 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.toggleBtn:hover {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.toggleIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggleIconExpanded {
+    transform: rotate(180deg);
+}
+
+/* ── Nav links ── */
+
+.nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem 0;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.75rem 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.navItem::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+.navItem:hover {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navItem.active {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navItem.active::before {
+    opacity: 1;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.label {
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.expanded .label {
+    opacity: 1;
+    transition: opacity 0.2s ease 0.2s;
+}
