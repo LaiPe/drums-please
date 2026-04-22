@@ -1,25 +1,34 @@
 'use client'
 
 import styles from "./ProductDetails.module.css"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import ProductDescription from "./ProductDescription"
 import { Product } from "@/lib/db/schema"
 
 export default function ProductDetailsClient({ products }: { products: Product[] }) {
     const [selectedProduct, setSelectedProduct] = useState(products[0])
+    const sectionRef = useRef<HTMLElement>(null)
 
-    const handleProductClick = (productId: number | string) => {
-        const product = products.find(p => p.id === productId)
-        if (product) {
-            setSelectedProduct(product)
+    useEffect(() => {
+        const slug = window.location.hash.slice(1)
+        if (!slug) return
+        const match = products.find(p => p.slug === slug)
+        if (match) {
+            setSelectedProduct(match)
+            sectionRef.current?.scrollIntoView({ behavior: "smooth" })
         }
+    }, [products])
+
+    const handleProductClick = (product: Product) => {
+        setSelectedProduct(product)
+        history.replaceState(null, "", `#${product.slug}`)
     }
 
     return (
-        <section className={styles.container}>
+        <section ref={sectionRef} className={styles.container}>
             <div className={styles.selector}>
                 {products.map(item => (
-                    <button key={item.id} className={styles.productButton} onClick={() => handleProductClick(item.id)}>
+                    <button key={item.id} className={`${styles.productButton} ${item.id === selectedProduct.id ? styles.selected : ""}`} onClick={() => handleProductClick(item)}>
                         <img src={item.imageSrc} alt={item.name} className={styles.productImage} />
                         <span className={styles.productName}>{item.name}</span>
                     </button>

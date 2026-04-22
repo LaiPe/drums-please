@@ -9,6 +9,17 @@ export function getAllProductCategories() : Promise<ProductCategory[]> {
     return db.select().from(productsCategoriesTable);
 }
 
+export async function getCategoryBySlug(slug: string) : Promise<ProductCategory | undefined> {
+    const rows = await db.select().from(productsCategoriesTable).where(eq(productsCategoriesTable.slug, slug));
+    return rows[0];
+}
+
 export function getAllProductsByCategoryId(categoryId: number) : Promise<Product[]> {
     return db.select().from(productsTable).where(eq(productsTable.categoryId, categoryId));
+}
+
+export async function getProductsByCategorySlug(slug: string) : Promise<Product[]> {
+    const category = await getCategoryBySlug(slug);
+    if (!category) return [];
+    return getAllProductsByCategoryId(category.id);
 }

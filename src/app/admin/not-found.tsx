@@ -7,7 +7,7 @@ export default function NotFound() {
             <div className={styles.content}>
                 <h2 className={styles.title}>404</h2>
                 <p className={styles.message}>Page not found</p>
-                <Button type="link" href="/">Go back to homepage</Button>
+                <Button type="link" href="/admin">Go back to admin overview</Button>
             </div>
         </div>
     );
