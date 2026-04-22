@@ -3,6 +3,9 @@ import ProductDetails from "@/ui/components/products/ProductDetails"
 import ViewportHeroWithText from "@/ui/components/hero/ViewportHeroWithText"
 import { getAllProductCategories } from "@/lib/data/data"
 import { ProductCategory } from "@/lib/db/schema"
+import { createStorageProvider } from "@/lib/data/storage"
+
+const imageProvider = createStorageProvider('images')
 
 export const revalidate = 3600 // fallback every hour
 
@@ -27,7 +30,7 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
                 <ViewportHeroWithText
                     title={category.name}
                     mediaType="image" 
-                    mediaSrc={category.imageSrc} 
+                    mediaSrc={imageProvider.getUrl(category.imageSrc)}
                     key={`hero-${category.slug}`}
                 />
             </section>

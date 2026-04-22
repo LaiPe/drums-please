@@ -5,6 +5,9 @@ import ProductCard from "@/ui/components/index/ProductCard"
 import ViewportHeroWithText from "@/ui/components/hero/ViewportHeroWithText"
 import { getAllProductCategories } from "@/lib/data/data"
 import { ProductCategory } from "@/lib/db/schema"
+import { createStorageProvider } from "@/lib/data/storage"
+
+const imageProvider = createStorageProvider('images')
 
 export default async function Page() {
   const productCategories : ProductCategory[] = await getAllProductCategories()
@@ -23,7 +26,7 @@ export default async function Page() {
           <ProductCard
             key={`card-${category.slug}`}
             title={category.name}
-            imageSrc={category.imageSrc}
+            imageSrc={imageProvider.getUrl(category.imageSrc)}
             link={`/products/${category.slug}`}
           />
         ))}

@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Pencil, Trash2, Plus, ChevronRight } from "lucide-react"
 import { ProductCategory } from "@/lib/db/schema"
+import { createStorageProvider } from "@/lib/data/storage"
 import { deleteCategory } from "@/lib/actions/categoryActions"
 import CategoryFormModal from "./CategoryFormModal"
 import DeleteConfirmModal from "./DeleteConfirmModal"
@@ -16,6 +17,7 @@ type ModalState =
     | null
 
 export default function CategoryManager({ categories }: { categories: ProductCategory[] }) {
+    const imageProvider = useMemo(() => createStorageProvider('images'), [])
     const [modal, setModal] = useState<ModalState>(null)
 
     return (
@@ -37,7 +39,7 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                 {categories.map(category => (
                     <article key={category.id} className={styles.card}>
                         <div className={styles.cardImage}>
-                            <img src={category.imageSrc} alt={category.name} className={styles.cardImg} />
+                            <img src={imageProvider.getUrl(category.imageSrc)} alt={category.name} className={styles.cardImg} />
                             <div className={styles.cardOverlay} />
                             <h2 className={styles.cardTitle}>{category.name}</h2>
                         </div>

@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Pencil, Trash2, Plus, ChevronLeft, Package } from "lucide-react"
 import { Product, ProductCategory } from "@/lib/db/schema"
+import { createStorageProvider } from "@/lib/data/storage"
 
 import { deleteProduct } from "@/lib/actions/productActions"
 import ProductFormModal from "./ProductFormModal"
@@ -22,6 +23,7 @@ type Props = {
 }
 
 export default function ProductManager({ category, products }: Props) {
+    const imageProvider = useMemo(() => createStorageProvider('images'), [])
     const [modal, setModal] = useState<ModalState>(null)
 
     return (
@@ -48,7 +50,7 @@ export default function ProductManager({ category, products }: Props) {
             </div>
 
             <div className={styles.categoryBanner}>
-                <img src={category.imageSrc} alt={category.name} className={styles.bannerImg} />
+                <img src={imageProvider.getUrl(category.imageSrc)} alt={category.name} className={styles.bannerImg} />
                 <div className={styles.bannerOverlay} />
             </div>
 
@@ -78,7 +80,7 @@ export default function ProductManager({ category, products }: Props) {
                                 <tr key={product.id} className={styles.tr}>
                                     <td className={styles.td}>
                                         <div className={styles.thumbWrapper}>
-                                            <img src={product.imageSrc} alt={product.name} className={styles.thumb} />
+                                            <img src={imageProvider.getUrl(product.imageSrc)} alt={product.name} className={styles.thumb} />
                                         </div>
                                     </td>
                                     <td className={styles.td}>

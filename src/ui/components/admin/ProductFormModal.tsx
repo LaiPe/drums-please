@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import Modal from "./Modal"
+import MediaPicker from "./MediaPicker"
 import { createProduct, updateProduct, ActionState } from "@/lib/actions/productActions"
 import { Product } from "@/lib/db/schema"
 
@@ -76,15 +77,12 @@ export default function ProductFormModal({ isOpen, onClose, product, categoryId 
                 <input type="hidden" name="categoryId" value={product?.categoryId ?? categoryId} />
 
 <div className="admin-field">
-                    <label className="admin-label" htmlFor="prod-image">URL de l'image</label>
-                    <input
-                        id="prod-image"
+                    <label className="admin-label">Image</label>
+                    <MediaPicker
+                        mediaType="image"
                         name="imageSrc"
-                        type="text"
-                        className="admin-input"
-                        placeholder="Ex : /img/products/pearl-export.jpg"
                         defaultValue={product?.imageSrc}
-                        required
+                        folder="products"
                     />
                 </div>
 

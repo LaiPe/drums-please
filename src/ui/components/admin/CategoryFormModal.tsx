@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import Modal from "./Modal"
+import MediaPicker from "./MediaPicker"
 import { createCategory, updateCategory, ActionState } from "@/lib/actions/categoryActions"
 import { ProductCategory } from "@/lib/db/schema"
 
@@ -73,15 +74,12 @@ export default function CategoryFormModal({ isOpen, onClose, category }: Props) 
                 </div>
 
                 <div className="admin-field">
-                    <label className="admin-label" htmlFor="cat-image">URL de l'image</label>
-                    <input
-                        id="cat-image"
+                    <label className="admin-label">Image</label>
+                    <MediaPicker
+                        mediaType="image"
                         name="imageSrc"
-                        type="text"
-                        className="admin-input"
-                        placeholder="Ex : /img/categories/batteries.jpg"
                         defaultValue={category?.imageSrc}
-                        required
+                        folder="categories"
                     />
                 </div>
 
