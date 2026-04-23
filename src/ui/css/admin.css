@@ -1,91 +1,16 @@
-.backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(3px);
-    z-index: 99000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    animation: fadeIn 0.15s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0 }
-    to   { opacity: 1 }
-}
-
-.panel {
-    background-color: var(--background-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 520px;
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: slideUp 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp {
-    from { transform: translateY(12px); opacity: 0 }
-    to   { transform: translateY(0);    opacity: 1 }
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 1.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.title {
-    font-family: var(--font-ojuju), sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-color);
-}
-
-.closeBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: none;
-    border: none;
-    border-radius: 5px;
-    color: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease;
-    flex-shrink: 0;
-}
-
-.closeBtn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: var(--text-color);
-}
-
-.body {
-    padding: 1.5rem;
-}
-
-/* ── Shared form styles (used by form modals) ── */
-
-:global(.admin-form) {
+.admin-form {
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
 }
 
-:global(.admin-field) {
+.admin-field {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
 }
 
-:global(.admin-label) {
+.admin-label {
     font-family: var(--font-poppins), sans-serif;
     font-size: 0.78rem;
     font-weight: 500;
@@ -93,9 +18,9 @@
     letter-spacing: 0.04em;
 }
 
-:global(.admin-input),
-:global(.admin-textarea),
-:global(.admin-select) {
+.admin-input,
+.admin-textarea,
+.admin-select {
     width: 100%;
     background-color: var(--background-color-secondary);
     color: var(--text-color);
@@ -109,25 +34,25 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-:global(.admin-input:focus),
-:global(.admin-textarea:focus),
-:global(.admin-select:focus) {
+.admin-input:focus,
+.admin-textarea:focus,
+.admin-select:focus {
     border-color: rgba(255, 255, 255, 0.35);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
-:global(.admin-textarea) {
+.admin-textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-:global(.admin-hint) {
+.admin-hint {
     font-family: var(--font-poppins), sans-serif;
     font-size: 0.72rem;
     color: rgba(255, 255, 255, 0.25);
 }
 
-:global(.admin-error) {
+.admin-error {
     font-family: var(--font-poppins), sans-serif;
     font-size: 0.8rem;
     color: #f87171;
@@ -137,7 +62,13 @@
     padding: 0.5rem 0.75rem;
 }
 
-:global(.admin-form-actions) {
+.admin-field-error {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.75rem;
+    color: #f87171;
+}
+
+.admin-form-actions {
     display: flex;
     justify-content: flex-end;
     gap: 0.5rem;
@@ -146,8 +77,8 @@
     margin-top: 0.5rem;
 }
 
-:global(.admin-btn-cancel) {
-    display: flex;
+.admin-btn-cancel {
+    display: inline-flex;
     align-items: center;
     padding: 0.55rem 1rem;
     background: none;
@@ -157,16 +88,17 @@
     font-family: var(--font-poppins), sans-serif;
     font-size: 0.85rem;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-:global(.admin-btn-cancel:hover) {
+.admin-btn-cancel:hover {
     background-color: rgba(255, 255, 255, 0.05);
     color: var(--text-color);
 }
 
-:global(.admin-btn-submit) {
-    display: flex;
+.admin-btn-submit {
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     padding: 0.55rem 1.1rem;
@@ -181,17 +113,17 @@
     transition: opacity 0.2s ease;
 }
 
-:global(.admin-btn-submit:hover) {
+.admin-btn-submit:hover {
     opacity: 0.88;
 }
 
-:global(.admin-btn-submit:disabled) {
+.admin-btn-submit:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-:global(.admin-btn-danger) {
-    display: flex;
+.admin-btn-danger {
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     padding: 0.55rem 1.1rem;
@@ -206,11 +138,11 @@
     transition: opacity 0.2s ease;
 }
 
-:global(.admin-btn-danger:hover) {
+.admin-btn-danger:hover {
     opacity: 0.85;
 }
 
-:global(.admin-btn-danger:disabled) {
+.admin-btn-danger:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }

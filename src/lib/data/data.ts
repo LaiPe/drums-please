@@ -23,3 +23,8 @@ export async function getProductsByCategorySlug(slug: string) : Promise<Product[
     if (!category) return [];
     return getAllProductsByCategoryId(category.id);
 }
+
+export async function getProductById(id: number): Promise<Product | undefined> {
+    const rows = await db.select().from(productsTable).where(eq(productsTable.id, id));
+    return rows[0];
+}

@@ -1,21 +1,8 @@
-'use client'
-
-import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Pencil, Trash2, Plus, ChevronLeft, Package } from "lucide-react"
 import { Product, ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
-
-import { deleteProduct } from "@/lib/actions/productActions"
-import ProductFormModal from "./ProductFormModal"
-import DeleteConfirmModal from "./DeleteConfirmModal"
 import styles from "./ProductManager.module.css"
-
-type ModalState =
-    | { type: 'create' }
-    | { type: 'edit'; product: Product }
-    | { type: 'delete'; product: Product }
-    | null
 
 type Props = {
     category: ProductCategory
@@ -23,8 +10,7 @@ type Props = {
 }
 
 export default function ProductManager({ category, products }: Props) {
-    const imageProvider = useMemo(() => createStorageProvider('images'), [])
-    const [modal, setModal] = useState<ModalState>(null)
+    const imageProvider = createStorageProvider('images')
 
     return (
         <>
@@ -38,14 +24,20 @@ export default function ProductManager({ category, products }: Props) {
                     <p className={styles.slug}>{category.slug}</p>
                 </div>
                 <div className={styles.headerActions}>
-                    <button type="button" className={styles.btnSecondary} onClick={() => { /* ouvre modal edit catégorie via prop si besoin */ }}>
+                    <Link
+                        href={`/admin/products/${category.slug}/edit`}
+                        className={styles.btnSecondary}
+                    >
                         <Pencil size={14} strokeWidth={1.8} />
                         Modifier la catégorie
-                    </button>
-                    <button type="button" className={styles.btnPrimary} onClick={() => setModal({ type: 'create' })}>
+                    </Link>
+                    <Link
+                        href={`/admin/products/${category.slug}/create`}
+                        className={styles.btnPrimary}
+                    >
                         <Plus size={16} strokeWidth={2} />
                         Nouveau produit
-                    </button>
+                    </Link>
                 </div>
             </div>
 
@@ -71,7 +63,6 @@ export default function ProductManager({ category, products }: Props) {
                             <tr>
                                 <th className={styles.th}>Image</th>
                                 <th className={styles.th}>Nom</th>
-                                <th className={styles.th}>Slug</th>
                                 <th className={`${styles.th} ${styles.thActions}`}>Actions</th>
                             </tr>
                         </thead>
@@ -86,9 +77,6 @@ export default function ProductManager({ category, products }: Props) {
                                     <td className={styles.td}>
                                         <span className={styles.productName}>{product.name}</span>
                                     </td>
-                                    <td className={styles.td}>
-                                        <code className={styles.productSlug}>{product.slug}</code>
-                                    </td>
                                     <td className={`${styles.td} ${styles.tdActions}`}>
                                         <div className={styles.rowActions}>
                                             <Link
@@ -98,22 +86,20 @@ export default function ProductManager({ category, products }: Props) {
                                             >
                                                 Voir
                                             </Link>
-                                            <button
-                                                type="button"
+                                            <Link
+                                                href={`/admin/products/${category.slug}/${product.id}/edit`}
                                                 className={styles.btnIcon}
                                                 aria-label="Modifier"
-                                                onClick={() => setModal({ type: 'edit', product })}
                                             >
                                                 <Pencil size={14} strokeWidth={1.8} />
-                                            </button>
-                                            <button
-                                                type="button"
+                                            </Link>
+                                            <Link
+                                                href={`/admin/products/${category.slug}/${product.id}/delete`}
                                                 className={`${styles.btnIcon} ${styles.btnDanger}`}
                                                 aria-label="Supprimer"
-                                                onClick={() => setModal({ type: 'delete', product })}
                                             >
                                                 <Trash2 size={14} strokeWidth={1.8} />
-                                            </button>
+                                            </Link>
                                         </div>
                                     </td>
                                 </tr>
@@ -121,32 +107,6 @@ export default function ProductManager({ category, products }: Props) {
                         </tbody>
                     </table>
                 </div>
-            )}
-
-            <ProductFormModal
-                isOpen={modal?.type === 'create'}
-                onClose={() => setModal(null)}
-                categoryId={category.id}
-            />
-
-            {modal?.type === 'edit' && (
-                <ProductFormModal
-                    isOpen
-                    onClose={() => setModal(null)}
-                    product={modal.product}
-                    categoryId={category.id}
-                />
-            )}
-
-            {modal?.type === 'delete' && (
-                <DeleteConfirmModal
-                    isOpen
-                    onClose={() => setModal(null)}
-                    title={`Supprimer « ${modal.product.name} »`}
-                    description={`Cette action est irréversible. Le produit « ${modal.product.name} » sera définitivement supprimé.`}
-                    action={deleteProduct}
-                    entityId={modal.product.id}
-                />
             )}
         </>
     )

@@ -1,24 +1,11 @@
-'use client'
-
-import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Pencil, Trash2, Plus, ChevronRight } from "lucide-react"
 import { ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
-import { deleteCategory } from "@/lib/actions/categoryActions"
-import CategoryFormModal from "./CategoryFormModal"
-import DeleteConfirmModal from "./DeleteConfirmModal"
 import styles from "./CategoryManager.module.css"
 
-type ModalState =
-    | { type: 'create' }
-    | { type: 'edit'; category: ProductCategory }
-    | { type: 'delete'; category: ProductCategory }
-    | null
-
 export default function CategoryManager({ categories }: { categories: ProductCategory[] }) {
-    const imageProvider = useMemo(() => createStorageProvider('images'), [])
-    const [modal, setModal] = useState<ModalState>(null)
+    const imageProvider = createStorageProvider('images')
 
     return (
         <>
@@ -27,10 +14,10 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                     <p className={styles.breadcrumb}>Administration</p>
                     <h1 className={styles.title}>Produits</h1>
                 </div>
-                <button type="button" className={styles.btnPrimary} onClick={() => setModal({ type: 'create' })}>
+                <Link href="/admin/products/create" className={styles.btnPrimary}>
                     <Plus size={16} strokeWidth={2} />
                     Nouvelle catégorie
-                </button>
+                </Link>
             </div>
 
             <p className={styles.count}>{categories.length} catégorie{categories.length !== 1 ? "s" : ""}</p>
@@ -50,51 +37,25 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                                     Gérer les produits
                                     <ChevronRight size={14} strokeWidth={2} />
                                 </Link>
-                                <button
-                                    type="button"
+                                <Link
+                                    href={`/admin/products/${category.slug}/edit`}
                                     className={styles.btnIcon}
                                     aria-label="Modifier"
-                                    onClick={() => setModal({ type: 'edit', category })}
                                 >
                                     <Pencil size={15} strokeWidth={1.8} />
-                                </button>
-                                <button
-                                    type="button"
+                                </Link>
+                                <Link
+                                    href={`/admin/products/${category.slug}/delete`}
                                     className={`${styles.btnIcon} ${styles.btnDanger}`}
                                     aria-label="Supprimer"
-                                    onClick={() => setModal({ type: 'delete', category })}
                                 >
                                     <Trash2 size={15} strokeWidth={1.8} />
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </article>
                 ))}
             </div>
-
-            <CategoryFormModal
-                isOpen={modal?.type === 'create'}
-                onClose={() => setModal(null)}
-            />
-
-            {modal?.type === 'edit' && (
-                <CategoryFormModal
-                    isOpen
-                    onClose={() => setModal(null)}
-                    category={modal.category}
-                />
-            )}
-
-            {modal?.type === 'delete' && (
-                <DeleteConfirmModal
-                    isOpen
-                    onClose={() => setModal(null)}
-                    title={`Supprimer « ${modal.category.name} »`}
-                    description={`Cette action est irréversible. La catégorie « ${modal.category.name} » et tous ses produits associés seront définitivement supprimés.`}
-                    action={deleteCategory}
-                    entityId={modal.category.id}
-                />
-            )}
         </>
     )
 }

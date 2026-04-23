@@ -1,0 +1,73 @@
+'use client'
+
+import { useActionState } from "react"
+import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
+import { updateCategory, ActionState } from "@/lib/actions/categoryActions"
+import { ProductCategory } from "@/lib/db/schema"
+import MediaPicker from "../../MediaPicker"
+import styles from "../formPage.module.css"
+
+type Props = { category: ProductCategory }
+
+const EMPTY: ActionState = {}
+
+export default function EditCategoryForm({ category }: Props) {
+    const [state, formAction, isPending] = useActionState(updateCategory, EMPTY)
+
+    return (
+        <div className={styles.page}>
+            <div className={styles.header}>
+                <Link href="/admin/products" className={styles.back}>
+                    <ChevronLeft size={12} strokeWidth={2} />
+                    Produits
+                </Link>
+                <h1 className={styles.title}>Modifier « {category.name} »</h1>
+            </div>
+
+            <div className={styles.card}>
+                <form action={formAction} className="admin-form">
+                    <input type="hidden" name="id" value={category.id} />
+
+                    <div className="admin-field">
+                        <label className="admin-label" htmlFor="cat-name">Nom</label>
+                        <input
+                            id="cat-name"
+                            name="name"
+                            type="text"
+                            className="admin-input"
+                            placeholder="Ex : Batteries acoustiques"
+                            defaultValue={category.name}
+                            required
+                        />
+                        {state.fieldErrors?.name && (
+                            <span className="admin-field-error">{state.fieldErrors.name[0]}</span>
+                        )}
+                    </div>
+
+                    <div className="admin-field">
+                        <label className="admin-label">Image</label>
+                        <MediaPicker
+                            mediaType="image"
+                            name="imageSrc"
+                            defaultValue={category.imageSrc}
+                            folder="categories"
+                        />
+                        {state.fieldErrors?.imageSrc && (
+                            <span className="admin-field-error">{state.fieldErrors.imageSrc[0]}</span>
+                        )}
+                    </div>
+
+                    {state.error && <p className="admin-error">{state.error}</p>}
+
+                    <div className="admin-form-actions">
+                        <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
+                        <button type="submit" className="admin-btn-submit" disabled={isPending}>
+                            {isPending ? "Enregistrement…" : "Enregistrer"}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
+}
