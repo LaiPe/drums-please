@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { createProduct, ActionState } from "@/lib/actions/productActions"
 import MediaPicker from "../../MediaPicker"
+import RichTextEditor from "../../RichTextEditor"
 import styles from "../formPage.module.css"
 
 type Props = {
@@ -56,13 +57,10 @@ export default function CreateProductForm({ categoryId, categorySlug }: Props) {
                     </div>
 
                     <div className="admin-field">
-                        <label className="admin-label" htmlFor="prod-desc">Description</label>
-                        <textarea
-                            id="prod-desc"
+                        <label className="admin-label">Description</label>
+                        <RichTextEditor
                             name="description"
-                            className="admin-textarea"
-                            placeholder="Description du produit (Markdown supporté)"
-                            required
+                            placeholder="Description du produit…"
                         />
                         {state.fieldErrors?.description && (
                             <span className="admin-field-error">{state.fieldErrors.description[0]}</span>

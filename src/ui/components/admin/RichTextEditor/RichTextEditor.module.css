@@ -1,0 +1,109 @@
+.wrapper {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wrapper:focus-within {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+/* Align slate palette to admin dark blue tones */
+.wrapper :global(.dark-theme) {
+    --slate-1: #0c0c1f;
+    --slate-2: #1a1a30;
+    --slate-3: #1e1e38;
+    --slate-4: #23233f;
+    --slate-5: #28284a;
+    --slate-6: #313155;
+    --slate-7: #3d3d66;
+    --slate-8: #555580;
+    --slate-9: #6b6b96;
+    --slate-10: #8080aa;
+    --slate-11: #b0b0cc;
+    --slate-12: #e8e8f0;
+}
+
+/* Toolbar */
+.wrapper :global(.dark-theme [role='toolbar']) {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.3rem 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+}
+
+/* Boutons du groupe de type (icon + label) */
+.wrapper :global(.dark-theme [role='toolbar'] [role='group'] button),
+.wrapper :global(.dark-theme [role='toolbar'] [role='radiogroup'] button) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+}
+
+/* ── Contenu de l'éditeur : miroir du style ProductDetails ─────────────── */
+.wrapper :global(.dark-theme [contenteditable]) {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.3rem;
+    padding: 0.8rem 1rem;
+    min-height: 140px;
+}
+
+/* H4 = Titre — même style que .productDescription h4 */
+.wrapper :global(.dark-theme [contenteditable] h4) {
+    font-family: var(--font-ojuju), sans-serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    margin-top: 0.8rem;
+}
+
+/* H5 = Sous-titre — même style que .productDescription h5 */
+.wrapper :global(.dark-theme [contenteditable] h5) {
+    font-family: var(--font-ojuju), sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-top: 0.6rem;
+}
+
+/* Paragraphes */
+.wrapper :global(.dark-theme [contenteditable] p) {
+    margin-bottom: 1rem;
+    line-height: 1.3rem;
+}
+
+/* Listes */
+.wrapper :global(.dark-theme [contenteditable] ul) {
+    list-style-type: disc;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.4rem;
+}
+
+.wrapper :global(.dark-theme [contenteditable] ol) {
+    list-style-type: decimal;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.4rem;
+}
+
+.wrapper :global(.dark-theme [contenteditable] li) {
+    margin: 0.5rem 0;
+}
+
+/* Blockquote */
+.wrapper :global(.dark-theme [contenteditable] blockquote) {
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    margin: 0.5rem 0;
+    padding-left: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+}
