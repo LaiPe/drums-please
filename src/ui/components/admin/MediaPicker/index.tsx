@@ -1,14 +1,11 @@
 'use client'
 
 import { useEffect, useMemo, useState, useTransition } from 'react'
-import styles from './MediaPicker.module.css'
 import { createStorageProvider } from '@/lib/data/storage'
-import { listMediaFiles, uploadMediaFile } from '@/lib/actions/storageActions'
-import { MediaType, Tab, BUCKETS } from './types'
-import MediaPickerPreview from './MediaPickerPreview'
-import MediaPickerTabs from './MediaPickerTabs'
-import MediaPickerLibrary from './MediaPickerLibrary'
-import MediaPickerUpload from './MediaPickerUpload'
+import { listMediaFiles, uploadMediaFile, deleteMediaFile } from '@/lib/actions/storageActions'
+import { MediaType, BUCKETS } from './types'
+import MediaPickerCompact from './MediaPickerCompact'
+import MediaPickerModal from './MediaPickerModal'
 
 type Props = {
   mediaType: MediaType
@@ -18,14 +15,14 @@ type Props = {
 }
 
 export default function MediaPicker({ mediaType, name, defaultValue, folder }: Props) {
-  const [tab, setTab] = useState<Tab>('library')
+  const [modalOpen, setModalOpen] = useState(false)
   const [files, setFiles] = useState<string[]>([])
   const [selected, setSelected] = useState<string>(defaultValue ?? '')
   const [isPending, startTransition] = useTransition()
-  const [uploadError, setUploadError] = useState<string>('')
+  const [uploadError, setUploadError] = useState('')
 
   const provider = useMemo(() => createStorageProvider(BUCKETS[mediaType]), [mediaType])
-  const previewUrl = selected ? provider.getUrl(selected, { width: 75, height: 75 }) : null
+  const previewUrl = selected ? provider.getUrl(selected, { width: 80, height: 80 }) : null
 
   useEffect(() => {
     startTransition(async () => {
@@ -34,63 +31,57 @@ export default function MediaPicker({ mediaType, name, defaultValue, folder }: P
     })
   }, [mediaType, folder])
 
-  function handleSelect(path: string) {
-    setSelected(path)
-    setTab('library')
-  }
-
   function handleUpload(file: File) {
     const formData = new FormData()
     formData.append('file', file)
     startTransition(async () => {
       const result = await uploadMediaFile(mediaType, folder, formData)
-      if (result.error) {
-        setUploadError(result.error)
-        return
-      }
+      if (result.error) { setUploadError(result.error); return }
       const refreshed = await listMediaFiles(mediaType, folder)
       setFiles(refreshed)
       setSelected(result.path!)
-      setTab('library')
+      setModalOpen(false)
+    })
+  }
+
+  function handleDelete(path: string) {
+    startTransition(async () => {
+      await deleteMediaFile(mediaType, path)
+      const refreshed = await listMediaFiles(mediaType, folder)
+      setFiles(refreshed)
+      if (selected === path) setSelected('')
     })
   }
 
   return (
-    <div className={styles.picker}>
+    <>
       <input type="hidden" name={name} value={selected} />
-
-      {selected && (
-        <MediaPickerPreview
-          selected={selected}
-          mediaType={mediaType}
-          previewUrl={previewUrl}
-          onClear={() => setSelected('')}
-        />
-      )}
-
-      <MediaPickerTabs tab={tab} onChange={setTab} />
-
-      {tab === 'library' && (
-        <MediaPickerLibrary
+      <MediaPickerCompact
+        selected={selected}
+        previewUrl={previewUrl}
+        mediaType={mediaType}
+        isPending={isPending}
+        uploadError={uploadError}
+        onUploadError={setUploadError}
+        onUpload={handleUpload}
+        onOpenModal={() => setModalOpen(true)}
+        onClear={() => setSelected('')}
+      />
+      {modalOpen && (
+        <MediaPickerModal
           files={files}
           selected={selected}
           mediaType={mediaType}
           isPending={isPending}
           provider={provider}
-          onSelect={handleSelect}
-        />
-      )}
-
-      {tab === 'upload' && (
-        <MediaPickerUpload
-          mediaType={mediaType}
-          folder={folder}
-          isPending={isPending}
-          error={uploadError}
-          onError={setUploadError}
+          uploadError={uploadError}
+          onUploadError={setUploadError}
           onUpload={handleUpload}
+          onSelect={(path: string) => { setSelected(path); setModalOpen(false) }}
+          onDelete={handleDelete}
+          onClose={() => setModalOpen(false)}
         />
       )}
-    </div>
+    </>
   )
 }

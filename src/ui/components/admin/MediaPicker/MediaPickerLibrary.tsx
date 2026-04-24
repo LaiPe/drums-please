@@ -10,6 +10,7 @@ type Props = {
   isPending: boolean
   provider: StorageProvider
   onSelect: (path: string) => void
+  onDelete?: (path: string) => void
 }
 
 function ImageThumb({ src, alt, className }: { src: string; alt: string; className: string }) {
@@ -28,12 +29,12 @@ function ImageThumb({ src, alt, className }: { src: string; alt: string; classNa
   )
 }
 
-export default function MediaPickerLibrary({ files, selected, mediaType, isPending, provider, onSelect }: Props) {
+export default function MediaPickerLibrary({ files, selected, mediaType, isPending, provider, onSelect, onDelete }: Props) {
   return (
     <div className={styles.library}>
       {isPending && (
         <div className={styles.grid}>
-          {Array.from({ length: 4 }).map((_, i) => (
+          {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className={styles.skeletonItem} />
           ))}
         </div>
@@ -44,23 +45,37 @@ export default function MediaPickerLibrary({ files, selected, mediaType, isPendi
       {!isPending && (
         <div className={styles.grid}>
           {files.map(path => {
-            const url = provider.getUrl(path, { width: 150, height: 150 })
+            const url = provider.getUrl(path, { width: 200, height: 200 })
             const isSelected = path === selected
             return (
-              <button
+              <div
                 key={path}
-                type="button"
                 className={`${styles.item}${isSelected ? ` ${styles.itemSelected}` : ''}`}
-                onClick={() => onSelect(path)}
-                title={path.split('/').pop()}
                 style={{ position: 'relative' }}
               >
-                {mediaType === 'image' ? (
-                  <ImageThumb src={url} alt={path} className={styles.itemThumb} />
-                ) : (
-                  <span className={styles.filename}>{path.split('/').pop()}</span>
+                <button
+                  type="button"
+                  className={styles.itemSelectBtn}
+                  onClick={() => onSelect(path)}
+                  title={path.split('/').pop()}
+                >
+                  {mediaType === 'image' ? (
+                    <ImageThumb src={url} alt={path} className={styles.itemThumb} />
+                  ) : (
+                    <span className={styles.filename}>{path.split('/').pop()}</span>
+                  )}
+                </button>
+                {onDelete && (
+                  <button
+                    type="button"
+                    className={styles.deleteBtn}
+                    onClick={e => { e.stopPropagation(); onDelete(path) }}
+                    title="Supprimer"
+                  >
+                    ✕
+                  </button>
                 )}
-              </button>
+              </div>
             )
           })}
         </div>

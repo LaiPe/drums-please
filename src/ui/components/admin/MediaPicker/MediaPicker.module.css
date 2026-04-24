@@ -1,37 +1,30 @@
-/* ── Container ── */
+/* ── Compact — preview state ── */
 
-.picker {
+.compactPreview {
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    align-items: stretch;
+    height: 80px;
+    min-width: 340px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.03);
     overflow: hidden;
-    background-color: var(--background-color);
 }
 
-/* ── Preview bar ── */
-
-.preview {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0.75rem;
-    background-color: rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.previewThumb {
-    width: clamp(50px, 8vw, 75px);
-    height: clamp(50px, 8vw, 75px);
+.compactThumb {
+    width: 110px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 4px;
     flex-shrink: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 7px 0 0 7px;
 }
 
-.previewPath {
+.compactPath {
     flex: 1;
+    min-width: 80px;
+    align-self: center;
+    padding: 0 0.75rem;
     font-family: var(--font-poppins), sans-serif;
     font-size: 0.72rem;
     color: rgba(255, 255, 255, 0.45);
@@ -40,92 +33,239 @@
     text-overflow: ellipsis;
 }
 
+.compactActions {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+
+.modifyBtn {
+    align-self: stretch;
+    padding: 0 1rem;
+    background: none;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.modifyBtn:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--text-color);
+}
+
 .clearBtn {
+    align-self: stretch;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
+    width: 42px;
     flex-shrink: 0;
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.35);
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.3);
     font-size: 0.7rem;
     cursor: pointer;
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .clearBtn:hover {
-    background-color: rgba(220, 60, 60, 0.15);
-    border-color: rgba(220, 60, 60, 0.3);
+    background-color: rgba(220, 60, 60, 0.12);
     color: #f87171;
 }
 
-/* ── Tabs ── */
+@media (max-width: 768px) {
+    .compactPreview {
+        height: 62px;
+        min-width: 278px;
+    }
 
-.tabs {
-    display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .compactThumb {
+        width: 70px;
+    }
+
+    .modifyBtn {
+        padding: 0 0.65rem;
+        font-size: 0.68rem;
+    }
+
+    .clearBtn {
+        width: 36px;
+        font-size: 0.65rem;
+    }
 }
 
-.tab {
+@media (max-width: 400px) {
+    .compactPreview {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        min-height: 68px;
+        min-width: 200px;
+    }
+
+    .compactThumb {
+        width: 52px;
+        height: 100%;
+        grid-row: 1 / 3;
+        align-self: stretch;
+    }
+
+    .compactPath {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+        padding: 0.45rem 0.6rem 0.2rem;
+    }
+
+    .compactActions {
+        grid-column: 2;
+        grid-row: 2;
+        align-items: center;
+        padding: 0.2rem 0.4rem 0.4rem;
+        gap: 0.35rem;
+    }
+
+    .modifyBtn {
+        align-self: auto;
+        flex: 1;
+        padding: 0.22rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        font-size: 0.65rem;
+        text-align: center;
+    }
+
+    .clearBtn {
+        align-self: auto;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        font-size: 0.6rem;
+    }
+}
+
+/* ── Compact — empty state ── */
+
+.compactEmpty {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 90px;
+}
+
+.compactHalf {
     flex: 1;
-    padding: 0.6rem 0;
+    display: flex;
+    min-width: 0;
+}
+
+.compactHalf .upload {
+    flex: 1;
+    padding: 0;
+}
+
+.compactHalf .dropzone {
+    flex: 1;
+    border-radius: 0;
+    border: none;
+    border-right: none;
+}
+
+.compactDivider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.libraryBtn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
     background: none;
     border: none;
-    border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.4);
     font-family: var(--font-poppins), sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 500;
     cursor: pointer;
-    transition: color 0.15s ease, border-color 0.15s ease;
-    margin-bottom: -1px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    padding: 0.5rem;
+    width: 100%;
 }
 
-.tab:hover {
-    color: rgba(255, 255, 255, 0.7);
+.libraryBtn:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.tabActive {
-    color: var(--text-color);
-    border-bottom-color: var(--text-color);
+.libraryBtnIcon {
+    font-size: 1.3rem;
+    line-height: 1;
 }
 
 /* ── Library ── */
 
 .library {
     padding: 0.75rem;
-    min-height: 120px;
+    min-height: 80px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 0.5rem;
 }
 
 .item {
     aspect-ratio: 1;
+    position: relative;
     background-color: var(--background-color-secondary);
     border: 2px solid transparent;
     border-radius: 6px;
     overflow: hidden;
-    cursor: pointer;
-    padding: 0;
-    transition: border-color 0.15s ease, opacity 0.15s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: border-color 0.15s ease;
 }
 
 .item:hover {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+.item:hover .deleteBtn {
+    opacity: 1;
+}
+
 .itemSelected {
     border-color: var(--text-color);
+}
+
+.itemSelectBtn {
+    position: absolute;
+    inset: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .itemThumb {
@@ -133,6 +273,32 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.6rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    z-index: 1;
+}
+
+.deleteBtn:hover {
+    background-color: rgba(220, 60, 60, 0.8);
+    border-color: rgba(220, 60, 60, 0.5);
+    color: #fff;
 }
 
 .filename {
@@ -171,7 +337,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-    padding: 0.75rem;
 }
 
 .dropzone {
@@ -189,6 +354,11 @@
     transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
+.dropzoneCompact {
+    padding: 0.5rem;
+    gap: 0.2rem;
+}
+
 .dropzone:hover,
 .dropzoneActive {
     border-color: rgba(255, 255, 255, 0.35);
@@ -201,14 +371,14 @@
 }
 
 .dropzoneIcon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1;
     color: rgba(255, 255, 255, 0.25);
 }
 
 .dropzoneLabel {
     font-family: var(--font-poppins), sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.45);
     text-align: center;
 }
@@ -226,4 +396,21 @@
     cursor: pointer;
     width: 100%;
     height: 100%;
+}
+
+/* ── Modal content (inside shared Modal component) ── */
+
+.modalContent {
+    margin: -1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalUploadPanel {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modalContent .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 }

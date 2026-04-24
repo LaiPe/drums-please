@@ -4,14 +4,14 @@ import { MediaType, ACCEPT, MAX_SIZE_MB, MAX_SIZE_BYTES } from './types'
 
 type Props = {
   mediaType: MediaType
-  folder?: string
   isPending: boolean
   error: string
+  compact?: boolean
   onError: (msg: string) => void
   onUpload: (file: File) => void
 }
 
-export default function MediaPickerUpload({ mediaType, folder, isPending, error, onError, onUpload }: Props) {
+export default function MediaPickerUpload({ mediaType, isPending, error, compact, onError, onUpload }: Props) {
   const [isDragOver, setIsDragOver] = useState(false)
 
   function processFile(file: File) {
@@ -38,6 +38,7 @@ export default function MediaPickerUpload({ mediaType, folder, isPending, error,
 
   const dropzoneClass = [
     styles.dropzone,
+    compact ? styles.dropzoneCompact : '',
     isDragOver ? styles.dropzoneActive : '',
     isPending ? styles.dropzoneDisabled : '',
   ].filter(Boolean).join(' ')
@@ -51,12 +52,19 @@ export default function MediaPickerUpload({ mediaType, folder, isPending, error,
         onDrop={handleDrop}
       >
         <span className={styles.dropzoneIcon}>↑</span>
-        <span className={styles.dropzoneLabel}>
-          {isPending ? 'Upload en cours…' : `Cliquer ou déposer une ${mediaType === 'image' ? 'image' : 'vidéo'}`}
-        </span>
-        <span className={styles.dropzoneHint}>
-          max {MAX_SIZE_MB} Mo
-        </span>
+        {!compact && (
+          <span className={styles.dropzoneLabel}>
+            {isPending ? 'Upload en cours…' : `Cliquer ou déposer une ${mediaType === 'image' ? 'image' : 'vidéo'}`}
+          </span>
+        )}
+        {compact && (
+          <span className={styles.dropzoneLabel}>
+            {isPending ? '…' : 'Uploader'}
+          </span>
+        )}
+        {!compact && (
+          <span className={styles.dropzoneHint}>max {MAX_SIZE_MB} Mo</span>
+        )}
         <input
           type="file"
           accept={ACCEPT[mediaType]}

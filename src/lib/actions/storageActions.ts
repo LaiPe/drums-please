@@ -44,3 +44,14 @@ export async function uploadMediaFile(
     return { error: e instanceof Error ? e.message : 'Erreur lors de l\'upload.' }
   }
 }
+
+export type DeleteResult = { error?: string }
+
+export async function deleteMediaFile(mediaType: MediaType, path: string): Promise<DeleteResult> {
+  try {
+    await getAdminProvider(mediaType).delete(path)
+    return {}
+  } catch (e) {
+    return { error: e instanceof Error ? e.message : 'Erreur lors de la suppression.' }
+  }
+}

@@ -5,9 +5,22 @@
 
 .adminMain {
     flex: 1;
+    min-width: 0;
     margin-left: 64px;
-    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
     min-height: 100vh;
     background-color: var(--background-color-secondary);
+}
+
+@media (min-width: 641px) {
+    .adminMain {
+        transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@media (max-width: 640px) {
+    .adminMain {
+        margin-left: 0;
+        padding: 1.25rem 1rem calc(60px + 1.25rem);
+    }
 }

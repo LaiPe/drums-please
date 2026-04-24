@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "./SideNav.module.css"
 
 export type SideNavLink = {
@@ -19,9 +19,27 @@ type SideNavProps = {
 export default function SideNav({ links }: SideNavProps) {
     const [expanded, setExpanded] = useState(false)
     const pathname = usePathname()
+    const navRef = useRef<HTMLElement>(null)
+
+    useEffect(() => {
+        const mq = window.matchMedia('(min-width: 641px)')
+        function handleChange() {
+            const el = navRef.current
+            if (!el) return
+            el.style.transition = 'none'
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (navRef.current) navRef.current.style.transition = ''
+                })
+            })
+        }
+        mq.addEventListener('change', handleChange)
+        return () => mq.removeEventListener('change', handleChange)
+    }, [])
 
     return (
         <aside
+            ref={navRef}
             className={`${styles.sidenav} ${expanded ? styles.expanded : styles.collapsed}`}
             aria-label="Navigation admin"
         >

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { getCategoryBySlug, getProductsByCategorySlug } from "@/lib/data/data"
-import ProductManager from "@/ui/components/admin/forms/ProductManager"
+import ProductManager from "@/ui/components/admin/managers/ProductManager"
 
 type PageProps = { params: Promise<{ categorySlug: string }> }
 
