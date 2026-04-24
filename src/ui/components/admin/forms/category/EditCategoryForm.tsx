@@ -18,15 +18,23 @@ export default function EditCategoryForm({ category }: Props) {
     return (
         <div className={styles.page}>
             <div className={styles.header}>
-                <Link href="/admin/products" className={styles.back}>
-                    <ChevronLeft size={12} strokeWidth={2} />
-                    Produits
-                </Link>
-                <h1 className={styles.title}>Modifier « {category.name} »</h1>
+                <div className={styles.headerLeft}>
+                    <Link href="/admin/products" className={styles.back}>
+                        <ChevronLeft size={12} strokeWidth={2} />
+                        Produits
+                    </Link>
+                    <h1 className={styles.title}>Modifier « {category.name} »</h1>
+                </div>
+                <div className={styles.headerActions}>
+                    <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
+                    <button type="submit" form="edit-category-form" className="admin-btn-submit" disabled={isPending}>
+                        {isPending ? "Enregistrement…" : "Enregistrer"}
+                    </button>
+                </div>
             </div>
 
             <div className={styles.card}>
-                <form action={formAction} className="admin-form">
+                <form id="edit-category-form" action={formAction} className="admin-form">
                     <input type="hidden" name="id" value={category.id} />
 
                     <div className="admin-field">
@@ -59,13 +67,6 @@ export default function EditCategoryForm({ category }: Props) {
                     </div>
 
                     {state.error && <p className="admin-error">{state.error}</p>}
-
-                    <div className="admin-form-actions">
-                        <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
-                        <button type="submit" className="admin-btn-submit" disabled={isPending}>
-                            {isPending ? "Enregistrement…" : "Enregistrer"}
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>

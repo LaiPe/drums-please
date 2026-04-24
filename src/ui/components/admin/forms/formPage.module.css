@@ -4,9 +4,41 @@
 }
 
 .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .header {
+        align-items: flex-start;
+    }
+    .headerActions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .headerActions a,
+    .headerActions button {
+        justify-content: center;
+    }
 }
 
 .back {

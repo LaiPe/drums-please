@@ -1,7 +1,8 @@
 import Link from "next/link"
-import { Pencil, Trash2, Plus, ChevronLeft, Package } from "lucide-react"
+import { Pencil, Plus, ChevronLeft, Package } from "lucide-react"
 import { Product, ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
+import DeleteProductButton from "./DeleteProductButton"
 import styles from "./ProductManager.module.css"
 
 type Props = {
@@ -93,13 +94,10 @@ export default function ProductManager({ category, products }: Props) {
                                             >
                                                 <Pencil size={14} strokeWidth={1.8} />
                                             </Link>
-                                            <Link
-                                                href={`/admin/products/${category.slug}/${product.id}/delete`}
-                                                className={`${styles.btnIcon} ${styles.btnDanger}`}
-                                                aria-label="Supprimer"
-                                            >
-                                                <Trash2 size={14} strokeWidth={1.8} />
-                                            </Link>
+                                            <DeleteProductButton
+                                                product={product}
+                                                categorySlug={category.slug}
+                                            />
                                         </div>
                                     </td>
                                 </tr>

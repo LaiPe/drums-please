@@ -1,7 +1,8 @@
 import Link from "next/link"
-import { Pencil, Trash2, Plus, ChevronRight } from "lucide-react"
+import { Pencil, Plus, ChevronRight } from "lucide-react"
 import { ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
+import DeleteCategoryButton from "./DeleteCategoryButton"
 import styles from "./CategoryManager.module.css"
 
 export default function CategoryManager({ categories }: { categories: ProductCategory[] }) {
@@ -44,13 +45,7 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                                 >
                                     <Pencil size={15} strokeWidth={1.8} />
                                 </Link>
-                                <Link
-                                    href={`/admin/products/${category.slug}/delete`}
-                                    className={`${styles.btnIcon} ${styles.btnDanger}`}
-                                    aria-label="Supprimer"
-                                >
-                                    <Trash2 size={15} strokeWidth={1.8} />
-                                </Link>
+                                <DeleteCategoryButton category={category} />
                             </div>
                         </div>
                     </article>

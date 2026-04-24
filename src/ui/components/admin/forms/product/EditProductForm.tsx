@@ -22,15 +22,23 @@ export default function EditProductForm({ product, categorySlug }: Props) {
     return (
         <div className={styles.page}>
             <div className={styles.header}>
-                <Link href={`/admin/products/${categorySlug}`} className={styles.back}>
-                    <ChevronLeft size={12} strokeWidth={2} />
-                    Retour
-                </Link>
-                <h1 className={styles.title}>Modifier « {product.name} »</h1>
+                <div className={styles.headerLeft}>
+                    <Link href={`/admin/products/${categorySlug}`} className={styles.back}>
+                        <ChevronLeft size={12} strokeWidth={2} />
+                        Retour
+                    </Link>
+                    <h1 className={styles.title}>Modifier « {product.name} »</h1>
+                </div>
+                <div className={styles.headerActions}>
+                    <Link href={`/admin/products/${categorySlug}`} className="admin-btn-cancel">Annuler</Link>
+                    <button type="submit" form="edit-product-form" className="admin-btn-submit" disabled={isPending}>
+                        {isPending ? "Enregistrement…" : "Enregistrer"}
+                    </button>
+                </div>
             </div>
 
             <div className={styles.card}>
-                <form action={formAction} className="admin-form">
+                <form id="edit-product-form" action={formAction} className="admin-form">
                     <input type="hidden" name="id" value={product.id} />
                     <input type="hidden" name="categoryId" value={product.categoryId} />
                     <input type="hidden" name="categorySlug" value={categorySlug} />
@@ -77,13 +85,6 @@ export default function EditProductForm({ product, categorySlug }: Props) {
                     </div>
 
                     {state.error && <p className="admin-error">{state.error}</p>}
-
-                    <div className="admin-form-actions">
-                        <Link href={`/admin/products/${categorySlug}`} className="admin-btn-cancel">Annuler</Link>
-                        <button type="submit" className="admin-btn-submit" disabled={isPending}>
-                            {isPending ? "Enregistrement…" : "Enregistrer"}
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>

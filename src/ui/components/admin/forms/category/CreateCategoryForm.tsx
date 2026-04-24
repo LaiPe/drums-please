@@ -15,15 +15,23 @@ export default function CreateCategoryForm() {
     return (
         <div className={styles.page}>
             <div className={styles.header}>
-                <Link href="/admin/products" className={styles.back}>
-                    <ChevronLeft size={12} strokeWidth={2} />
-                    Produits
-                </Link>
-                <h1 className={styles.title}>Nouvelle catégorie</h1>
+                <div className={styles.headerLeft}>
+                    <Link href="/admin/products" className={styles.back}>
+                        <ChevronLeft size={12} strokeWidth={2} />
+                        Produits
+                    </Link>
+                    <h1 className={styles.title}>Nouvelle catégorie</h1>
+                </div>
+                <div className={styles.headerActions}>
+                    <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
+                    <button type="submit" form="create-category-form" className="admin-btn-submit" disabled={isPending}>
+                        {isPending ? "Enregistrement…" : "Créer"}
+                    </button>
+                </div>
             </div>
 
             <div className={styles.card}>
-                <form action={formAction} className="admin-form">
+                <form id="create-category-form" action={formAction} className="admin-form">
                     <div className="admin-field">
                         <label className="admin-label" htmlFor="cat-name">Nom</label>
                         <input
@@ -48,13 +56,6 @@ export default function CreateCategoryForm() {
                     </div>
 
                     {state.error && <p className="admin-error">{state.error}</p>}
-
-                    <div className="admin-form-actions">
-                        <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
-                        <button type="submit" className="admin-btn-submit" disabled={isPending}>
-                            {isPending ? "Enregistrement…" : "Créer"}
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>
