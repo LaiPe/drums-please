@@ -6,6 +6,7 @@ import { Trash2 } from "lucide-react"
 import { deleteProduct, ActionState } from "@/lib/actions/productActions"
 import { Product } from "@/lib/db/schema"
 import Modal from "../../modal/Modal"
+import Button from "@/ui/components/inputs/Button"
 import styles from "../formPage.module.css"
 
 type Props = {
@@ -40,13 +41,13 @@ export default function DeleteProductForm({ product, categorySlug, onClose }: Pr
                 {state.error && <p className="admin-error">{state.error}</p>}
 
                 <div className="admin-form-actions">
-                    <button type="button" onClick={handleClose} className="admin-btn-cancel">
+                    <Button onClick={handleClose} variant="secondary">
                         Annuler
-                    </button>
-                    <button type="submit" className="admin-btn-danger" disabled={isPending}>
+                    </Button>
+                    <Button type="submit" variant="primary" danger disabled={isPending}>
                         <Trash2 size={14} strokeWidth={2} />
                         {isPending ? "Suppression…" : "Supprimer"}
-                    </button>
+                    </Button>
                 </div>
             </form>
         </Modal>

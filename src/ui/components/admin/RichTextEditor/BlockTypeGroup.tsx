@@ -35,8 +35,8 @@ function TexteContents() {
 }
 
 const ITEMS: { title: string; value: BlockType; contents: React.ReactNode }[] = [
-    { title: 'Titre (####)',        value: 'h4',        contents: <TitreContents /> },
-    { title: 'Sous-titre (#####)',  value: 'h5',        contents: <SousTitreContents /> },
+    { title: 'Titre',        value: 'h4',        contents: <TitreContents /> },
+    { title: 'Sous-titre',  value: 'h5',        contents: <SousTitreContents /> },
     { title: 'Texte normal',        value: 'paragraph', contents: <TexteContents /> },
 ]
 

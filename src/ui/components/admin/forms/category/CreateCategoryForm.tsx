@@ -1,11 +1,13 @@
 'use client'
 
 import { useActionState } from "react"
-import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { createCategory, ActionState } from "@/lib/actions/categoryActions"
 import MediaPicker from "../../MediaPicker"
+import Button from "@/ui/components/inputs/Button"
+import Input from "@/ui/components/inputs/Input"
 import styles from "../formPage.module.css"
+import Link from "next/link"
 
 const EMPTY: ActionState = {}
 
@@ -23,10 +25,10 @@ export default function CreateCategoryForm() {
                     <h1 className={styles.title}>Nouvelle catégorie</h1>
                 </div>
                 <div className={styles.headerActions}>
-                    <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
-                    <button type="submit" form="create-category-form" className="admin-btn-submit" disabled={isPending}>
+                    <Button href="/admin/products" variant="secondary">Annuler</Button>
+                    <Button type="submit" form="create-category-form" variant="primary" disabled={isPending}>
                         {isPending ? "Enregistrement…" : "Créer"}
-                    </button>
+                    </Button>
                 </div>
             </div>
 
@@ -34,11 +36,12 @@ export default function CreateCategoryForm() {
                 <form id="create-category-form" action={formAction} className="admin-form">
                     <div className="admin-field">
                         <label className="admin-label" htmlFor="cat-name">Nom</label>
-                        <input
+                        <Input
                             id="cat-name"
                             name="name"
                             type="text"
-                            className="admin-input"
+                            variant="admin"
+                            noWrap
                             placeholder="Ex : Batteries acoustiques"
                             required
                         />

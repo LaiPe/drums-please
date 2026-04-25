@@ -1,55 +1,60 @@
 import styles from "./Input.module.css"
 import { JSX } from "react"
 
-interface InputProps {
-    type?: 'text' | 'email' | 'password' | 'number' | 'select' | 'textarea'
-    options?: string[] // Only for select type
-    placeholder?: string
-    value?: string
+export type InputVariant = "default" | "admin"
+
+type CommonProps = {
+    variant?: InputVariant
     label?: string
-    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
+    options?: string[]
+    noWrap?: boolean
 }
 
-export default function Input({ type, options, placeholder, value, label, onChange }: InputProps) {
-    let input: JSX.Element;
+type InputProps = CommonProps & Omit<React.ComponentPropsWithoutRef<"input">, "type"> & {
+    type?: "text" | "email" | "password" | "number" | "select" | "textarea"
+}
 
-    if (type === 'select' && options) {
+export default function Input({ type, variant = "default", options, label, noWrap, ...rest }: InputProps) {
+    const isAdmin = variant === "admin"
+
+    let input: JSX.Element
+
+    if (type === "select" && options) {
+        const { defaultValue, ...selectRest } = rest as React.ComponentPropsWithoutRef<"select"> & { defaultValue?: string }
         input = (
-            <select value={value} onChange={onChange} className={styles.select}>
+            <select
+                defaultValue={defaultValue}
+                {...selectRest}
+                className={isAdmin ? styles.adminSelect : styles.select}
+            >
                 {options.map((option, index) => (
-                    <option key={index} value={option}>
-                        {option}
-                    </option>
+                    <option key={index} value={option}>{option}</option>
                 ))}
             </select>
-        );
-    }
-    else if (type === 'textarea') {
+        )
+    } else if (type === "textarea") {
         input = (
             <textarea
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-                className={styles.textarea}
+                {...(rest as React.ComponentPropsWithoutRef<"textarea">)}
+                className={isAdmin ? styles.adminTextarea : styles.textarea}
             />
-        );
-    }
-    else {
+        )
+    } else {
         input = (
             <input
                 type={type}
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-                className={styles.input}
+                {...rest}
+                className={isAdmin ? styles.adminInput : styles.input}
             />
-        );
+        )
     }
+
+    if (noWrap) return input
 
     return (
         <div className={styles.container}>
             {label && <label className={styles.label}>{label}</label>}
             {input}
         </div>
-    );
+    )
 }

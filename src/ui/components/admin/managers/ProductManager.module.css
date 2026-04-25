@@ -159,8 +159,7 @@
         width: 100%;
     }
 
-    .btnPrimary,
-    .btnSecondary {
+    .headerActions > * {
         justify-content: center;
     }
 
@@ -168,98 +167,6 @@
         flex-direction: column;
         align-items: flex-end;
     }
-}
-
-.btnPrimary {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.6rem 1.1rem;
-    background-color: var(--text-color);
-    color: var(--background-color);
-    border: none;
-    border-radius: 6px;
-    font-family: var(--font-poppins), sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btnPrimary:hover {
-    opacity: 0.88;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
-
-.btnSecondary {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.6rem 1rem;
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    font-family: var(--font-poppins), sans-serif;
-    font-size: 0.85rem;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btnSecondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.btnLink {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.35rem 0.65rem;
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-    font-family: var(--font-poppins), sans-serif;
-    font-size: 0.72rem;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.btnLink:hover {
-    background-color: rgba(255, 255, 255, 0.09);
-    color: var(--text-color);
-}
-
-.btnIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.btnIcon:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-    border-color: rgba(255, 255, 255, 0.18);
-}
-
-.btnDanger:hover {
-    background-color: rgba(220, 60, 60, 0.15);
-    color: #f87171;
-    border-color: rgba(220, 60, 60, 0.3);
 }
 
 .empty {

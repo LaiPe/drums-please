@@ -4,21 +4,23 @@ import { useState } from "react"
 import { Trash2 } from "lucide-react"
 import { ProductCategory } from "@/lib/db/schema"
 import DeleteCategoryForm from "../forms/category/DeleteCategoryForm"
-import styles from "./CategoryManager.module.css"
+import Button from "../../inputs/Button"
 
 export default function DeleteCategoryButton({ category }: { category: ProductCategory }) {
     const [open, setOpen] = useState(false)
 
     return (
         <>
-            <button
+            <Button
                 type="button"
-                className={`${styles.btnIcon} ${styles.btnDanger}`}
+                variant="secondary"
+                size="icon"
+                danger
                 aria-label="Supprimer"
                 onClick={() => setOpen(true)}
             >
                 <Trash2 size={15} strokeWidth={1.8} />
-            </button>
+            </Button>
             {open && (
                 <DeleteCategoryForm
                     category={category}

@@ -1,23 +1,88 @@
-.button {
-    display: block;
-    background-color: var(--couleur-fond-clair);
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
+/* === SIZES — layout uniquement === */
+
+.large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.medium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.small, .icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.icon {
+    padding: 0.35rem
+}
+
+/* === VARIANTS — couleurs et états uniquement === */
+
+.primary {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
     outline: none;
-    font-family: "Poppins";
-    font-weight: 200;
-    font-size: 1.1rem;
-    padding: 0.6rem;
-    transition: box-shadow 0.2s ease;
-    line-height: 1;
-}
-
-.button:hover {
-    box-shadow: 0px 0px 8px rgba(217, 217, 217, 0.5), 0px 0px 8px rgba(255, 255, 255, 0.5);
-}
-
-.button a {
+    cursor: pointer;
     text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.primary:hover { opacity: 0.88; }
+.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* primary + danger : surcharge uniquement les couleurs, le reste hérite de .primary */
+.primary.danger {
+    background-color: #dc3c3c;
+    color: white;
+}
+
+.primary.danger:hover { opacity: 0.85; }
+.primary.danger:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* secondary + danger : fond rouge subtil, texte et border rouge */
+.secondary.danger:hover {
+    background: rgba(220, 60, 60, 0.08);
+    color: #f87171;
+    border-color: rgba(220, 60, 60, 0.25);
 }

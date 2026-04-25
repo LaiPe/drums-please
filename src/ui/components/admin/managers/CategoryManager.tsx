@@ -1,8 +1,8 @@
-import Link from "next/link"
 import { Pencil, Plus, ChevronRight } from "lucide-react"
 import { ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
 import DeleteCategoryButton from "./DeleteCategoryButton"
+import Button from "@/ui/components/inputs/Button"
 import styles from "./CategoryManager.module.css"
 
 export default function CategoryManager({ categories }: { categories: ProductCategory[] }) {
@@ -15,10 +15,10 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                     <p className={styles.breadcrumb}>Administration</p>
                     <h1 className={styles.title}>Produits</h1>
                 </div>
-                <Link href="/admin/products/create" className={styles.btnPrimary}>
+                <Button href="/admin/products/create" variant="primary">
                     <Plus size={16} strokeWidth={2} />
                     Nouvelle catégorie
-                </Link>
+                </Button>
             </div>
 
             <p className={styles.count}>{categories.length} catégorie{categories.length !== 1 ? "s" : ""}</p>
@@ -34,17 +34,18 @@ export default function CategoryManager({ categories }: { categories: ProductCat
                         <div className={styles.cardFooter}>
                             <span className={styles.cardSlug}>{category.slug}</span>
                             <div className={styles.cardActions}>
-                                <Link href={`/admin/products/${category.slug}`} className={styles.btnLink}>
+                                <Button href={`/admin/products/${category.slug}`} variant="secondary" size="small">
                                     Gérer les produits
                                     <ChevronRight size={14} strokeWidth={2} />
-                                </Link>
-                                <Link
+                                </Button>
+                                <Button
                                     href={`/admin/products/${category.slug}/edit`}
-                                    className={styles.btnIcon}
+                                    variant="secondary"
+                                    size="icon"
                                     aria-label="Modifier"
                                 >
                                     <Pencil size={15} strokeWidth={1.8} />
-                                </Link>
+                                </Button>
                                 <DeleteCategoryButton category={category} />
                             </div>
                         </div>

@@ -1,12 +1,14 @@
 'use client'
 
 import { useActionState } from "react"
-import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { updateCategory, ActionState } from "@/lib/actions/categoryActions"
 import { ProductCategory } from "@/lib/db/schema"
 import MediaPicker from "../../MediaPicker"
+import Button from "@/ui/components/inputs/Button"
+import Input from "@/ui/components/inputs/Input"
 import styles from "../formPage.module.css"
+import Link from "next/link"
 
 type Props = { category: ProductCategory }
 
@@ -26,10 +28,10 @@ export default function EditCategoryForm({ category }: Props) {
                     <h1 className={styles.title}>Modifier « {category.name} »</h1>
                 </div>
                 <div className={styles.headerActions}>
-                    <Link href="/admin/products" className="admin-btn-cancel">Annuler</Link>
-                    <button type="submit" form="edit-category-form" className="admin-btn-submit" disabled={isPending}>
+                    <Button href="/admin/products" variant="secondary">Annuler</Button>
+                    <Button type="submit" form="edit-category-form" variant="primary" disabled={isPending}>
                         {isPending ? "Enregistrement…" : "Enregistrer"}
-                    </button>
+                    </Button>
                 </div>
             </div>
 
@@ -39,11 +41,12 @@ export default function EditCategoryForm({ category }: Props) {
 
                     <div className="admin-field">
                         <label className="admin-label" htmlFor="cat-name">Nom</label>
-                        <input
+                        <Input
                             id="cat-name"
                             name="name"
                             type="text"
-                            className="admin-input"
+                            variant="admin"
+                            noWrap
                             placeholder="Ex : Batteries acoustiques"
                             defaultValue={category.name}
                             required

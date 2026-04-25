@@ -6,7 +6,7 @@ export default function EmptyProductDetails() {
         <div className={styles.container}>
             <h3 className={`${styles.title} ${styles.lineHeight}`}>It's empty here!</h3>
             <p className={styles.message}>Hey administrator ! Please add some products to this category.</p>
-            <Button type="link" href="/admin/products">Go to Admin Panel</Button>
+            <Button href="/admin/products" variant="primary" size="large">Go to Admin Panel</Button>
         </div>
     )
 }

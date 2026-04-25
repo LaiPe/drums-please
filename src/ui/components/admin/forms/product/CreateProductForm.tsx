@@ -1,12 +1,14 @@
 'use client'
 
 import { useActionState } from "react"
-import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { createProduct, ActionState } from "@/lib/actions/productActions"
 import MediaPicker from "../../MediaPicker"
 import RichTextEditor from "../../RichTextEditor"
+import Button from "@/ui/components/inputs/Button"
+import Input from "@/ui/components/inputs/Input"
 import styles from "../formPage.module.css"
+import Link from "next/link"
 
 type Props = {
     categoryId: number
@@ -29,10 +31,10 @@ export default function CreateProductForm({ categoryId, categorySlug }: Props) {
                     <h1 className={styles.title}>Nouveau produit</h1>
                 </div>
                 <div className={styles.headerActions}>
-                    <Link href={`/admin/products/${categorySlug}`} className="admin-btn-cancel">Annuler</Link>
-                    <button type="submit" form="create-product-form" className="admin-btn-submit" disabled={isPending}>
+                    <Button href={`/admin/products/${categorySlug}`} variant="secondary">Annuler</Button>
+                    <Button type="submit" form="create-product-form" variant="primary" disabled={isPending}>
                         {isPending ? "Enregistrement…" : "Créer"}
-                    </button>
+                    </Button>
                 </div>
             </div>
 
@@ -43,11 +45,12 @@ export default function CreateProductForm({ categoryId, categorySlug }: Props) {
 
                     <div className="admin-field">
                         <label className="admin-label" htmlFor="prod-name">Nom</label>
-                        <input
+                        <Input
                             id="prod-name"
                             name="name"
                             type="text"
-                            className="admin-input"
+                            variant="admin"
+                            noWrap
                             placeholder="Ex : Pearl Export 5 pièces"
                             required
                         />
@@ -66,10 +69,7 @@ export default function CreateProductForm({ categoryId, categorySlug }: Props) {
 
                     <div className="admin-field">
                         <label className="admin-label">Description</label>
-                        <RichTextEditor
-                            name="description"
-                            placeholder="Description du produit…"
-                        />
+                        <RichTextEditor name="description" placeholder="Description du produit…" />
                         {state.fieldErrors?.description && (
                             <span className="admin-field-error">{state.fieldErrors.description[0]}</span>
                         )}

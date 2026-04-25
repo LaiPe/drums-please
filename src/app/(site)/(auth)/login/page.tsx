@@ -9,7 +9,7 @@ export default function Page() {
             <form>
                 <Input type="email" label="Email :" placeholder="Enter your email" />
                 <Input type="password" label="Password :" placeholder="Enter your password" />
-                <Button>Log In</Button>
+                <Button variant="primary" size="large">Log In</Button>
             </form>
         </section>
     )

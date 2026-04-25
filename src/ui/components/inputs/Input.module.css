@@ -27,3 +27,32 @@
 .container {
     margin-bottom: 1.5rem;
 }
+
+/* Admin variant */
+.adminInput,
+.adminTextarea,
+.adminSelect {
+    width: 100%;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.6rem 0.75rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.adminInput:focus,
+.adminTextarea:focus,
+.adminSelect:focus {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+.adminTextarea {
+    resize: vertical;
+    min-height: 100px;
+}
