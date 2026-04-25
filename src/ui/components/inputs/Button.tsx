@@ -1,8 +1,8 @@
 import Link from "next/link"
 import styles from "./Button.module.css"
 
-export type ButtonVariant = "primary" | "secondary"
-export type ButtonSize = "large" | "medium" | "small" | "icon"
+export type ButtonVariant = "primary" | "secondary" | "outline"
+export type ButtonSize = "very-large" | "large" | "medium" | "small" | "icon"
 
 type LinkButtonProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
     href: string

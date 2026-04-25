@@ -6,6 +6,7 @@ import ViewportHeroWithText from "@/ui/components/hero/ViewportHeroWithText"
 import { getAllProductCategories } from "@/lib/data/data"
 import { ProductCategory } from "@/lib/db/schema"
 import { createStorageProvider } from "@/lib/data/storage"
+import Button from "@/ui/components/inputs/Button"
 
 const imageProvider = createStorageProvider('images')
 
@@ -74,7 +75,7 @@ export default async function Page() {
         <BackgroundMedia mediaType="video" mediaSrc="/videos/video-background-index.mp4" childrenClassName={styles.ctaContent}>
           <h3 className={styles.ctaTitle}>Alors n'hésitez plus !</h3>
           <p>Profitez de la réduction de 50% pour votre première location.</p>
-          <Link href="/register" className={styles.ctaButton}>Inscrivez-vous !</Link>
+          <Button href="/register" variant="outline" size="very-large" className={styles.ctaButton}>Inscrivez-vous !</Button>
         </BackgroundMedia>
       </section>
     </>

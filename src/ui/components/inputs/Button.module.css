@@ -1,4 +1,16 @@
 /* === SIZES — layout uniquement === */
+.very-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    white-space: nowrap;
+    line-height: 1;
+}
 
 .large {
     display: inline-flex;
@@ -89,3 +101,21 @@
     color: #f87171;
     border-color: rgba(220, 60, 60, 0.25);
 }
+
+.outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    font-family: var(--font-poppins), sans-serif;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.outline:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border-color: var(--text-color);
+}
+
