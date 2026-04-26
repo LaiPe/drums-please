@@ -5,7 +5,8 @@
       "Bash(node -e \"const p = require\\('./node_modules/next/package.json'\\); console.log\\(p.version\\)\")",
       "Bash(npm install *)",
       "WebFetch(domain:mdxeditor.dev)",
-      "Bash(pnpm add *)"
+      "Bash(pnpm add *)",
+      "Bash(pnpm drizzle-kit *)"
     ]
   }
 }

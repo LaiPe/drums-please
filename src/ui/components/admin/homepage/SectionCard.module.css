@@ -1,0 +1,89 @@
+.card {
+    background-color: var(--background-color);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cardTitle {
+    font-family: var(--font-ojuju), sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.cardStatus {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+.cardStatusOk {
+    color: rgba(100, 220, 150, 0.85);
+}
+
+.cardStatusEmpty {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cardForm {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 1.5rem;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.emptyPlaceholder {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    position: relative;
+}
+
+.emptyPlaceholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.emptyPlaceholderText {
+    font-family: var(--font-ojuju), sans-serif;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
