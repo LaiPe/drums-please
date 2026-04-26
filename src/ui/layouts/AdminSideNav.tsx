@@ -1,4 +1,4 @@
-import { Home, Package } from "lucide-react"
+import { Home, Package, Palette } from "lucide-react"
 import SideNav, { SideNavLink } from "@/ui/components/navigation/SideNav"
 
 const ADMIN_LINKS: SideNavLink[] = [
@@ -11,6 +11,11 @@ const ADMIN_LINKS: SideNavLink[] = [
         label: "Produits",
         path: "/admin/products",
         icon: <Package size={20} strokeWidth={1.8} />,
+    },
+    {
+        label: "Identité visuelle",
+        path: "/admin/brand-identity",
+        icon: <Palette size={20} strokeWidth={1.8} />,
     },
 ]
 

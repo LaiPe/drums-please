@@ -1,0 +1,51 @@
+.logoPreview {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.logoPreviewItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.logoPreviewLabel {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.logoPreviewBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    min-width: 80px;
+    min-height: 48px;
+}
+
+.logoPreviewImg {
+    max-height: 36px;
+    max-width: 160px;
+    object-fit: contain;
+    opacity: 0.6;
+}
+
+.optionalTag {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}

@@ -57,3 +57,14 @@ export type HomepageHero     = InferSelectModel<typeof homepageHeroTable>
 export type HomepageProducts = InferSelectModel<typeof homepageProductsTable>
 export type HomepageAbout    = InferSelectModel<typeof homepageAboutTable>
 export type HomepageCta      = InferSelectModel<typeof homepageCtaTable>
+
+// ── Brand Identity tables ─────────────────────────────────────────────────────
+
+// Logo (0 or 1 row). Null fields → static placeholder fallback.
+export const brandIdentityLogoTable = pgTable("brand_identity_logo", {
+    id:             integer().primaryKey().generatedAlwaysAsIdentity(),
+    logoDesktopSrc: varchar("logo_desktop_src", { length: 255 }),
+    logoMobileSrc:  varchar("logo_mobile_src",  { length: 255 }),
+})
+
+export type BrandIdentityLogo = InferSelectModel<typeof brandIdentityLogoTable>
